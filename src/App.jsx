@@ -183,7 +183,7 @@ const TimerCard = ({ label, value, gradient, textHoverColor, delayIndex = 0 }) =
         </div>
       </motion.div>
 
-      <span className={`text-[10px] md:text-xs uppercase font-extrabold tracking-[0.2em] mt-5 text-gray-400 group-hover:${textHoverColor} transition-colors duration-300`}>
+      <span className={`text-[8px] sm:text-[10px] md:text-xs uppercase font-extrabold tracking-[0.15em] sm:tracking-[0.2em] mt-3 sm:mt-5 text-gray-400 group-hover:${textHoverColor} transition-colors duration-300`}>
         {label}
       </span>
     </div>
@@ -231,15 +231,15 @@ const HeroSection = () => {
       <FloatingCircuit top="20%" right="15%" scale={1.2} delay={0} color="text-blue-500/30" />
       <FloatingCircuit bottom="10%" left="20%" scale={0.8} delay={1} color="text-purple-500/30" />
 
-      <div className="parallax-element max-w-7xl mx-auto px-6 z-10 text-center relative w-full flex flex-col items-center" data-speed="1.5">
+      <div className="parallax-element max-w-7xl mx-auto px-4 sm:px-6 z-10 text-center relative w-full flex flex-col items-center" data-speed="1.5">
         <motion.div style={{ y: y2 }}>
           <RevealText>
-            <div className="flex items-center justify-center gap-2 py-1 px-5 rounded-full bg-white/50 border border-white/60 text-xs font-bold tracking-widest text-gray-600 uppercase mb-8 shadow-sm backdrop-blur-sm mx-auto w-max">
-              <span className="w-2 h-2 rounded-full bg-blue-400"></span>
-              <span className="w-2 h-2 rounded-full bg-yellow-400"></span>
-              <span className="w-2 h-2 rounded-full bg-green-400"></span>
-              <span className="w-2 h-2 rounded-full bg-pink-400"></span>
-              <span className="ml-2"><span className="text-red-600 font-black">RRGI</span> ORGANIZES</span>
+            <div className="flex items-center justify-center gap-1.5 sm:gap-2 py-1 px-3 sm:px-5 rounded-full bg-white/50 border border-white/60 text-[10px] sm:text-xs font-bold tracking-widest text-gray-600 uppercase mb-6 sm:mb-8 shadow-sm backdrop-blur-sm mx-auto w-max">
+              <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-blue-400"></span>
+              <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-yellow-400"></span>
+              <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-green-400"></span>
+              <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-pink-400"></span>
+              <span className="ml-1 sm:ml-2"><span className="text-red-600 font-black">RRGI</span> ORGANIZES</span>
             </div>
           </RevealText>
 
@@ -256,7 +256,7 @@ const HeroSection = () => {
           </RevealText>
 
           <RevealText delay={0.1}>
-            <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black tracking-tight mb-4 sm:mb-6 drop-shadow-xl" style={{ fontFamily: "'Syne', sans-serif", lineHeight: '1.4', letterSpacing: '-0.01em' }}>
+            <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black tracking-tight mb-3 sm:mb-6 drop-shadow-xl text-center w-full" style={{ fontFamily: "'Syne', sans-serif", lineHeight: '1.3', letterSpacing: '-0.01em' }}>
               <span className="text-red-600">RRGI</span>{" "}
               <span className="text-black">Innova</span><span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-blue-400">thon</span>
             </h1>
@@ -268,7 +268,7 @@ const HeroSection = () => {
           </RevealText>
 
           <RevealText delay={0.2}>
-            <p className="max-w-2xl mx-auto text-sm sm:text-base md:text-lg text-gray-600 font-medium mb-6 sm:mb-8 leading-relaxed px-2">
+            <p className="max-w-2xl mx-auto text-center text-sm sm:text-base md:text-lg text-gray-600 font-medium mb-6 sm:mb-8 leading-relaxed px-4 sm:px-2">
               Lucknow's Biggest Student Hackathon is Here! The ultimate Pan-Lucknow Inter-College Hackathon.
               <br /><span className="text-blue-500 font-bold">Hours of building, breaking, and creating the future.</span>
             </p>
@@ -304,20 +304,20 @@ const HeroSection = () => {
           </RevealText>
 
           <RevealText delay={0.4}>
-            <p className="text-xs font-bold tracking-widest text-gray-400 mb-6 uppercase">Hackathon Starts In</p>
-            <div className="flex justify-center items-center gap-1.5 sm:gap-2 md:gap-6 mb-6 relative z-30 px-2">
+            <p className="text-[10px] sm:text-xs font-bold tracking-widest text-gray-400 mb-4 sm:mb-6 uppercase text-center">Hackathon Starts In</p>
+            <div className="flex justify-center items-center gap-2 sm:gap-3 md:gap-6 mb-6 relative z-30 w-full max-w-lg mx-auto">
               <TimerCard delayIndex={0} label="Days" value={timeLeft.days} gradient="from-blue-400 via-cyan-300 to-indigo-500" textHoverColor="text-blue-500" />
-              <div className="text-xl sm:text-2xl md:text-4xl font-bold text-gray-600 mb-8">:</div>
+              <div className="text-lg sm:text-2xl md:text-4xl font-bold text-gray-600 mb-8">:</div>
               <TimerCard delayIndex={1} label="Hours" value={timeLeft.hours} gradient="from-orange-400 via-amber-300 to-rose-500" textHoverColor="text-orange-500" />
-              <div className="text-xl sm:text-2xl md:text-4xl font-bold text-gray-600 mb-8">:</div>
+              <div className="text-lg sm:text-2xl md:text-4xl font-bold text-gray-600 mb-8">:</div>
               <TimerCard delayIndex={2} label="Minutes" value={timeLeft.minutes} gradient="from-green-400 via-emerald-300 to-teal-500" textHoverColor="text-green-500" />
-              <div className="text-xl sm:text-2xl md:text-4xl font-bold text-gray-600 mb-8">:</div>
+              <div className="text-lg sm:text-2xl md:text-4xl font-bold text-gray-600 mb-8">:</div>
               <TimerCard delayIndex={3} label="Seconds" value={timeLeft.seconds} gradient="from-pink-400 via-fuchsia-300 to-purple-500" textHoverColor="text-pink-500" />
             </div>
           </RevealText>
 
           <RevealText delay={0.5}>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6 mt-4 px-4">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6 mt-4 px-6 sm:px-4 w-full max-w-md sm:max-w-none mx-auto">
               <a href="https://forms.gle/aWXrC9w6FwURfLDJ9" target="_blank" rel="noopener noreferrer" className="skeu-btn-primary px-6 sm:px-8 py-3 sm:py-4 rounded-full font-bold flex items-center gap-2 text-base sm:text-lg w-full sm:w-auto justify-center">
                 Register Now <ArrowRight size={18} />
               </a>
