@@ -73,9 +73,9 @@ const Navbar = () => {
       transition={{ duration: 0.8, ease: "easeOut" }}
       className="fixed top-0 w-full z-50 px-6 py-4"
     >
-      <div className="max-w-7xl mx-auto glass-card rounded-full px-6 py-3 flex justify-between items-center shadow-sm">
-        <div className="font-display font-extrabold text-2xl tracking-tight">
-          <span className="text-red-600 font-black">RRGI</span> <span className="text-blue-600 font-black">Innovathon</span> <span className="text-sm font-medium text-gray-600">2026</span>
+      <div className="max-w-7xl mx-auto glass-card rounded-full px-4 sm:px-6 py-2.5 sm:py-3 flex justify-between items-center shadow-sm">
+        <div className="font-display font-extrabold text-lg sm:text-2xl tracking-tight">
+          <span className="text-red-600 font-black">RRGI</span> <span className="text-blue-600 font-black">Innovathon</span> <span className="text-xs sm:text-sm font-medium text-gray-600">2026</span>
         </div>
         <div className="hidden md:flex gap-8 text-sm font-medium text-gray-600">
           <a href="#about" className="hover:text-blue-500 transition-colors">About</a>
@@ -84,8 +84,8 @@ const Navbar = () => {
           <a href="#themes" className="hover:text-blue-500 transition-colors">Themes</a>
           <a href="#faq" className="hover:text-blue-500 transition-colors">FAQs</a>
         </div>
-        <a href="https://forms.gle/aWXrC9w6FwURfLDJ9" target="_blank" rel="noopener noreferrer" className="skeu-btn-primary px-6 py-2 rounded-full font-bold text-sm flex items-center gap-2">
-          Register <ArrowRight size={16} />
+        <a href="https://forms.gle/aWXrC9w6FwURfLDJ9" target="_blank" rel="noopener noreferrer" className="skeu-btn-primary px-4 sm:px-6 py-2 rounded-full font-bold text-xs sm:text-sm flex items-center gap-1.5 sm:gap-2">
+          Register <ArrowRight size={14} className="sm:w-4 sm:h-4" />
         </a>
       </div>
     </motion.nav>
@@ -147,7 +147,7 @@ const TimerCard = ({ label, value, gradient, textHoverColor, delayIndex = 0 }) =
       <motion.div
         whileHover={{ scale: 1.05, rotateX: 10, rotateY: -10 }}
         transition={{ type: "spring", stiffness: 400, damping: 25 }}
-        className="w-20 md:w-32 h-28 md:h-40 rounded-3xl relative overflow-hidden backdrop-blur-2xl border border-white/60 flex items-center justify-center bg-white/20"
+        className="w-[4.5rem] sm:w-20 md:w-32 h-24 sm:h-28 md:h-40 rounded-2xl sm:rounded-3xl relative overflow-hidden backdrop-blur-2xl border border-white/60 flex items-center justify-center bg-white/20"
         style={{ boxShadow: '0 20px 40px -10px rgba(0,0,0,0.1), inset 0 2px 10px rgba(255,255,255,0.7)' }}
       >
         {/* Pulsing Gradient Base */}
@@ -175,7 +175,7 @@ const TimerCard = ({ label, value, gradient, textHoverColor, delayIndex = 0 }) =
               animate={{ y: 0, opacity: 1, filter: 'blur(0px)', scale: 1 }}
               exit={{ y: -30, opacity: 0, filter: 'blur(4px)', scale: 0.9 }}
               transition={{ type: "spring", stiffness: 300, damping: 25 }}
-              className="absolute text-5xl md:text-7xl font-display font-black text-slate-800 tracking-tighter drop-shadow-md tabular-nums"
+              className="absolute text-4xl sm:text-5xl md:text-7xl font-display font-black text-slate-800 tracking-tighter drop-shadow-md tabular-nums"
             >
               {displayValue}
             </motion.span>
@@ -223,7 +223,7 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section className="relative flex items-center justify-center pt-28 pb-10 overflow-hidden" id="hero">
+    <section className="relative flex items-center justify-center pt-24 sm:pt-28 pb-8 sm:pb-10 overflow-hidden" id="hero">
       <FloatingShape color="bg-pastelBlue" size="w-96 h-96" top="10%" left="10%" duration={15} />
       <FloatingShape color="bg-pastelPink" size="w-[30rem] h-[30rem]" top="40%" left="60%" duration={20} blur="blur-3xl" />
       <FloatingShape color="bg-pastelGreen" size="w-64 h-64" top="60%" left="15%" delay={2} duration={12} />
@@ -244,49 +244,49 @@ const HeroSection = () => {
           </RevealText>
 
           <RevealText delay={0.05}>
-            <div className="mx-auto w-max px-4 mb-6">
-              <div className="p-2 bg-white/70 backdrop-blur-md rounded-[1rem] border border-white/80 shadow-md flex items-center justify-center">
+            <div className="mx-auto w-max px-2 sm:px-4 mb-4 sm:mb-6">
+              <div className="p-1.5 sm:p-2 bg-white/70 backdrop-blur-md rounded-[0.75rem] sm:rounded-[1rem] border border-white/80 shadow-md flex items-center justify-center">
                 <img
                   src="/banner.png"
                   alt="RRGI Innovathon 2026 Banner"
-                  className="h-20 w-auto rounded-[0.75rem] object-contain"
+                  className="h-12 sm:h-20 w-auto rounded-[0.5rem] sm:rounded-[0.75rem] object-contain"
                 />
               </div>
             </div>
           </RevealText>
 
           <RevealText delay={0.1}>
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tight mb-6 drop-shadow-xl whitespace-nowrap" style={{ fontFamily: "'Syne', sans-serif", lineHeight: '1.4', letterSpacing: '-0.01em' }}>
+            <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black tracking-tight mb-4 sm:mb-6 drop-shadow-xl" style={{ fontFamily: "'Syne', sans-serif", lineHeight: '1.4', letterSpacing: '-0.01em' }}>
               <span className="text-red-600">RRGI</span>{" "}
               <span className="text-black">Innova</span><span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-blue-400">thon</span>
             </h1>
-            <div className="flex items-center justify-center mb-6 drop-shadow-sm overflow-hidden py-4">
-              <span className="text-4xl md:text-5xl lg:text-[4rem] font-black text-[#E88E73] transform scale-x-[2] inline-block tracking-tight" style={{ fontFamily: "'Orbitron', sans-serif" }}>
+            <div className="flex items-center justify-center mb-4 sm:mb-6 drop-shadow-sm overflow-hidden py-2 sm:py-4">
+              <span className="text-3xl sm:text-4xl md:text-5xl lg:text-[4rem] font-black text-[#E88E73] transform scale-x-[1.5] sm:scale-x-[2] inline-block tracking-tight" style={{ fontFamily: "'Orbitron', sans-serif" }}>
                 2026
               </span>
             </div>
           </RevealText>
 
           <RevealText delay={0.2}>
-            <p className="max-w-2xl mx-auto text-base md:text-lg text-gray-600 font-medium mb-8 leading-relaxed">
+            <p className="max-w-2xl mx-auto text-sm sm:text-base md:text-lg text-gray-600 font-medium mb-6 sm:mb-8 leading-relaxed px-2">
               Lucknow's Biggest Student Hackathon is Here! The ultimate Pan-Lucknow Inter-College Hackathon.
               <br /><span className="text-blue-500 font-bold">Hours of building, breaking, and creating the future.</span>
             </p>
           </RevealText>
 
           <RevealText delay={0.3}>
-            <div className="flex flex-wrap justify-center gap-3 md:gap-4 mb-16">
-              <div className="flex items-center gap-2 bg-blue-50 text-blue-600 px-4 py-2 rounded-full font-semibold text-xs border border-blue-100 shadow-sm">
-                <Calendar size={14} /> 16,17,18 April
+            <div className="flex flex-wrap justify-center gap-2 sm:gap-3 md:gap-4 mb-10 sm:mb-16 px-2">
+              <div className="flex items-center gap-1.5 sm:gap-2 bg-blue-50 text-blue-600 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full font-semibold text-[10px] sm:text-xs border border-blue-100 shadow-sm">
+                <Calendar size={12} className="sm:w-3.5 sm:h-3.5" /> 16,17,18 April
               </div>
-              <div className="flex items-center gap-2 bg-yellow-50 text-orange-600 px-4 py-2 rounded-full font-semibold text-xs border border-orange-100 shadow-sm">
-                <MapPin size={14} /> <span className="text-red-600 font-bold">RRGI</span>, Lucknow
+              <div className="flex items-center gap-1.5 sm:gap-2 bg-yellow-50 text-orange-600 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full font-semibold text-[10px] sm:text-xs border border-orange-100 shadow-sm">
+                <MapPin size={12} className="sm:w-3.5 sm:h-3.5" /> <span className="text-red-600 font-bold">RRGI</span>, Lucknow
               </div>
-              <div className="flex items-center gap-2 bg-green-50 text-green-600 px-4 py-2 rounded-full font-semibold text-xs border border-green-100 shadow-sm">
-                <Clock size={14} /> Rs. 100/- Registration
+              <div className="flex items-center gap-1.5 sm:gap-2 bg-green-50 text-green-600 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full font-semibold text-[10px] sm:text-xs border border-green-100 shadow-sm">
+                <Clock size={12} className="sm:w-3.5 sm:h-3.5" /> Rs. 100/- Registration
               </div>
-              <div className="flex items-center gap-2 bg-pink-50 text-pink-600 px-4 py-2 rounded-full font-semibold text-xs border border-pink-100 shadow-sm">
-                <Users size={14} /> Open to All Colleges
+              <div className="flex items-center gap-1.5 sm:gap-2 bg-pink-50 text-pink-600 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full font-semibold text-[10px] sm:text-xs border border-pink-100 shadow-sm">
+                <Users size={12} className="sm:w-3.5 sm:h-3.5" /> Open to All Colleges
               </div>
             </div>
           </RevealText>
@@ -305,24 +305,24 @@ const HeroSection = () => {
 
           <RevealText delay={0.4}>
             <p className="text-xs font-bold tracking-widest text-gray-400 mb-6 uppercase">Hackathon Starts In</p>
-            <div className="flex justify-center items-center gap-2 md:gap-6 mb-6 relative z-30">
+            <div className="flex justify-center items-center gap-1.5 sm:gap-2 md:gap-6 mb-6 relative z-30 px-2">
               <TimerCard delayIndex={0} label="Days" value={timeLeft.days} gradient="from-blue-400 via-cyan-300 to-indigo-500" textHoverColor="text-blue-500" />
-              <div className="text-2xl md:text-4xl font-bold text-gray-600 mb-8">:</div>
+              <div className="text-xl sm:text-2xl md:text-4xl font-bold text-gray-600 mb-8">:</div>
               <TimerCard delayIndex={1} label="Hours" value={timeLeft.hours} gradient="from-orange-400 via-amber-300 to-rose-500" textHoverColor="text-orange-500" />
-              <div className="text-2xl md:text-4xl font-bold text-gray-600 mb-8">:</div>
+              <div className="text-xl sm:text-2xl md:text-4xl font-bold text-gray-600 mb-8">:</div>
               <TimerCard delayIndex={2} label="Minutes" value={timeLeft.minutes} gradient="from-green-400 via-emerald-300 to-teal-500" textHoverColor="text-green-500" />
-              <div className="text-2xl md:text-4xl font-bold text-gray-600 mb-8">:</div>
+              <div className="text-xl sm:text-2xl md:text-4xl font-bold text-gray-600 mb-8">:</div>
               <TimerCard delayIndex={3} label="Seconds" value={timeLeft.seconds} gradient="from-pink-400 via-fuchsia-300 to-purple-500" textHoverColor="text-pink-500" />
             </div>
           </RevealText>
 
           <RevealText delay={0.5}>
-            <div className="flex items-center justify-center gap-6 mt-4">
-              <a href="https://forms.gle/aWXrC9w6FwURfLDJ9" target="_blank" rel="noopener noreferrer" className="skeu-btn-primary px-8 py-4 rounded-full font-bold flex items-center gap-2 text-lg">
-                Register Now <ArrowRight size={20} />
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6 mt-4 px-4">
+              <a href="https://forms.gle/aWXrC9w6FwURfLDJ9" target="_blank" rel="noopener noreferrer" className="skeu-btn-primary px-6 sm:px-8 py-3 sm:py-4 rounded-full font-bold flex items-center gap-2 text-base sm:text-lg w-full sm:w-auto justify-center">
+                Register Now <ArrowRight size={18} />
               </a>
-              <a href="#about" className="skeu-btn-secondary px-8 py-4 rounded-full font-bold flex items-center gap-2 text-lg">
-                <Info size={20} /> Learn More
+              <a href="#about" className="skeu-btn-secondary px-6 sm:px-8 py-3 sm:py-4 rounded-full font-bold flex items-center gap-2 text-base sm:text-lg w-full sm:w-auto justify-center">
+                <Info size={18} /> Learn More
               </a>
             </div>
           </RevealText>
@@ -341,8 +341,8 @@ const AboutSection = () => {
   ];
 
   return (
-    <section className="py-24 relative" id="about">
-      <div className="max-w-7xl mx-auto px-6">
+    <section className="py-16 sm:py-24 relative" id="about">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="text-center mb-16 relative">
           <RevealText>
             <div className="flex justify-center mb-6">
@@ -351,10 +351,10 @@ const AboutSection = () => {
                 What's It?
               </div>
             </div>
-            <h2 className="text-4xl md:text-6xl font-black mb-6 tracking-tight text-slate-800">About <span className="text-blue-600">RRGI Innovathon</span></h2>
+            <h2 className="text-3xl sm:text-4xl md:text-6xl font-black mb-4 sm:mb-6 tracking-tight text-slate-800">About <span className="text-blue-600">RRGI Innovathon</span></h2>
           </RevealText>
           <RevealText delay={0.1}>
-            <p className="max-w-4xl mx-auto text-lg text-gray-600 leading-relaxed font-medium">
+            <p className="max-w-4xl mx-auto text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed font-medium px-2">
               The RR Group of Institutions, Lucknow proudly presents RRGI Innovathon 2026—the ultimate Pan-Lucknow Inter-College Hackathon designed for the visionaries of tomorrow. Whether you're an AI enthusiast, a web wizard, or a cybersecurity sentinel, this is your stage to build, compete, and innovate.
               <br /><br />
               We are inviting the brightest student developers and problem-solvers to step up and build technology solutions for real-world challenges. Innovation isn't just about thinking—it's about doing. 🛠️
@@ -362,12 +362,12 @@ const AboutSection = () => {
           </RevealText>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 relative z-10">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-6 relative z-10">
           {stats.map((stat, idx) => (
             <RevealText key={idx} delay={0.1 * idx}>
               <motion.div
                 whileHover={{ y: -5, scale: 1.02 }}
-                className={`p-8 flex flex-col items-center justify-center text-center h-full ${stat.bg} bg-opacity-70 hover:shadow-xl transition-all duration-300 relative overflow-hidden backdrop-blur-xl border border-white/60 shadow-sm rounded-3xl`}
+                className={`p-4 sm:p-8 flex flex-col items-center justify-center text-center h-full ${stat.bg} bg-opacity-70 hover:shadow-xl transition-all duration-300 relative overflow-hidden backdrop-blur-xl border border-white/60 shadow-sm rounded-2xl sm:rounded-3xl`}
               >
                 {/* Vibrant top edge */}
                 <div className={`absolute top-0 left-0 w-full h-2 bg-gradient-to-r ${stat.glow} opacity-90`}></div>
@@ -375,8 +375,8 @@ const AboutSection = () => {
                 {/* Subtle top right dot from image */}
                 <div className={`absolute top-3 right-3 w-2 h-2 rounded-full bg-gradient-to-r ${stat.glow}`}></div>
 
-                <h3 className="text-4xl md:text-5xl font-display font-black mb-2 text-slate-800 drop-shadow-sm tracking-tight">{stat.value}</h3>
-                <p className={`text-xs font-bold tracking-widest uppercase ${stat.text}`}>{stat.label}</p>
+                <h3 className="text-2xl sm:text-4xl md:text-5xl font-display font-black mb-1 sm:mb-2 text-slate-800 drop-shadow-sm tracking-tight">{stat.value}</h3>
+                <p className={`text-[10px] sm:text-xs font-bold tracking-widest uppercase ${stat.text}`}>{stat.label}</p>
               </motion.div>
             </RevealText>
           ))}
@@ -436,12 +436,12 @@ const FeaturesSection = () => {
   ];
 
   return (
-    <section className="py-24 relative overflow-hidden" id="features">
+    <section className="py-16 sm:py-24 relative overflow-hidden" id="features">
       <FloatingShape color="bg-pastelBlue" size="w-[500px] h-[500px]" top="10%" left="-10%" duration={25} />
       <FloatingCircuit top="30%" right="5%" scale={0.9} delay={2} color="text-blue-400/30" />
       <FloatingCircuit bottom="10%" left="5%" scale={1.1} delay={3} color="text-blue-600/20" />
 
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="text-center mb-16">
           <RevealText>
             <span className="inline-block py-1.5 px-6 rounded-full bg-gradient-to-r from-blue-100 to-indigo-100 border border-blue-200 text-xs font-bold tracking-widest text-blue-700 uppercase mb-4 shadow-md backdrop-blur-sm">
@@ -456,7 +456,7 @@ const FeaturesSection = () => {
               <motion.div
                 whileHover={{ y: -8, scale: 1.02 }}
                 transition={{ type: "spring", stiffness: 300, damping: 22 }}
-                className={`relative rounded-[2rem] p-8 flex flex-col overflow-hidden border border-white/50 shadow-md ${feature.cardBg} ${feature.featured ? 'md:-mt-6 md:pb-10 md:pt-10 shadow-xl' : ''}`}
+                className={`relative rounded-[1.5rem] sm:rounded-[2rem] p-5 sm:p-8 flex flex-col overflow-hidden border border-white/50 shadow-md ${feature.cardBg} ${feature.featured ? 'md:-mt-6 md:pb-10 md:pt-10 shadow-xl' : ''}`}
               >
                 {/* Corner dot indicator */}
                 <div className={`absolute top-5 right-5 w-2.5 h-2.5 rounded-full ${feature.dotIndicator}`}></div>
@@ -474,7 +474,7 @@ const FeaturesSection = () => {
                   </div>
 
                   {/* Title */}
-                  <h3 className={`text-3xl font-black leading-tight mb-6 text-slate-800 whitespace-pre-line`} style={{ fontFamily: "'Exo 2', sans-serif" }}>
+                  <h3 className={`text-2xl sm:text-3xl font-black leading-tight mb-4 sm:mb-6 text-slate-800 whitespace-pre-line`} style={{ fontFamily: "'Exo 2', sans-serif" }}>
                     {feature.title}
                   </h3>
 
@@ -847,16 +847,16 @@ const PrizeSection = () => {
   ];
 
   return (
-    <section className="py-24 relative" id="prizes">
+    <section className="py-16 sm:py-24 relative" id="prizes">
       <FloatingShape color="bg-pastelYellow" size="w-64 h-64" top="20%" right="10%" duration={18} />
 
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="flex flex-col xl:flex-row items-center justify-between gap-12 lg:gap-16 mb-24 cursor-default">
           {/* Left Column: Heading and Text */}
           <div className="w-full xl:w-5/12 text-left shrink-0">
             <RevealText>
-              <h2 className="text-5xl md:text-7xl font-display font-black mb-6 tracking-tight text-slate-800">Prize <span className="text-blue-600">Money</span></h2>
-              <p className="text-lg md:text-xl text-gray-600 font-medium leading-relaxed mb-6">
+              <h2 className="text-4xl sm:text-5xl md:text-7xl font-display font-black mb-4 sm:mb-6 tracking-tight text-slate-800">Prize <span className="text-blue-600">Money</span></h2>
+              <p className="text-base sm:text-lg md:text-xl text-gray-600 font-medium leading-relaxed mb-4 sm:mb-6">
                 Scratch the digital ticket on the right to manually reveal the grand prize pool waiting for you at the finish line!
               </p>
               <span className="text-blue-600 font-bold border-l-4 border-blue-500 pl-4 py-1 inline-block uppercase tracking-widest text-xs">Prove your excellence. Claim your reward.</span>
@@ -877,12 +877,12 @@ const PrizeSection = () => {
           </span>
         </div>
 
-        <div className="flex flex-col md:flex-row items-stretch justify-center gap-6 mt-12 px-4">
+        <div className="flex flex-col md:flex-row items-stretch justify-center gap-4 sm:gap-6 mt-8 sm:mt-12 px-2 sm:px-4">
           {prizes.map((prize, idx) => (
             <RevealText key={idx} delay={0.1 * idx}>
               <motion.div
                 whileHover={{ y: -6, scale: 1.02 }}
-                className={`p-8 flex flex-col items-center justify-center text-center w-full md:w-[22rem] h-56 rounded-[2rem] ${prize.cardBg} shadow-sm border border-white/50 relative overflow-hidden backdrop-blur-md`}
+                className={`p-5 sm:p-8 flex flex-col items-center justify-center text-center w-full md:w-[22rem] h-44 sm:h-56 rounded-[1.5rem] sm:rounded-[2rem] ${prize.cardBg} shadow-sm border border-white/50 relative overflow-hidden backdrop-blur-md`}
               >
                 {/* Top Border Strip */}
                 <div className={`absolute top-0 left-0 right-0 h-2.5 ${prize.topStrip}`}></div>
@@ -891,7 +891,7 @@ const PrizeSection = () => {
                 <div className={`absolute top-5 right-5 w-2 h-2 rounded-full ${prize.dot}`}></div>
 
                 {/* Main Text (Big) */}
-                <h3 className={`text-6xl md:text-[4.5rem] tracking-tighter font-black ${prize.textColor} mb-3 drop-shadow-sm`} style={{ fontFamily: "'Outfit', sans-serif" }}>
+                <h3 className={`text-4xl sm:text-6xl md:text-[4.5rem] tracking-tighter font-black ${prize.textColor} mb-2 sm:mb-3 drop-shadow-sm`} style={{ fontFamily: "'Outfit', sans-serif" }}>
                   {prize.lock}
                 </h3>
 
@@ -919,24 +919,24 @@ const ThemesSection = () => {
   ];
 
   return (
-    <section className="py-24 relative overflow-hidden" id="themes">
+    <section className="py-16 sm:py-24 relative overflow-hidden" id="themes">
       <FloatingShape color="bg-pastelPink" size="w-96 h-96" top="-10%" left="40%" duration={30} blur="blur-3xl" />
 
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="text-center mb-16">
           <RevealText>
-            <h2 className="text-5xl md:text-6xl font-display font-bold mb-6">Innovative <span className="text-orange-500">Themes</span></h2>
-            <p className="text-gray-600 font-medium max-w-2xl mx-auto">Build innovative technology solutions that solve real-world problems.</p>
+            <h2 className="text-3xl sm:text-5xl md:text-6xl font-display font-bold mb-4 sm:mb-6">Innovative <span className="text-orange-500">Themes</span></h2>
+            <p className="text-sm sm:text-base text-gray-600 font-medium max-w-2xl mx-auto">Build innovative technology solutions that solve real-world problems.</p>
           </RevealText>
         </div>
 
-        <div className="flex flex-col md:flex-row gap-12 items-center justify-center">
-          <div className="w-full md:w-1/3 flex flex-col gap-4">
+        <div className="flex flex-col md:flex-row gap-8 sm:gap-12 items-center justify-center">
+          <div className="w-full md:w-1/3 flex flex-col gap-2.5 sm:gap-4">
             {themes.map((theme, idx) => (
               <RevealText key={idx} delay={0.05 * idx}>
                 <button
                   onClick={() => setActiveTheme(idx)}
-                  className={`w-full text-left px-6 py-4 rounded-2xl font-bold flex items-center gap-4 border domain-tab ${activeTheme === idx
+                  className={`w-full text-left px-4 sm:px-6 py-3 sm:py-4 rounded-xl sm:rounded-2xl font-bold text-sm sm:text-base flex items-center gap-3 sm:gap-4 border domain-tab ${activeTheme === idx
                     ? `domain-active text-slate-900 border-white/50 ${theme.bg}`
                     : "text-slate-500 border-gray-100"
                     }`}
@@ -950,7 +950,7 @@ const ThemesSection = () => {
             ))}
           </div>
 
-          <div className="w-full md:w-1/2 relative min-h-[300px] flex items-center justify-center">
+          <div className="w-full md:w-1/2 relative min-h-[240px] sm:min-h-[300px] flex items-center justify-center">
             <AnimatePresence mode="wait">
               <motion.div
                 key={activeTheme}
@@ -958,15 +958,15 @@ const ThemesSection = () => {
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 exit={{ opacity: 0, y: -10, scale: 0.98 }}
                 transition={{ duration: 0.4, ease: "easeInOut" }}
-                className={`w-full h-full glass-card border p-12 flex flex-col items-center justify-center text-center rounded-[2rem] shadow-[0_8px_30px_rgb(0,0,0,0.04)] animate-float-subtle ${themes[activeTheme].cardBg} ${themes[activeTheme].border}`}
+                className={`w-full h-full glass-card border p-6 sm:p-12 flex flex-col items-center justify-center text-center rounded-[1.5rem] sm:rounded-[2rem] shadow-[0_8px_30px_rgb(0,0,0,0.04)] animate-float-subtle ${themes[activeTheme].cardBg} ${themes[activeTheme].border}`}
               >
-                <div className={`w-20 h-20 rounded-full flex items-center justify-center mb-6 shadow-sm ${themes[activeTheme].iconBg} ${themes[activeTheme].text}`}>
-                  {React.cloneElement(themes[activeTheme].icon, { size: 36, strokeWidth: 2 })}
+                <div className={`w-14 h-14 sm:w-20 sm:h-20 rounded-full flex items-center justify-center mb-4 sm:mb-6 shadow-sm ${themes[activeTheme].iconBg} ${themes[activeTheme].text}`}>
+                  {React.cloneElement(themes[activeTheme].icon, { size: 28, strokeWidth: 2, className: 'sm:w-9 sm:h-9' })}
                 </div>
-                <h3 className={`text-3xl font-display font-black mb-3 tracking-tight ${themes[activeTheme].text}`}>
+                <h3 className={`text-2xl sm:text-3xl font-display font-black mb-2 sm:mb-3 tracking-tight ${themes[activeTheme].text}`}>
                   {themes[activeTheme].name}
                 </h3>
-                <p className="text-gray-600 font-medium leading-relaxed max-w-sm">
+                <p className="text-sm sm:text-base text-gray-600 font-medium leading-relaxed max-w-sm">
                   {themes[activeTheme].desc}
                 </p>
               </motion.div>
@@ -998,11 +998,11 @@ const FaqSection = () => {
   ];
 
   return (
-    <section className="py-24 relative" id="faq">
-      <div className="max-w-3xl mx-auto px-6">
+    <section className="py-16 sm:py-24 relative" id="faq">
+      <div className="max-w-3xl mx-auto px-4 sm:px-6">
         <div className="text-center mb-16">
           <RevealText>
-            <h2 className="text-5xl md:text-6xl font-display font-bold mb-4">Frequently <span className="text-blue-500">Asked</span><br /><span className="text-orange-400">Questions</span></h2>
+            <h2 className="text-3xl sm:text-5xl md:text-6xl font-display font-bold mb-4">Frequently <span className="text-blue-500">Asked</span><br /><span className="text-orange-400">Questions</span></h2>
             <p className="text-gray-600 font-medium mt-4">Everything you need to know before you build.</p>
           </RevealText>
         </div>
@@ -1024,16 +1024,16 @@ const FaqSection = () => {
 
                   <button
                     onClick={() => setOpenIdx(isOpen ? -1 : idx)}
-                    className="w-full text-left pl-7 pr-6 py-5 flex items-center justify-between focus:outline-none"
+                    className="w-full text-left pl-5 sm:pl-7 pr-4 sm:pr-6 py-4 sm:py-5 flex items-center justify-between focus:outline-none"
                   >
-                    <div className="flex items-center gap-5">
-                      <span className={`text-sm font-extrabold tracking-widest ${fc.number}`}>{String(idx + 1).padStart(2, '0')}</span>
-                      <h4 className={`font-bold text-base md:text-lg ${isOpen ? 'text-slate-800' : 'text-gray-700'}`}>{faq.q}</h4>
+                    <div className="flex items-center gap-3 sm:gap-5">
+                      <span className={`text-xs sm:text-sm font-extrabold tracking-widest ${fc.number}`}>{String(idx + 1).padStart(2, '0')}</span>
+                      <h4 className={`font-bold text-sm sm:text-base md:text-lg ${isOpen ? 'text-slate-800' : 'text-gray-700'}`}>{faq.q}</h4>
                     </div>
                     <motion.div
                       animate={{ rotate: isOpen ? 45 : 0 }}
                       transition={{ duration: 0.2 }}
-                      className={`w-9 h-9 rounded-full border-2 flex items-center justify-center flex-shrink-0 ml-4 text-lg font-bold leading-none ${isOpen ? fc.btn : 'border-gray-200 text-gray-400 bg-white'
+                      className={`w-7 h-7 sm:w-9 sm:h-9 rounded-full border-2 flex items-center justify-center flex-shrink-0 ml-2 sm:ml-4 text-base sm:text-lg font-bold leading-none ${isOpen ? fc.btn : 'border-gray-200 text-gray-400 bg-white'
                         }`}
                     >
                       +
@@ -1047,7 +1047,7 @@ const FaqSection = () => {
                         animate={{ height: 'auto', opacity: 1 }}
                         exit={{ height: 0, opacity: 0 }}
                         transition={{ duration: 0.25 }}
-                        className="pl-[3.75rem] pr-6 pb-5 text-gray-600 font-medium leading-relaxed text-sm md:text-base"
+                        className="pl-10 sm:pl-[3.75rem] pr-4 sm:pr-6 pb-4 sm:pb-5 text-gray-600 font-medium leading-relaxed text-xs sm:text-sm md:text-base"
                       >
                         {faq.a}
                       </motion.div>
@@ -1130,16 +1130,16 @@ const TeamSection = () => {
   );
 
   return (
-    <section className="py-24 relative overflow-hidden" id="team">
+    <section className="py-16 sm:py-24 relative overflow-hidden" id="team">
       <FloatingShape color="bg-pastelBlue" size="w-72 h-72" top="20%" left="-5%" duration={18} blur="blur-3xl" />
       <FloatingShape color="bg-pastelPink" size="w-80 h-80" top="50%" left="85%" duration={22} blur="blur-3xl" />
 
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
         {/* Main Heading */}
         <div className="text-center mb-16">
           <RevealText>
             <p className="text-xs font-extrabold tracking-[0.25em] uppercase text-gray-400 mb-4">The People Behind It</p>
-            <h2 className="text-5xl md:text-6xl font-display font-black mb-8 tracking-tight">
+            <h2 className="text-3xl sm:text-5xl md:text-6xl font-display font-black mb-6 sm:mb-8 tracking-tight">
               Meet the <span className="text-blue-500">Organisers</span>
             </h2>
             <div className="flex items-center justify-center gap-2 py-2 px-5 rounded-full bg-white/70 border border-gray-100 shadow-sm w-max mx-auto">
@@ -1167,7 +1167,7 @@ const TeamSection = () => {
             </div>
           </RevealText>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-5 md:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-5 md:gap-8">
             {coreOrganisers.map((member, idx) => (
               <MemberCard key={idx} member={member} idx={idx} />
             ))}
@@ -1187,7 +1187,7 @@ const TeamSection = () => {
             </div>
           </RevealText>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-5 md:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-5 md:gap-8">
             {hackerlanceTeam.map((member, idx) => (
               <MemberCard key={idx} member={member} idx={idx + coreOrganisers.length} />
             ))}
@@ -1260,25 +1260,25 @@ const EventTimelineSection = () => {
   const currentEvent = currentDay.events[activeEvent];
 
   return (
-    <section className="py-24 relative overflow-hidden" id="timeline">
+    <section className="py-16 sm:py-24 relative overflow-hidden" id="timeline">
       <FloatingShape color="bg-pastelYellow" size="w-80 h-80" top="10%" left="80%" duration={20} blur="blur-3xl" />
       <FloatingShape color="bg-pastelBlue" size="w-64 h-64" top="60%" left="-5%" duration={16} blur="blur-3xl" />
 
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
         {/* Section Heading */}
         <div className="text-center mb-16">
           <RevealText>
             <p className="text-xs font-extrabold tracking-[0.25em] uppercase text-gray-400 mb-4">3-Day Schedule</p>
-            <h2 className="text-5xl md:text-6xl font-display font-black mb-6 tracking-tight">
+            <h2 className="text-3xl sm:text-5xl md:text-6xl font-display font-black mb-4 sm:mb-6 tracking-tight">
               Event <span className={colors.text}>Timeline</span>
             </h2>
-            <p className="text-gray-600 font-medium max-w-xl mx-auto">Click any day to explore the full schedule. Navigate events using the timeline bar.</p>
+            <p className="text-sm sm:text-base text-gray-600 font-medium max-w-xl mx-auto">Click any day to explore the full schedule. Navigate events using the timeline bar.</p>
           </RevealText>
         </div>
 
         {/* Day Switcher Tabs */}
         <RevealText>
-          <div className="flex items-center justify-center gap-3 md:gap-4 mb-14">
+          <div className="flex items-center justify-center gap-2 sm:gap-3 md:gap-4 mb-10 sm:mb-14">
             {days.map((day, idx) => {
               const dColors = colorMap[day.color];
               const isActive = activeDay === idx;
@@ -1286,7 +1286,7 @@ const EventTimelineSection = () => {
                 <button
                   key={idx}
                   onClick={() => { setActiveDay(idx); setActiveEvent(0); }}
-                  className={`relative flex items-center gap-2.5 px-5 md:px-7 py-3 md:py-3.5 rounded-2xl font-bold text-sm transition-all duration-300 border ${isActive
+                  className={`relative flex items-center gap-1.5 sm:gap-2.5 px-3 sm:px-5 md:px-7 py-2.5 sm:py-3 md:py-3.5 rounded-xl sm:rounded-2xl font-bold text-xs sm:text-sm transition-all duration-300 border ${isActive
                     ? `${dColors.bg} ${dColors.border} ${dColors.text} shadow-md scale-105`
                     : `bg-white/50 border-gray-100 text-gray-400 ${dColors.tabHover} hover:text-gray-600 hover:border-gray-200`
                     }`}
@@ -1303,7 +1303,7 @@ const EventTimelineSection = () => {
         </RevealText>
 
         {/* Timeline Content */}
-        <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-start">
+        <div className="flex flex-col lg:flex-row gap-6 sm:gap-8 lg:gap-12 items-start">
 
           {/* Left: Vertical Timeline Bar */}
           <div className="w-full lg:w-[420px] shrink-0 relative">
@@ -1372,7 +1372,7 @@ const EventTimelineSection = () => {
               initial={{ opacity: 0, scale: 0.98 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.3 }}
-              className={`rounded-[2rem] p-6 md:p-10 border-2 ${colors.border} bg-blue-50/50 backdrop-blur-md shadow-lg relative overflow-hidden flex flex-col justify-between h-max`}
+              className={`rounded-[1.5rem] sm:rounded-[2rem] p-5 sm:p-6 md:p-10 border-2 ${colors.border} bg-blue-50/50 backdrop-blur-md shadow-lg relative overflow-hidden flex flex-col justify-between h-max`}
             >
               {/* Grid overlay */}
               <div className="absolute inset-0 bg-grid-pattern opacity-10 rounded-[2rem]"></div>
@@ -1399,7 +1399,7 @@ const EventTimelineSection = () => {
                   </div>
                   <div>
                     <p className={`text-xs font-extrabold tracking-[0.2em] uppercase ${colors.text} mb-1`}>{currentEvent.time}</p>
-                    <h3 className="text-2xl md:text-3xl font-display font-black text-slate-800 tracking-tight leading-tight">
+                    <h3 className="text-xl sm:text-2xl md:text-3xl font-display font-black text-slate-800 tracking-tight leading-tight">
                       {currentEvent.title}
                     </h3>
                   </div>
@@ -1459,13 +1459,13 @@ const EventTimelineSection = () => {
 
 const Footer = () => {
   return (
-    <footer className="pt-24 pb-12 relative border-t border-gray-200/60 mt-12 overflow-hidden bg-white/50">
+    <footer className="pt-16 sm:pt-24 pb-8 sm:pb-12 relative border-t border-gray-200/60 mt-8 sm:mt-12 overflow-hidden bg-white/50">
       <div className="absolute inset-0 bg-grid-pattern opacity-40"></div>
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 sm:gap-12 mb-12 sm:mb-16">
           <div className="col-span-1 md:col-span-1">
-            <div className="font-display font-bold text-2xl tracking-tight mb-4">
+            <div className="font-display font-bold text-xl sm:text-2xl tracking-tight mb-3 sm:mb-4">
               RRGI <span className="text-blue-500">Innovathon</span>
             </div>
             <p className="text-gray-600 text-sm font-medium mb-6">
