@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { motion, useScroll, useTransform, AnimatePresence, useInView } from 'framer-motion';
 import Lenis from 'lenis';
 import {
-  Users, Zap, Trophy, ChevronDown, Rocket,
+  Users, Zap, Trophy, ChevronDown, ChevronUp, Rocket,
   MapPin, Calendar, Clock, ArrowRight, Instagram, Linkedin, Twitter, Globe, Info, Gift, Lightbulb, UserPlus, Fingerprint, Code, Smartphone,
   Coffee, Utensils, Mic, Play, Pause, Award, PartyPopper, Sun, Moon, Sunrise, ChevronLeft, ChevronRight, Hammer, Presentation, MessageSquare, Star
 } from 'lucide-react';
@@ -71,11 +71,23 @@ const Navbar = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
-      className="fixed top-0 w-full z-50 px-6 py-4"
+      className="fixed top-0 w-full z-50 px-4 sm:px-6 py-2 sm:py-3"
     >
-      <div className="max-w-7xl mx-auto glass-card rounded-full px-4 sm:px-6 py-2.5 sm:py-3 flex justify-between items-center shadow-sm">
-        <div className="font-display font-extrabold text-lg sm:text-2xl tracking-tight">
-          <span className="text-red-600 font-black">RRGI</span> <span className="text-blue-600 font-black">Innovathon</span> <span className="text-xs sm:text-sm font-medium text-gray-600">2026</span>
+      <div className="max-w-7xl mx-auto glass-card rounded-2xl sm:rounded-full px-4 sm:px-6 py-2 flex justify-between items-center shadow-lg border border-white/40">
+        <div className="flex items-center gap-1 sm:gap-4 hover:opacity-90 transition-opacity cursor-pointer">
+
+          <div className="flex flex-col justify-center mt-0.5 z-10">
+            <div className="flex items-center gap-2 mb-1">
+              <span className="text-[8px] sm:text-[10px] font-bold tracking-[0.15em] uppercase text-slate-500 whitespace-nowrap">
+                <span className="text-red-600 font-black">RRGI</span> ORGANIZES
+              </span>
+              <span className="text-[8px] sm:text-[9px] font-bold text-blue-600 uppercase tracking-widest leading-none opacity-80 hidden min-[400px]:inline">2026 Edition</span>
+            </div>
+            <div className="font-display font-black text-lg sm:text-2xl tracking-tighter leading-none flex items-center gap-1.5" style={{ letterSpacing: '-0.04em' }}>
+              <span className="text-red-600 drop-shadow-sm">RRGI</span>
+              <span className="text-slate-800 drop-shadow-sm">Innovathon</span>
+            </div>
+          </div>
         </div>
         <div className="hidden md:flex gap-8 text-sm font-medium text-gray-600">
           <a href="#about" className="hover:text-blue-500 transition-colors">About</a>
@@ -243,17 +255,7 @@ const HeroSection = () => {
             </div>
           </RevealText>
 
-          <RevealText delay={0.05}>
-            <div className="mx-auto w-max px-2 sm:px-4 mb-4 sm:mb-6">
-              <div className="p-1.5 sm:p-2 bg-white/70 backdrop-blur-md rounded-[0.75rem] sm:rounded-[1rem] border border-white/80 shadow-md flex items-center justify-center">
-                <img
-                  src="/banner.png"
-                  alt="RRGI Innovathon 2026 Banner"
-                  className="h-12 sm:h-20 w-auto rounded-[0.5rem] sm:rounded-[0.75rem] object-contain"
-                />
-              </div>
-            </div>
-          </RevealText>
+
 
           <RevealText delay={0.1}>
             <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black tracking-tight mb-3 sm:mb-6 drop-shadow-xl text-center w-full" style={{ fontFamily: "'Syne', sans-serif", lineHeight: '1.3', letterSpacing: '-0.01em' }}>
@@ -327,6 +329,104 @@ const HeroSection = () => {
             </div>
           </RevealText>
         </motion.div>
+      </div>
+    </section>
+  );
+};
+ 
+
+const StudentOrganizersSection = () => {
+  const organizers = [
+    { name: 'Ekansh Saxena', role: 'Organizer', subtitle: 'B.Tech CSE, Year 3', img: '', website: '#', linkedin: '#', instagram: '#' },
+    { name: 'Ashish Singh', role: 'Organizer', subtitle: 'B.Tech CSE, Year 3', img: '', website: '#', linkedin: '#', instagram: '#' },
+    { name: 'Rahul Sharma', role: 'Design Lead', subtitle: 'B.Des, Year 3', img: '', website: '#', linkedin: '#', instagram: '#' },
+    { name: 'Neha Verma', role: 'Tech Lead', subtitle: 'BBA, Year 2', img: '', website: '#', linkedin: '#', instagram: '#' },
+    { name: 'Sakshi Jain', role: 'Marketing', subtitle: 'B.Com, Year 2', img: '', website: '#', linkedin: '#', instagram: '#' },
+    { name: 'Rohan Patel', role: 'Tech Ops', subtitle: 'B.Tech ECE, Year 3', img: '', website: '#', linkedin: '#', instagram: '#' },
+   
+  ];
+
+  const scrollerRef = useRef(null);
+
+  const handlePrev = () => {
+    const node = scrollerRef.current;
+    if (!node) return;
+    node.scrollBy({ top: -node.clientHeight, behavior: 'smooth' });
+  };
+
+  const handleNext = () => {
+    const node = scrollerRef.current;
+    if (!node) return;
+    node.scrollBy({ top: node.clientHeight, behavior: 'smooth' });
+  };
+
+  return (
+    <section className="py-12 sm:py-16 relative" id="students">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="text-center mb-6">
+          <RevealText>
+            <h2 className="text-3xl sm:text-4xl font-display font-black">Student Organizers</h2>
+            <p className="text-gray-500 mt-2">Meet the team behind the event</p>
+          </RevealText>
+        </div>
+
+        <div className="flex flex-col md:flex-row gap-6 items-start">
+          {/* Left: Team Panels (fixed) */}
+          <div className="md:w-[320px] flex flex-col gap-4 flex-shrink-0">
+            <RevealText delay={0.05}>
+              <motion.div whileHover={{ y: -6 }} transition={{ type: 'spring', stiffness: 320, damping: 28 }} className="bg-white/70 backdrop-blur-sm rounded-[20px] p-6 border border-gray-100 shadow-md overflow-hidden">
+                <div className="relative w-full h-44 rounded-lg overflow-hidden bg-slate-50 flex items-center justify-center">
+                  <img src="/HACKLANCE.jpeg" alt="HACKLANCE" className="w-full h-full object-cover" />
+                </div>
+                <h3 className="mt-4 text-xl font-black text-slate-900">HACKLANCE</h3>
+                <p className="text-sm text-gray-400">Innovation Team</p>
+              </motion.div>
+            </RevealText>
+
+            <RevealText delay={0.1}>
+              <motion.div whileHover={{ y: -6 }} transition={{ type: 'spring', stiffness: 320, damping: 28 }} className="bg-white/70 backdrop-blur-sm rounded-[20px] p-6 border border-gray-100 shadow-md overflow-hidden">
+                <div className="relative w-full h-44 rounded-lg overflow-hidden bg-slate-50 flex items-center justify-center">
+                  <img src="/logo.png" alt="T&P" className="w-full h-full object-cover" />
+                </div>
+                <h3 className="mt-4 text-xl font-black text-slate-900">T&amp;P</h3>
+                <p className="text-sm text-gray-400">Training &amp; Placement</p>
+              </motion.div>
+            </RevealText>
+          </div>
+
+          {/* Right: List with hidden scrollbar + nav buttons */}
+          <div className="flex-1 relative">
+            <div className="absolute right-0 top-0 flex gap-2 z-20">
+              <button onClick={handlePrev} aria-label="Previous" className="p-2 bg-white/80 rounded-full border border-gray-100 shadow-sm hover:bg-white">
+                <ChevronUp size={16} />
+              </button>
+              <button onClick={handleNext} aria-label="Next" className="p-2 bg-white/80 rounded-full border border-gray-100 shadow-sm hover:bg-white">
+                <ChevronDown size={16} />
+              </button>
+            </div>
+
+            <div ref={scrollerRef} className="max-h-[600px] overflow-y-auto scrollbar-hide pr-2 space-y-3">
+              {organizers.map((org, idx) => (
+                <RevealText key={org.name} delay={0.02 * idx}>
+                  <motion.div whileHover={{ y: -4 }} transition={{ type: 'spring', stiffness: 320, damping: 28 }} className="flex items-center gap-4 p-3 bg-white/70 backdrop-blur-sm rounded-lg border border-gray-100 shadow-sm">
+                    <div className="w-14 h-14 rounded-lg overflow-hidden flex-shrink-0 bg-gray-100">
+                      <img src={org.img} alt={org.name} className="w-full h-full object-cover" />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <div className="text-sm font-bold text-slate-900 truncate">{org.name}</div>
+                      <div className="text-xs text-gray-400 truncate">{org.subtitle}</div>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <a href={org.linkedin} target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-blue-600 transition-colors"><Linkedin size={18} /></a>
+                      <a href={org.instagram} target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-pink-500 transition-colors"><Instagram size={18} /></a>
+                      <a href={org.website} target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-slate-800 transition-colors"><Globe size={18} /></a>
+                    </div>
+                  </motion.div>
+                </RevealText>
+              ))}
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
@@ -1071,129 +1171,136 @@ const FaqSection = () => {
 };
 
 const TeamSection = () => {
-  const coreOrganisers = [
-    { name: "Ashutosh Mishra", role: "Lead Organiser", color: "bg-blue-100", dotColor: "bg-blue-400", textColor: "text-blue-600", initials: "AM" },
-    { name: "Aditya Verma", role: "Tech Lead", color: "bg-purple-100", dotColor: "bg-purple-400", textColor: "text-purple-600", initials: "AV" },
-    { name: "Priya Singh", role: "Design Head", color: "bg-pink-100", dotColor: "bg-pink-400", textColor: "text-pink-600", initials: "PS" },
+  const committee = [
+    { name: "Shri Anil Agarwal", role: "Chief Patron", subtitle: "Chairman, RRGI", color: "border-blue-500", dot: "bg-blue-500", initials: "SC", img: "/chaiman.jpeg" },
+    { name: "Mr. Chitranshu Agarwal", role: "Patron", subtitle: "Secretary, RRGI", color: "border-red-500", dot: "bg-red-500", initials: "CA", img: "/secretary.jpeg" },
+    { name: "Dr. S. S. Chauhan", role: "Co-Patron", subtitle: "Director, RRIMT", color: "border-yellow-500", dot: "bg-yellow-500", initials: "CP", img: "/director.jpeg" },
+    { name: "Ms. Aarti Jaiswal", role: "Event Chair", subtitle: "Dean Training & Placement, RRIMT", color: "border-green-500", dot: "bg-green-500", initials: "AJ", img: "/deant&p.jpeg" },
+    { name: "Mr. Durgesh Verma", role: "Academic Advisor", subtitle: "Dean Academics, RRIMT", color: "border-blue-400", dot: "bg-blue-400", initials: "DV", img: "/dean.jpeg" },
+    { name: "Mr. Vikash Singh", role: "Student Engagement Lead", subtitle: "Dean Student and Welfare, RRIMT", color: "border-purple-500", dot: "bg-purple-500", initials: "VS", img: "/dsw.jpeg" },
+    { name: "Mr. Vijay Bahadur Singh", role: "Protocol & Discipline Lead", subtitle: "Chief Proctor, RRIMT", color: "border-orange-500", dot: "bg-orange-500", initials: "VB", img: "/proctor.jpeg" },
   ];
 
-  const hackerlanceTeam = [
-    { name: "Rahul Kumar", role: "Operations", color: "bg-orange-100", dotColor: "bg-orange-400", textColor: "text-orange-600", initials: "RK" },
-    { name: "Sneha Gupta", role: "Marketing", color: "bg-green-100", dotColor: "bg-green-400", textColor: "text-green-600", initials: "SG" },
-    { name: "Vikas Pandey", role: "Sponsorships", color: "bg-cyan-100", dotColor: "bg-cyan-400", textColor: "text-cyan-600", initials: "VP" },
-  ];
-
-  const MemberCard = ({ member, idx }) => (
-    <RevealText key={idx} delay={0.08 * idx}>
+  const MemberCard = ({ member, idx, isLarge = false }) => (
+    <RevealText key={idx} delay={0.05 * idx}>
       <motion.div
-        whileHover={{ y: -6, scale: 1.02 }}
-        transition={{ type: "spring", stiffness: 300, damping: 22 }}
-        className={`relative rounded-[1.5rem] md:rounded-[2rem] p-6 md:p-8 flex flex-col items-center text-center overflow-hidden border border-white/50 shadow-md ${member.color}`}
+        whileHover={{ y: -8, scale: 1.02 }}
+        transition={{ type: "spring", stiffness: 400, damping: 25 }}
+        className={`relative bg-white rounded-[2.5rem] p-8 flex flex-col items-center text-center border-b-4 ${member.color} shadow-[0_15px_40px_rgba(0,0,0,0.06)] hover:shadow-[0_25px_60px_rgba(0,0,0,0.12)] transition-all overflow-hidden h-full group`}
       >
-        {/* Corner dot */}
-        <div className={`absolute top-4 right-4 w-2.5 h-2.5 rounded-full ${member.dotColor}`}></div>
-        {/* Grid overlay */}
-        <div className="absolute inset-0 bg-grid-pattern opacity-10 rounded-[2rem]"></div>
+        {/* Decorative elements */}
+        <div className="absolute top-0 right-0 w-24 h-24 bg-gray-50 rounded-bl-[4rem] -z-10 group-hover:bg-blue-50 transition-colors"></div>
+        <div className={`absolute top-8 right-8 w-3 h-3 rounded-full ${member.dot} opacity-20`}></div>
 
-        <div className="relative z-10 flex flex-col items-center">
-          {/* Avatar circle with initials */}
-          <div className={`w-20 h-20 md:w-24 md:h-24 rounded-full flex items-center justify-center mb-4 shadow-sm border-2 border-white/80 ${member.color}`}>
-            <span className={`text-2xl md:text-3xl font-black ${member.textColor}`} style={{ fontFamily: "'Exo 2', sans-serif" }}>
-              {member.initials}
-            </span>
+        {/* Avatar Area - show image if available */}
+        <div className="relative mb-6">
+          <div className={`w-28 h-28 sm:w-32 sm:h-32 rounded-3xl rotate-3 flex items-center justify-center bg-gray-50 border-2 border-dashed border-gray-200 group-hover:rotate-0 group-hover:border-solid group-hover:${member.color} transition-all duration-500 overflow-hidden`}>
+             <div className="w-full h-full rounded-2xl flex items-center justify-center bg-white shadow-inner overflow-hidden">
+               {member.img ? (
+                 <img src={member.img} alt={member.name} className="w-full h-full object-cover" />
+               ) : (
+                 <span className="text-4xl font-black text-slate-800 opacity-20 group-hover:opacity-100 transition-opacity">
+                   {member.initials}
+                 </span>
+               )}
+             </div>
+          </div>
           </div>
 
-          {/* Name */}
-          <h3 className="text-base md:text-xl font-black text-slate-800 mb-1" style={{ fontFamily: "'Exo 2', sans-serif" }}>
+        {/* Info */}
+        <div className="mt-2">
+          <p className="text-[10px] font-extrabold tracking-[0.2em] uppercase text-blue-600 mb-2">{member.role}</p>
+          <h3 className="text-xl sm:text-2xl font-black text-slate-800 leading-tight mb-2 tracking-tight">
             {member.name}
           </h3>
-
-          {/* Role badge */}
-          <div className="flex items-center gap-1.5 mt-1">
-            <div className={`w-1.5 h-1.5 rounded-full ${member.dotColor} animate-pulse`}></div>
-            <span className="text-[10px] md:text-xs font-bold tracking-wider uppercase text-gray-600">
-              {member.role}
-            </span>
-          </div>
-
-          {/* Social links */}
-          <div className="flex gap-2 mt-4">
-            {[Linkedin, Twitter, Instagram].map((Icon, i) => (
-              <a key={i} href="#" className="w-8 h-8 rounded-full bg-white/70 flex items-center justify-center text-gray-400 hover:text-blue-500 hover:shadow-md transition-all border border-gray-100/50">
-                <Icon size={14} />
-              </a>
-            ))}
-          </div>
+          <p className="text-xs font-bold text-gray-400 uppercase tracking-wider">
+            {member.subtitle}
+          </p>
         </div>
       </motion.div>
     </RevealText>
   );
 
+  const HorizontalProfileCard = ({ member, full = false }) => (
+    <RevealText delay={0.05}>
+      <motion.div
+        whileHover={{ y: full ? 0 : -4 }}
+        transition={{ type: 'spring', stiffness: 300, damping: 24 }}
+        className={`w-full ${full ? 'h-full min-h-screen' : ''} bg-white/95 rounded-[18px] ${full ? 'p-8 sm:p-12' : 'p-3 sm:p-4'} flex items-center gap-4 border border-gray-100 ${full ? 'shadow-xl' : 'shadow-md'} overflow-hidden`}
+      >
+        <div className={`${full ? 'flex-shrink-0 w-40 h-40 sm:w-56 sm:h-56' : 'flex-shrink-0 w-16 h-16 sm:w-20 sm:h-20'} rounded-lg overflow-hidden bg-gray-100`}>
+          {member.img ? (
+            <img src={member.img} alt={member.name} className="w-full h-full object-cover" />
+          ) : (
+            <div className="w-full h-full flex items-center justify-center bg-gray-200"><span className="text-lg font-black text-gray-400">{member.initials}</span></div>
+          )}
+        </div>
+        <div className="flex-1 min-w-0">
+          <p className={`${full ? 'text-sm' : 'text-[10px]'} font-extrabold uppercase tracking-wide text-gray-500`}>{member.role}</p>
+          <h3 className={`${full ? 'text-3xl sm:text-4xl' : 'text-lg'} font-black text-slate-800 truncate`}>{member.name}</h3>
+          <p className={`${full ? 'text-base' : 'text-xs'} text-gray-400 truncate`}>{member.subtitle}</p>
+        </div>
+        <div className={`${full ? 'flex' : 'hidden sm:flex'} items-center justify-end text-right ml-4`}>
+          <a href="#team" className="text-sm font-semibold text-blue-600 hover:underline">Contact</a>
+        </div>
+      </motion.div>
+    </RevealText>
+  );
+
+  const [showAll, setShowAll] = useState(false);
+
   return (
-    <section className="py-16 sm:py-24 relative overflow-hidden" id="team">
-      <FloatingShape color="bg-pastelBlue" size="w-72 h-72" top="20%" left="-5%" duration={18} blur="blur-3xl" />
-      <FloatingShape color="bg-pastelPink" size="w-80 h-80" top="50%" left="85%" duration={22} blur="blur-3xl" />
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        {/* Main Heading */}
-        <div className="text-center mb-16">
+    <section className="py-20 sm:py-32 relative overflow-hidden bg-transparent" id="team">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+        <div className="text-center mb-20">
           <RevealText>
-            <p className="text-xs font-extrabold tracking-[0.25em] uppercase text-gray-400 mb-4">The People Behind It</p>
-            <h2 className="text-3xl sm:text-5xl md:text-6xl font-display font-black mb-6 sm:mb-8 tracking-tight">
-              Meet the <span className="text-blue-500">Organisers</span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 border border-blue-100 text-blue-600 text-[10px] font-black uppercase tracking-[0.2em] mb-6">
+               <Users size={14} /> Team Behind Innovation
+            </div>
+            <h2 className="text-4xl sm:text-6xl md:text-7xl font-display font-black mb-6 tracking-tighter text-slate-900">
+              Core  <br/>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Organizing Committee</span>
             </h2>
-            <div className="flex items-center justify-center gap-2 py-2 px-5 rounded-full bg-white/70 border border-gray-100 shadow-sm w-max mx-auto">
-              <div className="flex -space-x-1">
-                <span className="w-2.5 h-2.5 rounded-full bg-blue-400"></span>
-                <span className="w-2.5 h-2.5 rounded-full bg-orange-400"></span>
-                <span className="w-2.5 h-2.5 rounded-full bg-green-400"></span>
-                <span className="w-2.5 h-2.5 rounded-full bg-pink-400"></span>
-              </div>
-              <span className="text-xs font-extrabold tracking-[0.15em] uppercase text-gray-600 ml-1">The Team</span>
-            </div>
+            <p className="max-w-2xl mx-auto text-gray-500 font-medium text-lg">
+              The visionaries and mentors driving the spirit of innovation at RRGI.
+            </p>
           </RevealText>
         </div>
 
-        {/* Core Organisers */}
-        <div className="mb-20">
-          <RevealText>
-            <div className="flex items-center justify-center gap-3 mb-10">
-              <div className="h-px flex-1 max-w-[80px] bg-gradient-to-r from-transparent to-blue-300"></div>
-              <span className="inline-flex items-center gap-2 py-1.5 px-5 rounded-full bg-blue-50 border border-blue-200 text-xs font-extrabold tracking-[0.2em] uppercase text-blue-600 shadow-sm">
-                <span className="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></span>
-                Core Organisers
-              </span>
-              <div className="h-px flex-1 max-w-[80px] bg-gradient-to-l from-transparent to-blue-300"></div>
-            </div>
-          </RevealText>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-5 md:gap-8">
-            {coreOrganisers.map((member, idx) => (
-              <MemberCard key={idx} member={member} idx={idx} />
-            ))}
-          </div>
+        {/* Top label above tiles */}
+        <div className="flex justify-center mb-6">
+          <span className="inline-block text-xs sm:text-sm font-extrabold uppercase tracking-[0.18em] text-gray-600 px-4 py-2 rounded-full bg-white/70 border border-gray-200 shadow-sm">
+            CORE ORGANIZING COMMITTEE
+          </span>
         </div>
 
-        {/* HackerLance Team */}
-        <div>
-          <RevealText>
-            <div className="flex items-center justify-center gap-3 mb-10">
-              <div className="h-px flex-1 max-w-[80px] bg-gradient-to-r from-transparent to-orange-300"></div>
-              <span className="inline-flex items-center gap-2 py-1.5 px-5 rounded-full bg-orange-50 border border-orange-200 text-xs font-extrabold tracking-[0.2em] uppercase text-orange-600 shadow-sm">
-                <span className="w-2 h-2 rounded-full bg-orange-500 animate-pulse"></span>
-                HackerLance Team
-              </span>
-              <div className="h-px flex-1 max-w-[80px] bg-gradient-to-l from-transparent to-orange-300"></div>
-            </div>
-          </RevealText>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-5 md:gap-8">
-            {hackerlanceTeam.map((member, idx) => (
-              <MemberCard key={idx} member={member} idx={idx + coreOrganisers.length} />
-            ))}
-          </div>
+        {/* Row 1: 3 Members */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-10 mb-6 sm:mb-16">
+          {committee.slice(0, 3).map((member, idx) => (
+            <MemberCard key={idx} member={member} idx={idx} />
+          ))}
         </div>
+
+        {/* Mobile: show toggle for more members */}
+        <div className="flex justify-center sm:hidden mb-6">
+          <button onClick={() => setShowAll(s => !s)} className="inline-flex items-center gap-2 py-2 px-4 rounded-full bg-white/90 border border-gray-200 shadow-sm font-bold">
+            {showAll ? 'See Less' : 'Show More'}
+            <ChevronDown size={16} className={`ml-2 transform ${showAll ? 'rotate-180' : ''}`} />
+          </button>
+        </div>
+
+        {/* Row 2: 4 Members (hidden on mobile unless toggled) */}
+        <div className={`${showAll ? 'grid' : 'hidden sm:grid'} grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mb-10 sm:mb-16`}>
+          {committee.slice(3, 7).map((member, idx) => (
+            <MemberCard key={idx + 3} member={member} idx={idx + 3} />
+          ))}
+        </div>
+
+        {/* Event Coordinator horizontal tile removed */}
+        
       </div>
+
+      {/* Full-screen Event Coordinator Tile removed */}
     </section>
   );
 };
@@ -1457,6 +1564,8 @@ const EventTimelineSection = () => {
   );
 };
 
+
+
 const Footer = () => {
   return (
     <footer className="pt-16 sm:pt-24 pb-8 sm:pb-12 relative border-t border-gray-200/60 mt-8 sm:mt-12 overflow-hidden bg-white/50">
@@ -1465,8 +1574,11 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 sm:gap-12 mb-12 sm:mb-16">
           <div className="col-span-1 md:col-span-1">
-            <div className="font-display font-bold text-xl sm:text-2xl tracking-tight mb-3 sm:mb-4">
-              RRGI <span className="text-blue-500">Innovathon</span>
+            <div className="flex items-center gap-1 mb-3 sm:mb-4">
+
+              <div className="font-display font-black text-2xl sm:text-3xl tracking-tighter z-10" style={{ letterSpacing: '-0.03em' }}>
+                <span className="text-red-600">RRGI</span> <span className="text-slate-800">Innovathon</span>
+              </div>
             </div>
             <p className="text-gray-600 text-sm font-medium mb-6">
               Lucknow's Biggest Student Hackathon. Where ideas turn into innovation and you prove your technical excellence.
@@ -1516,22 +1628,51 @@ const Footer = () => {
 
           <div>
             <h4 className="font-bold text-xs uppercase tracking-widest text-green-500 mb-6">Location</h4>
-            <div className="w-full h-32 bg-white rounded-2xl overflow-hidden border border-gray-200 shadow-sm p-4 relative flex flex-col items-center justify-center text-center">
-              <MapPin size={24} className="mb-2 text-red-500" />
-              <span className="text-xs font-semibold text-gray-700">R.R. Institute of Modern Technology, Lucknow</span>
+            <div className="block w-full h-48 bg-white rounded-2xl overflow-hidden border border-gray-200 shadow-sm relative group">
+              <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3554.43633215273!2d80.91549957591605!3d27.01247575560882!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39995173007f27d5%3A0xd8e0f9e0017ddd9!2sR.R.%20Group%20of%20Institutions!5e0!3m2!1sen!2sin!4v1712561500000!5m2!1sen!2sin"
+                width="100%" 
+                height="100%" 
+                style={{ border: 0, filter: 'grayscale(0.1)' }} 
+                allowFullScreen="" 
+                loading="lazy" 
+                title="Mini Map"
+              ></iframe>
+              <a 
+                href="https://maps.app.goo.gl/d8e0f9e0017ddd9" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center"
+              >
+                <div className="bg-white/90 backdrop-blur-sm p-2 rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity translate-y-2 group-hover:translate-y-0 duration-300">
+                   <MapPin size={16} className="text-red-500" />
+                </div>
+              </a>
             </div>
+            <p className="text-[10px] font-bold text-gray-500 mt-2 uppercase tracking-wide">RRGI Campus, Lucknow</p>
           </div>
         </div>
 
-        <div className="pt-8 border-t border-gray-200/60 flex flex-col md:flex-row items-center justify-between text-xs font-semibold text-gray-400">
-          <div className="flex gap-2">
-            <span className="w-2 h-2 rounded-full bg-blue-400"></span>
-            <span className="w-2 h-2 rounded-full bg-yellow-400"></span>
-            <span className="w-2 h-2 rounded-full bg-green-400"></span>
-            <span className="w-2 h-2 rounded-full bg-pink-400"></span>
-            <span className="ml-2">RRGI Innovathon 2026 · T&P</span>
+        <div className="pt-8 border-t border-gray-200/60 flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="flex flex-wrap justify-center md:justify-start gap-x-6 gap-y-2 text-[10px] font-bold uppercase tracking-widest text-gray-400">
+            <a href="#hero" className="hover:text-blue-500 transition-colors">Home</a>
+            <a href="#about" className="hover:text-blue-500 transition-colors">About</a>
+            <a href="#themes" className="hover:text-blue-500 transition-colors">Themes</a>
+            <a href="#prizes" className="hover:text-blue-500 transition-colors">Prizes</a>
+            <a href="#faq" className="hover:text-blue-500 transition-colors">FAQs</a>
+            <a href="#location" className="hover:text-blue-500 transition-colors">Location</a>
+            <a href="https://forms.gle/aWXrC9w6FwURfLDJ9" target="_blank" rel="noopener noreferrer" className="text-red-500/80 hover:text-red-600 transition-colors">Register</a>
           </div>
-          <p className="mt-4 md:mt-0">© 2026 T&P RRIMT. All rights reserved.</p>
+          
+          <div className="flex items-center gap-4 text-xs font-semibold text-gray-400">
+            <div className="flex gap-1.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-blue-400"></span>
+              <span className="w-1.5 h-1.5 rounded-full bg-yellow-400"></span>
+              <span className="w-1.5 h-1.5 rounded-full bg-green-400"></span>
+              <span className="w-1.5 h-1.5 rounded-full bg-pink-400"></span>
+            </div>
+            <p>© 2026 RRGI Innovathon · T&P RRIMT</p>
+          </div>
         </div>
       </div>
     </footer>
@@ -1901,6 +2042,36 @@ function App() {
         <ThemesSection />
         <EventTimelineSection />
         <TeamSection />
+        <StudentOrganizersSection />
+
+        <div className="w-full py-8 overflow-hidden">
+          <div className="flex justify-center">
+            <RevealText>
+              <motion.div whileHover={{ y: -6 }} transition={{ type: 'spring', stiffness: 320, damping: 28 }} className="w-full sm:w-[80vw] max-w-[calc(100vw-160px)] bg-white rounded-[18px] p-5 sm:p-6 flex items-center gap-6 border border-gray-100 shadow-md mx-auto">
+                <div className="flex items-center gap-4">
+                  <div className="w-20 h-20 rounded-full overflow-hidden bg-gray-100 flex-shrink-0">
+                    <img src="" alt="Mr. Sujeet Singh" className="w-full h-full object-cover" />
+                  </div>
+                  <div>
+                    <p className="text-[10px] font-extrabold uppercase tracking-[0.2em] text-blue-500">Event Coordinator</p>
+                    <h3 className="text-xl sm:text-2xl font-black text-slate-900 leading-tight">Mr. Sujeet Singh</h3>
+                    <p className="text-sm text-gray-400 mt-1">Assistant Professor, RRIMT</p>
+                  </div>
+                </div>
+
+                <div className="ml-auto flex items-center gap-4">
+                  <div className="text-xs text-gray-400 hidden sm:block">HackerLance</div>
+                  <div className="flex items-center gap-3 text-gray-500">
+                    <a href="#" className="hover:text-blue-600"><Globe size={16} /></a>
+                    <a href="#" className="hover:text-blue-700"><Linkedin size={16} /></a>
+                    <a href="#" className="hover:text-pink-500"><Instagram size={16} /></a>
+                  </div>
+                </div>
+              </motion.div>
+            </RevealText>
+          </div>
+        </div>
+
         <FaqSection />
       </main>
 
