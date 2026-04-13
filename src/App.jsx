@@ -93,6 +93,7 @@ const Navbar = () => {
             <div className="font-display font-black text-lg sm:text-2xl tracking-tighter leading-none flex items-center gap-1.5" style={{ letterSpacing: '-0.04em' }}>
               <span className="text-red-600 drop-shadow-sm">RRGI</span>
               <span className="text-slate-800 drop-shadow-sm">Innovathon</span>
+              
             </div>
           </div>
         </div>
@@ -289,6 +290,21 @@ const HeroSection = () => {
               <span className="text-red-600">RRGI</span>{" "}
               <span className="text-black">Innova</span><span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-blue-400">thon</span>
             </h1>
+            <RevealText delay={0.45}>
+            <div className="flex flex-wrap justify-center items-center gap-2 sm:gap-3 md:gap-4 mb-8 px-2">
+              <a href="#" className="flex items-center gap-2 bg-white/6 hover:bg-white/12 border border-white/10 text-sm text-slate-800 px-3 py-1.5 rounded-full shadow-sm transition-all duration-200 backdrop-blur-sm">
+                <img src="/ola.jpeg" alt="OLA" className="w-6 h-6 rounded-full object-contain" />
+                <span className="font-semibold text-xs">Powered by OLA Krutrim</span>
+              </a>
+
+              <a href="#" className="flex items-center gap-2 bg-white/6 hover:bg-white/12 border border-white/10 text-sm text-slate-800 px-3 py-1.5 rounded-full shadow-sm transition-all duration-200 backdrop-blur-sm">
+                <img src="/trainx.jpeg" alt="TrainX" className="w-6 h-6 rounded-full object-contain" />
+                <span className="font-semibold text-xs">Strategic Partner — TrainX</span>
+              </a>
+
+             
+            </div>
+          </RevealText>
             <div className="flex items-center justify-center mb-4 sm:mb-6 drop-shadow-sm overflow-hidden py-2 sm:py-4">
               <span className="text-3xl sm:text-4xl md:text-5xl lg:text-[4rem] font-black text-[#E88E73] transform scale-x-[1.5] sm:scale-x-[2] inline-block tracking-tight" style={{ fontFamily: "'Orbitron', sans-serif" }}>
                 2026
@@ -355,6 +371,10 @@ const HeroSection = () => {
               </a>
             </div>
           </RevealText>
+
+          {/* Sponsors moved to hero */}
+          
+          
         </motion.div>
       </div>
     </section>
@@ -367,22 +387,25 @@ const StudentOrganizersSection = () => {
     { name: 'Ekansh Saxena', role: 'Core Lead', subtitle: 'B.Tech CSE, 3rd Year', img: '/ekansh.jpeg', website: 'https://www.ekanshh.in', linkedin: 'https://www.linkedin.com/in/ekanshsaxena0718?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app', instagram: 'https://www.instagram.com/eku.dev' },
     { name: 'Ashish Singh', role: 'Technical Head', subtitle: 'B.Tech CSE, 3rd Year', img: '/ashish.jpeg', website: 'https://www.ashishbhadauriya.in', linkedin: 'https://www.linkedin.com/in/ashishsinghbhadauriya', instagram: 'https://www.instagram.com/bhadauriya.kshatriya' },
     { name: 'Soumya Singh', role: 'Design Lead', subtitle: 'B.Tech CSE, 3rd Year', img: '/momo.jpeg', website: '#', linkedin: 'https://www.linkedin.com/in/soumya-singh-424388252?utm_source=share_via&utm_content=profile&utm_medium=member_android', instagram: '' },
-    { name: 'Abhay Soni', role: 'Systems Lead', subtitle: 'B.Tech CSE, 3rd Year', img: '/abhay.jpeg', website: '#', linkedin: 'https://www.linkedin.com/in/abhay-soni-a4798a286?utm_source=share_via&utm_content=profile&utm_medium=member_android', instagram: '' },
     { name: 'Divyanshu Sachan', role: 'Logistics Head', subtitle: 'B.Tech CSE, 3rd Year', img: '/sachan.jpeg', website: '#', linkedin: 'https://www.linkedin.com/in/divyanshu-sachan-a32a5132b', instagram: 'https://www.instagram.com/mr.khurana54' },
     { name: 'Aditya Maurya', role: 'Community Lead', subtitle: 'B.Tech CS AIML, 3rd Year', img: '/aditya.jpeg', website: '#', linkedin: 'https://www.linkedin.com/in/adiincode?utm_source=share_via&utm_content=profile&utm_medium=member_ios', instagram: 'https://www.instagram.com/0001_adi_?igsh=ODZkd2NvODZpY3hj&utm_source=qr' },
-    { name: 'Kamlesh Rathour', role: 'Sponsorship Head', subtitle: 'B.Tech CS AIML, 3rd Year', img: '/kamlesh.jpeg', website: '#', linkedin: 'https://www.linkedin.com/in/kamlesh-rathour-81668532b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app', instagram: 'https://www.instagram.com/kamlesh.rathour.75054?igsh=MWxnZWU0ZTZ1bmZnZQ==' },
-    { name: 'Vikas Yadav', role: 'Marketing Head', subtitle: 'B.Tech CS AIML, 3rd Year', img: '/vikas.jpeg', website: '#', linkedin: 'https://www.linkedin.com/in/vikas-chandra-yadav-6027b5280?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app', instagram: 'https://www.instagram.com/vikas1585_yadav?igsh=MTRmeno1Yjc3YnRnbg==' },
   ];
+   
 
   // Hacklance / Student leadership team
   const hacklanceTeam = [
-    { role: 'President', name: 'Uday Kumar', website: '#', linkedin: 'FH', instagram: '#' },
-    { role: 'Vice President', name: 'Anushka Srivastava', website: '#', linkedin: 'https://www.linkedin.com/in/anushkasrivastava27?utm_source=share_via&utm_content=profile&utm_medium=member_android', instagram: '#' },
-    { role: 'Joint Secretary', name: 'Satya Prakash Sharma', website: '#', linkedin: '#', instagram: '#' },
-    { role: 'Treasurer', name: 'Muskan Yadav', website: '#', linkedin: '#', instagram: '#' },
-    { role: 'Documentation Head', name: 'Mukesh Chauhan', website: '#', linkedin: '#', instagram: '#' },
-    { role: 'Media Team', name: 'Amartya Kushwaha , Mohd Sahil', website: '#', linkedin: '#', instagram: '#' },
-    { role: 'Core Member', name: 'Nilesh Rajbhar, Aryan Singh , Ambrish Rao, Ayushman Paswan  ', website: '#', linkedin: '#', instagram: '#' },
+    { role: 'President', name: 'Uday Kumar', website: '#', linkedin: 'https://www.linkedin.com/in/uday-kumar-b12040296?utm_source=share_via&utm_content=profile&utm_medium=member_android', instagram: '#', img: 'uday.jpeg' },
+    { role: 'Vice President', name: 'Anushka Srivastava', website: '#', linkedin: 'https://www.linkedin.com/in/anushkasrivastava27?utm_source=share_via&utm_content=profile&utm_medium=member_android', instagram: '#', img: 'anushka.jpeg' },
+    { role: 'Joint Secretary', name: 'Satya Prakash Sharma', website: '#', linkedin: 'https://www.linkedin.com/in/satya-prakash-sharma-b6440b243/', instagram: '#', img: 'satya.jpeg' },
+    { role: 'Treasurer', name: 'Muskan Yadav', website: '#', linkedin: 'https://www.linkedin.com/in/muskan-yadav-9120922b6/', instagram: '#', img: 'muskan.jpeg' },
+    { role: 'Documentation Head', name: 'Ambrish Rao', website: '', linkedin: 'https://www.linkedin.com/in/ambrish-rao-918164251/', instagram: '#', img: 'ambrish.jpeg' },
+    { role: 'Core Member', name: 'Aryan Singh', website: '#', linkedin: 'https://www.linkedin.com/in/aryan-singh-986b05329?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app', instagram: '#', img: 'aryan.jpeg' },
+    { role: 'Core Member', name: 'Mohd Sahil', website: '#', linkedin: 'https://www.linkedin.com/in/mohd-sahil-919407295?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app', instagram: '#', img: 'sahil.jpeg' },
+    { role: 'Core Member', name: 'Amartya Kushwaha', website: '#', linkedin: 'https://www.linkedin.com/in/amartya-kushwaha-70204832b?utm_source=share_via&utm_content=profile&utm_medium=member_android', instagram: '#', img: 'amartya.jpeg' },
+    { role: 'Core Member', name: 'Ayushman Paswan', website: '#', linkedin: 'https://tinywebs.site/IQPyiK', instagram: '#', img: 'ayushman.jpeg' },
+    { role: 'Core Member', name: 'Nilesh Rajbhar', website: '#', linkedin: 'https://www.linkedin.com/in/nilesh-rajbhar-483371274/', instagram: '#', img: 'nilesh.jpeg' },
+    
+
     
     
   ];
@@ -451,6 +474,49 @@ const StudentOrganizersSection = () => {
     ...photoMembers.filter(m => !priorityNames.includes(m.name))
   ];
   const [showAllMobile, setShowAllMobile] = useState(false);
+
+  // Slider refs + auto-slide logic for the right-side team carousel
+  const sliderRef = useRef(null);
+  const autoSlideRef = useRef(null);
+  const [isSliderHovered, setIsSliderHovered] = useState(false);
+
+  useEffect(() => {
+    const slider = sliderRef.current;
+    if (!slider) return;
+
+    const step = () => {
+      if (isSliderHovered) return; // pause on hover
+      const maxScroll = slider.scrollHeight - slider.clientHeight;
+      const delta = Math.round(slider.clientHeight / 3);
+      const next = Math.min(slider.scrollTop + delta, maxScroll);
+      if (slider.scrollTop >= maxScroll - 5) {
+        slider.scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
+        slider.scrollTo({ top: next, behavior: 'smooth' });
+      }
+    };
+
+    autoSlideRef.current = setInterval(step, 3000);
+    return () => clearInterval(autoSlideRef.current);
+  }, [isSliderHovered]);
+
+  const slideNext = () => {
+    const slider = sliderRef.current;
+    if (!slider) return;
+    const maxScroll = slider.scrollHeight - slider.clientHeight;
+    const delta = Math.round(slider.clientHeight / 3);
+    const next = Math.min(slider.scrollTop + delta, maxScroll);
+    slider.scrollTo({ top: next, behavior: 'smooth' });
+  };
+
+  const slidePrev = () => {
+    const slider = sliderRef.current;
+    if (!slider) return;
+    const delta = Math.round(slider.clientHeight / 3);
+    const prev = Math.max(slider.scrollTop - delta, 0);
+    slider.scrollTo({ top: prev, behavior: 'smooth' });
+  };
+
   return (
     <section className="py-12 sm:py-16 relative" id="students">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 space-y-14">
@@ -465,12 +531,12 @@ const StudentOrganizersSection = () => {
           <div>
             <RevealText>
               <div className="text-center mb-8">
-                <SectionLabel color="from-yellow-100 to-amber-100 border-amber-200 text-amber-700">Sponsorship</SectionLabel>
-                <h2 className="text-3xl sm:text-4xl font-display font-black mt-3">Sponsorship</h2>
-                <p className="text-gray-500 mt-2 text-sm">Supported by</p>
+                <SectionLabel color="from-yellow-100 to-amber-100 border-amber-200 text-amber-700">Partners & Sponsors</SectionLabel>
+                <h2 className="text-3xl sm:text-4xl font-display font-black mt-3">Our Partners & Sponsors</h2>
+                <p className="text-gray-500 mt-2 text-sm">Backed by industry leaders</p>
               </div>
             </RevealText>
-            <RevealText delay={0.05}>
+            <RevealText delay={0.05} className="mb-24">
               <div className="flex flex-col sm:flex-row gap-12">
                 <motion.div
                   whileHover={{ y: -6 }}
@@ -545,7 +611,7 @@ const StudentOrganizersSection = () => {
         </div>
 
         {/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-            SECTION 2 — MEET THE TEAM
+            SECTION 2 — MEET THE TEAM (Redesigned: 50/50 Grid + Slider)
         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */}
         <div>
           <RevealText>
@@ -557,99 +623,104 @@ const StudentOrganizersSection = () => {
           </RevealText>
 
           <RevealText>
-            <div className="flex flex-col md:flex-row gap-6 items-start">
-              <RevealText>
-                <div className="flex flex-col md:flex-row gap-6 items-start">
-                  <div className="md:w-[70%] w-full px-6 sm:px-8">
-                    <div className="flex items-center justify-center mb-4">
-                      <span className="inline-block py-1 px-4 rounded-full bg-white/70 border border-gray-200 text-xs font-extrabold tracking-widest uppercase text-gray-600">CORE ORGANIZING TEAM</span>
-                    </div>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 items-stretch justify-items-stretch">
-                      {orderedPhotoMembers.map((org, idx) => {
-                        const tc = rowColors[idx % rowColors.length];
-                        const mobileHidden = idx >= 3 && !showAllMobile;
-                        const displayClass = mobileHidden ? 'hidden md:flex' : 'flex';
+            <div className="flex flex-col md:flex-row gap-8 items-start md:items-end">
+
+              {/* LEFT: Core Organizing Team (2 columns × 3 rows) — wider (60%) */}
+              <div className="w-full md:w-[60%] px-6 sm:px-8">
+                <div className="flex items-center justify-center mb-4">
+                  <SectionLabel color="from-indigo-100 to-indigo-200 border-indigo-200 text-indigo-700">Core Organizing Team</SectionLabel>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  {organizers.slice(0, 6).map((org, idx) => {
+                    const tc = rowColors[idx % rowColors.length];
+                    return (
+                      <motion.div
+                        key={`${org.name}-${idx}`}
+                        whileHover={{ scale: 1.03 }}
+                        transition={{ type: 'spring', stiffness: 260, damping: 20 }}
+                        className={`group rounded-xl p-4 flex items-start md:items-center gap-4 shadow-sm ${tc.outerBorder} bg-gradient-to-br ${tc.gradient}`}
+                        style={{ minHeight: 110 }}
+                      >
+                        <div className={`w-16 h-16 md:w-20 md:h-20 rounded-lg overflow-hidden flex items-center justify-center ${tc.avatar} flex-shrink-0`}> 
+                          {org.img ? <img src={org.img} alt={org.name} className="w-full h-full object-cover" /> : <span className="text-lg font-black text-gray-400">{(org.name||'').split(' ').map(n=>n[0]).slice(0,2).join('')}</span>}
+                        </div>
+
+                        <div className="flex-1 min-w-0">
+                          <div className="text-base font-black text-slate-900 leading-tight break-normal whitespace-normal">{org.name}</div>
+                        </div>
+
+                        <div className="flex items-center gap-3">
+                          {org.website && org.website !== '#' && (
+                            <a href={org.website} target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-blue-500">
+                              <Globe size={14} />
+                            </a>
+                          )}
+                          {org.linkedin && org.linkedin !== '#' && (
+                            <a href={org.linkedin} target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-blue-700">
+                              <Linkedin size={14} />
+                            </a>
+                          )}
+                        </div>
+                      </motion.div>
+                    );
+                  })}
+                </div>
+              </div>
+
+              {/* RIGHT: Large card with vertical slider (Hacklance Team) — narrower (40%) */}
+              <div className="w-full md:w-[40%] px-6 sm:px-8">
+                <div className="flex items-center justify-center mb-4">
+                  <SectionLabel color="from-teal-100 to-cyan-100 border-teal-200 text-teal-700">Hacklance Team</SectionLabel>
+                </div>
+
+                <motion.div className={`rounded-2xl shadow-md bg-white/80 p-6 border border-gray-100 relative overflow-hidden`}>
+                  <div className={`absolute top-0 left-0 w-full h-1 bg-gradient-to-r ${hacklanceTheme.topStrip} opacity-90`} />
+
+                  <div className="relative z-10">
+                    <div
+                      ref={sliderRef}
+                      onMouseEnter={() => setIsSliderHovered(true)}
+                      onMouseLeave={() => setIsSliderHovered(false)}
+                      onTouchStart={() => setIsSliderHovered(true)}
+                      onWheel={(e) => e.preventDefault()}
+                      onTouchMove={(e) => e.preventDefault()}
+                      className="flex flex-col gap-4 overflow-y-auto scroll-smooth py-2 px-1 md:max-h-[336px] max-h-[336px] premium-scrollbar"
+                      style={{ WebkitOverflowScrolling: 'touch' }}
+                    >
+                      {hacklanceTeam.map((m, i) => {
+                        const hc = rowColors[i % rowColors.length];
                         return (
-                          <motion.div key={`${org.name}-${idx}`} className={`${displayClass} flex-col sm:flex-row relative w-full h-full items-center gap-4 p-4 rounded-xl shadow-md bg-white ${tc.outerBorder} overflow-hidden max-w-[90vw] mx-auto sm:max-w-full sm:mx-0 md:max-w-none`}>
-                            <div className={`absolute top-0 left-0 w-full h-1 bg-gradient-to-r ${tc.topStrip} opacity-90`} />
-
-                            <div className={`w-20 h-20 sm:w-16 sm:h-16 rounded-lg overflow-hidden flex-shrink-0 ${tc.avatar} flex items-center justify-center mx-auto sm:mx-0`}> 
-                              {org.img ? <img src={org.img} alt={org.name} className="w-full h-full object-cover" /> : <span className="text-lg font-black text-gray-400">{(org.name||'').split(' ').map(n=>n[0]).slice(0,2).join('')}</span>}
+                          <div key={`${m.name}-${i}`} className={`snap-start w-full rounded-xl p-4 flex items-center gap-4 h-24 shadow-sm ${hc.outerBorder} bg-gradient-to-br ${hc.gradient}`}>
+                            <div className={`w-16 h-16 rounded-lg overflow-hidden flex items-center justify-center ${hc.avatar} flex-shrink-0`}> 
+                              {m.img ? <img src={m.img} alt={m.name} className="w-full h-full object-cover" /> : <span className="text-lg font-black text-gray-400">{(m.name||'').split(' ').map(n=>n[0]).slice(0,2).join('')}</span>}
                             </div>
 
-                            <div className="flex-1 min-w-0 flex flex-col sm:flex-row items-center sm:items-center justify-between text-center sm:text-left">
-                              <div className="text-base sm:text-lg font-black text-slate-900 leading-tight break-words">{org.name}</div>
-
-                              <div className="flex items-center gap-3 mt-3 sm:mt-0">
-                                {org.website && org.website !== '#' && (
-                                  <a href={org.website} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-blue-500">
-                                    <Globe size={14} />
-                                  </a>
-                                )}
-                                {org.linkedin && org.linkedin !== '#' && (
-                                  <a href={org.linkedin} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-blue-700">
-                                    <Linkedin size={14} />
-                                  </a>
-                                )}
-                              </div>
+                            <div className="flex-1 min-w-0">
+                              <div className="text-sm font-black text-slate-900 break-words">{m.name}</div>
                             </div>
-                          </motion.div>
+
+                            <div className="flex items-center gap-3">
+                              {m.website && m.website !== '#' && (
+                                <a href={m.website} target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-blue-500">
+                                  <Globe size={14} />
+                                </a>
+                              )}
+                              {m.linkedin && m.linkedin !== '#' && (
+                                <a href={m.linkedin} target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-blue-700">
+                                  <Linkedin size={14} />
+                                </a>
+                              )}
+                            </div>
+                          </div>
                         );
                       })}
                     </div>
 
-                    {/* Mobile-only HACKLANCE summary (shows below the cards) */}
-                    <div className="md:hidden mt-6 px-4">
-                      <div className="text-center mb-3">
-                        <span className="inline-block py-1 px-4 rounded-full bg-white/70 border border-gray-200 text-xs font-extrabold tracking-widest uppercase text-gray-600">HACKLANCE TEAM</span>
-                      </div>
-                      <motion.div className={`p-4 rounded-xl shadow-md bg-white ${hacklanceTheme.outerBorder} overflow-hidden relative`}> 
-                        <div className={`absolute top-0 left-0 w-full h-1 bg-gradient-to-r ${hacklanceTheme.topStrip} opacity-90`} />
-                        <ul className="text-sm text-gray-600 space-y-2 mt-2">
-                          {noPhotoMembers.map((m, i) => (
-                            <li key={`${m.name}-mobile-${i}`} className="flex items-center justify-start py-2">
-                              <div className="flex items-center gap-3">
-                                <span className={`w-3 h-3 rounded-full ${hacklanceTheme.avatar} ring-1 ${hacklanceTheme.ring}`} />
-                                <span className="text-sm font-bold text-slate-900">{m.role ? m.role + ' - ' + m.name : m.name}</span>
-                              </div>
-                            </li>
-                          ))}
-                        </ul>
-                      </motion.div>
-                    </div>
-
-                    {orderedPhotoMembers.length > 3 && (
-                      <div className="mt-3 md:hidden flex justify-center">
-                        <button onClick={() => setShowAllMobile(v => !v)} className="inline-flex items-center gap-2 py-2 px-4 rounded-full bg-white/90 border border-gray-200 shadow-sm font-bold">
-                          {showAllMobile ? 'Show Less' : 'Show More'}
-                          <ChevronDown size={16} className={`ml-2 transform ${showAllMobile ? 'rotate-180' : ''}`} />
-                        </button>
-                      </div>
-                    )}
+                    {/* controls removed per request */}
                   </div>
-
-                  <div className="md:w-[30%] w-full hidden md:block">
-                    <div className="flex items-center justify-between mb-4">
-                      <span className="inline-block py-1 px-4 rounded-full bg-white/70 border border-gray-200 text-xs font-extrabold tracking-widest uppercase text-gray-600">HACKLANCE TEAM</span>
-                    </div>
-                    <motion.div className={`p-4 rounded-xl shadow-md bg-white ${hacklanceTheme.outerBorder} overflow-hidden flex flex-col relative`}>
-                      <div className={`absolute top-0 left-0 w-full h-1 bg-gradient-to-r ${hacklanceTheme.topStrip} opacity-90`} />
-                      <div className={`absolute -bottom-6 -right-6 w-24 h-24 rounded-full bg-gradient-to-br ${hacklanceTheme.topStrip} opacity-20 blur-xl -z-10`} />
-
-                      <ul className="text-sm text-gray-600 space-y-2">
-                        {noPhotoMembers.map((m, i) => (
-                          <li key={`${m.name}-${i}`} className="flex items-center justify-start py-2">
-                            <div className="flex items-center gap-3">
-                              <span className={`w-3 h-3 rounded-full ${hacklanceTheme.avatar} ring-1 ${hacklanceTheme.ring}`} />
-                              <span className="text-sm font-bold text-slate-900">{m.role ? m.role + ' - ' + m.name : m.name}</span>
-                            </div>
-                          </li>
-                        ))}
-                      </ul>
-                    </motion.div>
-                  </div>
-                </div>
-              </RevealText>
+                </motion.div>
+              </div>
             </div>
           </RevealText>
         </div>
@@ -727,14 +798,27 @@ const AboutSection = () => {
               </div>
             </div>
             <h2 className="text-3xl sm:text-4xl md:text-6xl font-black mb-4 sm:mb-6 tracking-tight text-slate-800">About <span className="text-blue-600">RRGI Innovathon</span></h2>
+            <div className="flex items-center justify-center gap-3 mt-3 flex-wrap">
+              
+              
+            </div>
           </RevealText>
           <RevealText delay={0.1}>
             <p className="max-w-4xl mx-auto text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed font-medium px-2">
-              The RR Group of Institutions, Lucknow proudly presents RRGI Innovathon 2026—the ultimate Pan-Lucknow Inter-College Hackathon designed for the visionaries of tomorrow. Whether you're an AI enthusiast, a web wizard, or a cybersecurity sentinel, this is your stage to build, compete, and innovate.
+              The RR Group of Institutions, Lucknow proudly presents RRGI Innovathon 2026—the ultimate Pan-Lucknow Inter-College Hackathon powered by <a href="#" className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/80 border border-amber-100 text-xs font-bold text-amber-700 shadow-sm">
+                <img src="/ola.jpeg" alt="OLA KRUTRIM" className="w-5 h-5 rounded-sm object-contain" />
+                <span className="hidden sm:inline">OLA KRUTRIM</span>
+              </a> with <a href="#" className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/80 border border-teal-100 text-xs font-bold text-teal-700 shadow-sm">
+                <img src="/trainx.jpeg" alt="TrainX" className="w-5 h-5 rounded-sm object-contain" />
+                <span className="hidden sm:inline">TrainX</span>
+              </a> as strategic partner, designed for the visionaries of tomorrow. Whether you're an AI enthusiast, a web wizard, or a cybersecurity sentinel, this is your stage to build, compete, and innovate.
               <br /><br />
               We are inviting the brightest student developers and problem-solvers to step up and build technology solutions for real-world challenges. Innovation isn't just about thinking—it's about doing. 🛠️
             </p>
           </RevealText>
+
+   
+
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-6 relative z-10">
