@@ -459,9 +459,55 @@ const StudentOrganizersSection = () => {
             SECTION 1 — EVENT PLANNERS
         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */}
         <div>
+          {/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+              SPONSORSHIP — Added above Organized By
+          ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */}
+          <div>
+            <RevealText>
+              <div className="text-center mb-8">
+                <SectionLabel color="from-yellow-100 to-amber-100 border-amber-200 text-amber-700">Sponsorship</SectionLabel>
+                <h2 className="text-3xl sm:text-4xl font-display font-black mt-3">Sponsorship</h2>
+                <p className="text-gray-500 mt-2 text-sm">Supported by</p>
+              </div>
+            </RevealText>
+            <RevealText delay={0.05}>
+              <div className="flex flex-col sm:flex-row gap-12">
+                <motion.div
+                  whileHover={{ y: -6 }}
+                  transition={{ type: 'spring', stiffness: 320, damping: 28 }}
+                  className="flex-1 bg-white/80 backdrop-blur-sm rounded-[20px] p-6 border border-gray-100 shadow-md overflow-hidden flex items-center gap-5 min-h-[140px]"
+                >
+                  <div className="w-28 h-28 rounded-2xl overflow-hidden bg-slate-50 flex items-center justify-center p-2 border border-gray-100 shadow-inner flex-shrink-0">
+                    <img src="/ola.jpeg" alt="OLA KRUTRIM" className="w-full h-full object-contain" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-black text-slate-900">Powered by</h3>
+                    <p className="text-lg font-extrabold text-slate-900">OLA KRUTRIM</p>
+                  </div>
+                </motion.div>
+
+                <motion.div
+                  whileHover={{ y: -6 }}
+                  transition={{ type: 'spring', stiffness: 320, damping: 28 }}
+                  className="flex-1 bg-white/80 backdrop-blur-sm rounded-[20px] p-6 border border-gray-100 shadow-md overflow-hidden flex items-center gap-5 min-h-[140px]"
+                >
+                  <div className="w-28 h-28 rounded-2xl overflow-hidden bg-slate-50 flex items-center justify-center p-2 border border-gray-100 shadow-inner flex-shrink-0">
+                    <img src="/trainx.jpeg" alt="TrainX" className="w-full h-full object-contain" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-black text-slate-900">Strategic Partner</h3>
+                    <p className="text-lg font-extrabold text-slate-900">TrainX</p>
+                  </div>
+                </motion.div>
+              </div>
+            </RevealText>
+          </div>
+
           <RevealText>
             <div className="text-center mb-8">
-              <SectionLabel color="from-blue-100 to-indigo-100 border-blue-200 text-blue-700">Event Planners</SectionLabel>
+              <div className="mt-6 flex justify-center">
+                <SectionLabel color="from-blue-100 to-indigo-100 border-blue-200 text-blue-700">Event Planners</SectionLabel>
+              </div>
               <h2 className="text-3xl sm:text-4xl font-display font-black mt-3">Organized By</h2>
               <p className="text-gray-500 mt-2 text-sm">Proudly presented under the banner of</p>
             </div>
