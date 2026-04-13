@@ -634,12 +634,14 @@ const StudentOrganizersSection = () => {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   {organizers.slice(0, 6).map((org, idx) => {
                     const tc = rowColors[idx % rowColors.length];
+                    const hideOnMobile = !showAllMobile && idx >= 2; // show only first 2 on mobile when collapsed
+                    const layoutClass = hideOnMobile ? 'hidden sm:flex items-start md:items-center' : 'flex items-start md:items-center';
                     return (
                       <motion.div
                         key={`${org.name}-${idx}`}
                         whileHover={{ scale: 1.03 }}
                         transition={{ type: 'spring', stiffness: 260, damping: 20 }}
-                        className={`group rounded-xl p-4 flex items-start md:items-center gap-4 shadow-sm ${tc.outerBorder} bg-gradient-to-br ${tc.gradient}`}
+                        className={`group rounded-xl p-4 ${layoutClass} gap-4 shadow-sm ${tc.outerBorder} bg-gradient-to-br ${tc.gradient}`}
                         style={{ minHeight: 110 }}
                       >
                         <div className={`w-16 h-16 md:w-20 md:h-20 rounded-lg overflow-hidden flex items-center justify-center ${tc.avatar} flex-shrink-0`}> 
@@ -666,6 +668,22 @@ const StudentOrganizersSection = () => {
                     );
                   })}
                 </div>
+
+                {/* Mobile-only Show more / Show less */}
+                {organizers.slice(0, 6).length > 2 && (
+                  <div className="flex sm:hidden justify-center mt-4">
+                    <button
+                      onClick={() => setShowAllMobile(v => !v)}
+                      aria-expanded={showAllMobile}
+                      className="flex items-center gap-2 px-4 py-2.5 rounded-full bg-white border border-gray-200 text-slate-900 font-semibold shadow-md hover:shadow-lg transition-all duration-200"
+                    >
+                      <span className="text-sm">
+                        {showAllMobile ? 'Show less' : `Show ${Math.max(0, organizers.slice(0,6).length - 2)} more`}
+                      </span>
+                      <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${showAllMobile ? 'rotate-180' : ''}`} />
+                    </button>
+                  </div>
+                )}
               </div>
 
               {/* RIGHT: Large card with vertical slider (Hacklance Team) — narrower (40%) */}
