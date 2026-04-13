@@ -411,8 +411,8 @@ const StudentOrganizersSection = () => {
   ];
 
   const coordinators = [
-    { name: 'Mr. Sujeet Singh', role: '', subtitle: 'Asst. Professor, CSE Dept., RRIMT', img: '/sujeet.jpeg', linkedin: '#' },
-    { name: 'Mr. Anurag Pandey', role: '', subtitle: 'Head of Department, T&P Dept., RRIMT', img: '/hodtnp.jpeg', linkedin: '#' },
+    { name: 'Mr. Anurag Pandey', role: '', subtitle: 'EVENT COORDINATOR ,GIT RRGI INNOVATHON', img: '/hodtnp.jpeg', linkedin: '#' },
+     { name: 'Mr. Sujeet Singh', role: '', subtitle: 'EVENT COORDINATOR , RRGI INNOVATHON', img: '/sujeet.jpeg', linkedin: '#' },
     { name: 'Mr. Harendra  Prajapati', role: '', subtitle: 'Faculty Advisor,Hacklance, RRIMT', img: '/harendra.jpeg', linkedin: '#' },
   ];
 
