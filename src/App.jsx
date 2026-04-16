@@ -4,7 +4,7 @@ import Lenis from 'lenis';
 import {
   Users, Zap, Trophy, ChevronDown, ChevronUp, Rocket,
   MapPin, Calendar, Clock, ArrowRight, Instagram, Linkedin, Twitter, Globe, Info, Gift, Lightbulb, UserPlus, Fingerprint, Code, Smartphone,
-  Coffee, Utensils, Mic, Play, Pause, Award, PartyPopper, Sun, Moon, Sunrise, ChevronLeft, ChevronRight, Hammer, Presentation, MessageSquare, Star, Menu, X
+  Coffee, Utensils, Mic, Play, Pause, Award, PartyPopper, Sun, Moon, Sunrise, ChevronLeft, ChevronRight, Hammer, Presentation, MessageSquare, Star, Menu, X, QrCode
 } from 'lucide-react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -1463,6 +1463,603 @@ const faqColors = [
   { strip: 'bg-purple-400', btn: 'border-purple-300 text-purple-500 bg-purple-50', activeBg: 'bg-blue-50/60 border-blue-200', number: 'text-purple-500' },
 ];
 
+const problemLoadingMessages = [
+  "Decrypting brilliant ideas...",
+  "Aligning judges and coffee levels...",
+  "Scanning concept signals...",
+  "Warming up innovation engines...",
+  "Stabilizing design modules...",
+  "Routing smart logic blocks...",
+  "Calibrating performance matrix...",
+  "Polishing your challenge pipeline...",
+  "Sealing premium build layers...",
+  "Charging the curiosity core..."
+];
+
+const loadingIcons = [
+  { Icon: Zap, tone: 'text-blue-500' },
+  { Icon: Fingerprint, tone: 'text-rose-500' },
+  { Icon: Code, tone: 'text-violet-500' },
+  { Icon: Smartphone, tone: 'text-emerald-500' },
+  { Icon: Globe, tone: 'text-orange-500' },
+  { Icon: Rocket, tone: 'text-sky-500' },
+  { Icon: Star, tone: 'text-fuchsia-500' },
+  { Icon: Award, tone: 'text-amber-500' },
+  { Icon: Lightbulb, tone: 'text-yellow-500' },
+  { Icon: Trophy, tone: 'text-cyan-500' }
+];
+
+const loadingTags = [
+  { Icon: Rocket, label: 'Quantum Sync', tone: 'text-blue-600 bg-blue-50 border-blue-200' },
+  { Icon: Star, label: 'Neural Pulse', tone: 'text-violet-600 bg-violet-50 border-violet-200' },
+  { Icon: Award, label: 'Elite Mode', tone: 'text-amber-600 bg-amber-50 border-amber-200' },
+  { Icon: Lightbulb, label: 'Idea Scan', tone: 'text-orange-600 bg-orange-50 border-orange-200' },
+  { Icon: Trophy, label: 'Final Polish', tone: 'text-emerald-600 bg-emerald-50 border-emerald-200' },
+  { Icon: Rocket, label: 'Hyper Launch', tone: 'text-sky-600 bg-sky-50 border-sky-200' },
+  { Icon: Star, label: 'Astra Beam', tone: 'text-fuchsia-600 bg-fuchsia-50 border-fuchsia-200' },
+  { Icon: Award, label: 'Prime Seal', tone: 'text-lime-600 bg-lime-50 border-lime-200' },
+  { Icon: Lightbulb, label: 'Vision Forge', tone: 'text-yellow-600 bg-yellow-50 border-yellow-200' },
+  { Icon: Trophy, label: 'Crown Sync', tone: 'text-cyan-600 bg-cyan-50 border-cyan-200' }
+];
+
+const ConstellationCanvas = ({ colors = ['#60a5fa', '#a78bfa', '#f472b6', '#34d399', '#fbbf24', '#f87171', '#38bdf8'] }) => {
+  const canvasRef = useRef(null);
+
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    let width = canvas.offsetWidth;
+    let height = canvas.offsetHeight;
+    canvas.width = width;
+    canvas.height = height;
+
+    class Particle {
+      constructor() {
+        this.x = Math.random() * width;
+        this.y = Math.random() * height;
+        this.vx = (Math.random() - 0.5) * 0.3;
+        this.vy = (Math.random() - 0.5) * 0.3;
+        // Occasional large nodes amongst tiny clusters
+        this.radius = Math.random() > 0.85 ? Math.random() * 4.0 + 3.0 : Math.random() * 1.5 + 1.0;
+        this.color = colors[Math.floor(Math.random() * colors.length)];
+        this.baseAlpha = this.radius > 3 ? 0.9 : 0.5;
+      }
+      update() {
+        this.x += this.vx;
+        this.y += this.vy;
+        if (this.x < 0 || this.x > width) this.vx = -this.vx;
+        if (this.y < 0 || this.y > height) this.vy = -this.vy;
+      }
+      draw() {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+        ctx.fillStyle = this.color;
+        ctx.globalAlpha = this.baseAlpha;
+        ctx.shadowBlur = 18;
+        ctx.shadowColor = this.color;
+        ctx.fill();
+        ctx.shadowBlur = 0;
+        ctx.globalAlpha = 1;
+      }
+    }
+
+    const particles = Array.from({ length: 45 }, () => new Particle());
+    let animationFrameId;
+
+    const render = () => {
+      ctx.clearRect(0, 0, width, height);
+      ctx.lineWidth = 0.5;
+      for (let i = 0; i < particles.length; i++) {
+        for (let j = i + 1; j < particles.length; j++) {
+          const dx = particles[i].x - particles[j].x;
+          const dy = particles[i].y - particles[j].y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < 180) {
+            ctx.beginPath();
+            const gradient = ctx.createLinearGradient(particles[i].x, particles[i].y, particles[j].x, particles[j].y);
+            gradient.addColorStop(0, particles[i].color);
+            gradient.addColorStop(1, particles[j].color);
+            ctx.strokeStyle = gradient;
+            ctx.globalAlpha = Math.max(0, 1 - dist / 180) * 0.15; // Extremely faint connecting lines
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(particles[j].x, particles[j].y);
+            ctx.stroke();
+            ctx.globalAlpha = 1;
+          }
+        }
+      }
+      particles.forEach(p => {
+        p.update();
+        p.draw();
+      });
+      animationFrameId = window.requestAnimationFrame(render);
+    };
+    render();
+
+    const handleResize = () => {
+      width = canvas.offsetWidth;
+      height = canvas.offsetHeight;
+      canvas.width = width;
+      canvas.height = height;
+    };
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.cancelAnimationFrame(animationFrameId);
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  return (
+    <motion.canvas 
+      ref={canvasRef} 
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 2.5, ease: "easeOut" }}
+      className="absolute inset-0 w-full h-full z-0 pointer-events-none mix-blend-multiply" 
+      style={{ 
+        filter: 'contrast(1.1) saturate(1.2)',
+        WebkitMaskImage: 'radial-gradient(ellipse at center, black 15%, transparent 80%)',
+        maskImage: 'radial-gradient(ellipse at center, black 15%, transparent 80%)'
+      }} 
+    />
+  );
+};
+
+const ProblemStatementSection = () => {
+  const loadingStageCount = 10;
+  const processConfig = {
+    curtainMs: 2500,
+    loadingMs: 24500,
+    countdownMs: 3000,
+    messageTickMs: Math.floor(24500 / (loadingStageCount - 1))
+  };
+  const totalProcessSec = Math.round((processConfig.curtainMs + processConfig.loadingMs + processConfig.countdownMs) / 1000);
+
+  const [isOn, setIsOn] = useState(false);
+  const [phase, setPhase] = useState('idle'); // idle | curtain | loading | countdown | qr
+  const [messageIndex, setMessageIndex] = useState(0);
+  const [countdown, setCountdown] = useState(3);
+  const [smoothLoad, setSmoothLoad] = useState(1);
+  const [elapsedSec, setElapsedSec] = useState(0);
+
+  useEffect(() => {
+    if (!isOn) {
+      setPhase('idle');
+      setMessageIndex(0);
+      setCountdown(3);
+      setSmoothLoad(1);
+      setElapsedSec(0);
+      return;
+    }
+
+    setPhase('curtain');
+
+    const curtainTimer = setTimeout(() => setPhase('loading'), processConfig.curtainMs);
+
+    const loadingTimer = setTimeout(() => setPhase('countdown'), processConfig.curtainMs + processConfig.loadingMs);
+
+    const messageTicker = setInterval(
+      () => setMessageIndex((prev) => Math.min(prev + 1, loadingStageCount - 1)),
+      processConfig.messageTickMs
+    );
+
+    let countdownTicker;
+    const countdownStarter = setTimeout(() => {
+      setCountdown(3);
+      countdownTicker = setInterval(() => {
+        setCountdown((prev) => {
+          if (prev <= 1) {
+            clearInterval(countdownTicker);
+            setPhase('qr');
+            return 1;
+          }
+          return prev - 1;
+        });
+      }, 1000);
+    }, processConfig.curtainMs + processConfig.loadingMs);
+
+    const elapsedTicker = setInterval(() => {
+      setElapsedSec((prev) => Math.min(prev + 1, totalProcessSec));
+    }, 1000);
+
+    return () => {
+      clearTimeout(curtainTimer);
+      clearTimeout(loadingTimer);
+      clearTimeout(countdownStarter);
+      clearInterval(messageTicker);
+      clearInterval(elapsedTicker);
+      if (countdownTicker) clearInterval(countdownTicker);
+    };
+  }, [isOn]);
+
+  useEffect(() => {
+    if (phase !== 'loading') {
+      return;
+    }
+
+    const loadStart = 1;
+    setSmoothLoad(loadStart);
+    const targetLoad = 100;
+    const loadStep = (targetLoad - loadStart) / (processConfig.loadingMs / 100);
+
+    const loadTicker = setInterval(() => {
+      setSmoothLoad((prev) => {
+        if (prev >= targetLoad) return targetLoad;
+        return Math.min(targetLoad, prev + loadStep);
+      });
+    }, 100);
+
+    return () => {
+      clearInterval(loadTicker);
+    };
+  }, [phase]);
+
+  const curtainState = phase === 'idle' ? 'closed' : phase === 'curtain' ? 'opening' : 'open';
+  const loadingProgress = Math.min(100, Math.max(1, Math.round(smoothLoad)));
+  const activeStageIndex = Math.min(messageIndex, loadingStageCount - 1);
+  const activeIconTheme = loadingIcons[activeStageIndex];
+  const activeTag = loadingTags[activeStageIndex];
+  const remainingSec = Math.max(totalProcessSec - elapsedSec, 0);
+  const processLabel =
+    phase === 'idle'
+      ? 'Awaiting switch'
+      : phase === 'curtain'
+        ? 'Curtain opening'
+        : phase === 'loading'
+          ? 'Initializing delivery channel'
+          : phase === 'countdown'
+            ? `Final countdown: ${countdown}`
+            : 'QR is live';
+
+  return (
+    <section className="py-16 sm:py-24 relative overflow-hidden" id="problem-statement-ids">
+      {/* Background floaters for the section */}
+      <FloatingShape color="bg-pastelBlue" size="w-[400px] h-[400px]" top="-5%" right="-5%" duration={25} blur="blur-3xl" />
+      <FloatingShape color="bg-pastelPink" size="w-96 h-96" top="50%" left="-10%" duration={20} delay={2} blur="blur-3xl" />
+      
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 relative z-10">
+        <RevealText>
+          <div className="bg-white/40 backdrop-blur-2xl relative overflow-hidden rounded-[2rem] border border-white/60 p-6 sm:p-10 shadow-lg">
+            {/* Vibrant top edge */}
+            <div className="absolute top-0 left-0 w-full h-2.5 bg-gradient-to-r from-blue-500 to-blue-300 opacity-90 z-20"></div>
+            {/* Subtle top right dot */}
+            <div className="absolute top-5 right-5 w-2.5 h-2.5 rounded-full bg-gradient-to-r from-blue-500 to-blue-300 z-20"></div>
+            
+            {/* Floaters strictly inside the block */}
+            <FloatingShape color="bg-pastelPink" size="w-64 h-64" top="-20%" right="-10%" duration={15} blur="blur-2xl" />
+            <FloatingShape color="bg-pastelBlue" size="w-80 h-80" top="50%" left="-20%" duration={18} delay={1} blur="blur-2xl" />
+            <FloatingCircuit top="10%" left="40%" scale={0.7} delay={3} color="text-indigo-400/20" />
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 sm:gap-6 mb-6">
+              <div>
+                <p className="text-[11px] uppercase tracking-[0.2em] text-slate-500 font-bold">Live Reveal</p>
+                <h3 className="text-2xl sm:text-4xl font-display font-black tracking-tight text-slate-800">PROBLEM STATEMENT IDs</h3>
+                <p className="mt-2 text-xs sm:text-sm font-semibold text-slate-500">
+                  {processLabel} <span className="text-slate-400">| ETA ~{remainingSec}s</span>
+                </p>
+              </div>
+
+              <button
+                onClick={() => setIsOn((prev) => !prev)}
+                className={`relative w-20 h-11 rounded-full transition-all duration-500 border ${
+                  isOn ? 'bg-slate-900 border-slate-900 shadow-[0_8px_26px_rgba(15,23,42,0.35)]' : 'bg-white border-slate-200'
+                }`}
+                aria-label="Toggle problem statement reveal"
+                aria-pressed={isOn}
+              >
+                <span
+                  className={`absolute top-1.5 left-1.5 h-8 w-8 rounded-full transition-all duration-500 flex items-center justify-center ${
+                    isOn ? 'translate-x-9 bg-emerald-400' : 'translate-x-0 bg-slate-200'
+                  }`}
+                >
+                  {isOn ? <Play size={14} className="text-slate-900 ml-0.5" /> : <Pause size={14} className="text-slate-500" />}
+                </span>
+              </button>
+            </div>
+            {/* Sleek Gradient Border Wrapper */}
+            <div className="relative mx-auto w-full p-[3px] rounded-[2.5rem] bg-gradient-to-br from-blue-400 via-purple-400 to-emerald-400 shadow-[0_30px_60px_-15px_rgba(15,23,42,0.25)] ring-1 ring-slate-900/5 transition-all duration-700">
+              <div className="relative min-h-[480px] rounded-[2.35rem] bg-white/60 backdrop-blur-3xl overflow-hidden shadow-[inset_0_0_100px_rgba(255,255,255,0.8)] border border-white/50">
+              {/* Ethereal animated glowing orbs in the background */}
+              <motion.div 
+                className="absolute -top-32 -right-32 w-[30rem] h-[30rem] bg-blue-100/10 rounded-full blur-[80px] pointer-events-none"
+                animate={{ scale: [1, 1.1, 1], opacity: [0.15, 0.3, 0.15] }}
+                transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
+              />
+              <motion.div 
+                className="absolute -bottom-32 -left-32 w-[30rem] h-[30rem] bg-violet-200/10 rounded-full blur-[80px] pointer-events-none"
+                animate={{ scale: [1.1, 1, 1.1], opacity: [0.15, 0.3, 0.15] }}
+                transition={{ duration: 9, repeat: Infinity, ease: "easeInOut" }}
+              />
+              
+              {/* Animated Panning Grid Pattern (More Visible) */}
+              <motion.div 
+                className="absolute inset-0 z-0 opacity-70 mix-blend-multiply pointer-events-none" 
+                style={{ 
+                  backgroundImage: 'linear-gradient(to right, rgba(59, 130, 246, 0.6) 1px, transparent 1px), linear-gradient(to bottom, rgba(59, 130, 246, 0.6) 1px, transparent 1px)',
+                  backgroundSize: '40px 40px',
+                  WebkitMaskImage: 'radial-gradient(ellipse at center, black 15%, transparent 85%)', 
+                  maskImage: 'radial-gradient(ellipse at center, black 15%, transparent 85%)' 
+                }}
+                animate={{ backgroundPosition: ['0px 0px', '40px 40px'] }}
+                transition={{ duration: 4, repeat: Infinity, ease: 'linear' }}
+              />
+
+              {/* Constellation Network isolated gently to the vertical borders */}
+              <div 
+                className="absolute inset-0 z-0 pointer-events-none"
+                style={{
+                  WebkitMaskImage: 'linear-gradient(to right, black 0%, transparent 15%, transparent 85%, black 100%)',
+                  maskImage: 'linear-gradient(to right, black 0%, transparent 15%, transparent 85%, black 100%)'
+                }}
+              >
+                <ConstellationCanvas colors={['#60a5fa', '#a855f7', '#ec4899', '#38bdf8', '#c084fc']} />
+              </div>
+              {phase !== 'idle' && (
+                <div className="absolute inset-0 z-[1] pointer-events-none">
+                  {[...Array(8)].map((_, idx) => (
+                    <motion.span
+                      key={`spark-${idx}`}
+                      className="absolute w-1.5 h-1.5 rounded-full bg-white/70"
+                      style={{ left: `${12 + idx * 11}%`, top: `${20 + (idx % 3) * 22}%` }}
+                      animate={{ y: [0, -14, 0], opacity: [0.15, 0.85, 0.15], scale: [0.7, 1.15, 0.7] }}
+                      transition={{ duration: 2.8 + idx * 0.2, repeat: Infinity, ease: "easeInOut", delay: idx * 0.12 }}
+                    />
+                  ))}
+                </div>
+              )}
+
+              {/* Premium Mac-Style Glass Window Header */}
+              <div className="absolute top-0 left-0 right-0 h-12 bg-white/75 backdrop-blur-xl border-b border-white z-30 flex items-center px-4 sm:px-6 shadow-[0_4px_20px_rgba(15,23,42,0.03)]">
+                <div className="flex gap-2">
+                  <div className="w-3 h-3 sm:w-3.5 sm:h-3.5 rounded-full bg-[#ff5f56] border border-[#e0443e] shadow-inner" />
+                  <div className="w-3 h-3 sm:w-3.5 sm:h-3.5 rounded-full bg-[#ffbd2e] border border-[#dea123] shadow-inner" />
+                  <div className="w-3 h-3 sm:w-3.5 sm:h-3.5 rounded-full bg-[#27c93f] border border-[#1aab29] shadow-inner" />
+                </div>
+                <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
+                  <span className="text-[10px] sm:text-[11px] uppercase tracking-[0.3em] font-black text-slate-500">RRGI INNOVATHON</span>
+                  <span className="text-[7px] sm:text-[8px] font-bold tracking-widest text-slate-400">READY TO INNOVATE</span>
+                </div>
+              </div>
+
+              <motion.div
+                className="absolute inset-y-0 left-0 w-1/2 z-20"
+                animate={{
+                  x: curtainState === 'closed' ? '0%' : curtainState === 'opening' ? '-72%' : '-108%',
+                  skewY: curtainState === 'open' ? [-2.8, -1.6, -2.2, -2] : 0
+                }}
+                transition={
+                  curtainState === 'open'
+                    ? {
+                        x: { type: 'spring', stiffness: 82, damping: 12, mass: 0.9 },
+                        skewY: { duration: 1.1, ease: [0.22, 1, 0.36, 1] }
+                      }
+                    : { duration: curtainState === 'opening' ? 1.5 : 0.8, ease: [0.22, 1, 0.36, 1] }
+                }
+              >
+                <div className="h-full w-full bg-gradient-to-r from-slate-950 via-slate-900 to-slate-800 shadow-[inset_-16px_0_22px_rgba(255,255,255,0.08),inset_-30px_0_30px_rgba(15,23,42,0.6)]" />
+                <div className="absolute inset-y-0 right-6 w-[2px] bg-white/10" />
+                <div className="absolute inset-y-0 right-0 w-8 bg-gradient-to-r from-transparent to-black/35" />
+              </motion.div>
+
+              <motion.div
+                className="absolute inset-y-0 right-0 w-1/2 z-20"
+                animate={{
+                  x: curtainState === 'closed' ? '0%' : curtainState === 'opening' ? '72%' : '108%',
+                  skewY: curtainState === 'open' ? [2.8, 1.6, 2.2, 2] : 0
+                }}
+                transition={
+                  curtainState === 'open'
+                    ? {
+                        x: { type: 'spring', stiffness: 82, damping: 12, mass: 0.9 },
+                        skewY: { duration: 1.1, ease: [0.22, 1, 0.36, 1] }
+                      }
+                    : { duration: curtainState === 'opening' ? 1.5 : 0.8, ease: [0.22, 1, 0.36, 1] }
+                }
+              >
+                <div className="h-full w-full bg-gradient-to-l from-slate-950 via-slate-900 to-slate-800 shadow-[inset_16px_0_22px_rgba(255,255,255,0.08),inset_30px_0_30px_rgba(15,23,42,0.6)]" />
+                <div className="absolute inset-y-0 left-6 w-[2px] bg-white/10" />
+                <div className="absolute inset-y-0 left-0 w-8 bg-gradient-to-l from-transparent to-black/35" />
+              </motion.div>
+
+              <motion.div
+                className="absolute inset-y-0 left-1/2 w-px bg-white/40 z-20"
+                animate={{ opacity: curtainState === 'closed' ? 0.7 : curtainState === 'opening' ? 0.25 : 0 }}
+                transition={{ duration: 0.6 }}
+              />
+
+              <motion.div
+                className="absolute inset-0 z-10 pointer-events-none flex items-center justify-center"
+                animate={
+                  curtainState === 'open'
+                    ? { opacity: [0, 0.28, 0], scale: [0.86, 1.05, 1.18] }
+                    : { opacity: 0, scale: 0.86 }
+                }
+                transition={{ duration: 0.95, ease: [0.22, 1, 0.36, 1] }}
+              >
+                <div className="w-44 h-44 sm:w-64 sm:h-64 rounded-full bg-gradient-to-r from-blue-300/25 via-white/35 to-indigo-300/25 blur-2xl" />
+              </motion.div>
+
+              {/* Adjusted padding top to clear the new glass header */}
+              <div className="absolute inset-0 flex items-center justify-center p-5 sm:p-8 pt-16 sm:pt-20">
+                {(phase === 'idle' || phase === 'curtain') && (
+                  <div className="text-center">
+                    <p className="text-xs uppercase tracking-[0.3em] text-slate-400 font-bold mb-3">Ready</p>
+                    <h2 className="text-2xl sm:text-4xl text-slate-800 font-display font-black tracking-tight drop-shadow-sm" style={{ fontFamily: "'Syne', sans-serif" }}>INNOVATHON</h2>
+                    <h2><span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">ORGANIZED BY RRGI</span></h2>
+                  </div>
+                )}
+
+                {phase === 'loading' && (
+                  <div className="text-center w-full">
+                    <div className="mx-auto mb-5 flex items-center justify-center w-20 h-20 relative">
+                      <AnimatePresence mode="wait">
+                        <motion.div
+                          key={`hero-icon-${activeStageIndex}`}
+                          initial={{ opacity: 0, scale: 0.78, y: 10 }}
+                          animate={{
+                            opacity: [1, 0.8, 1],
+                            scale: [1, 1.14, 1],
+                            y: [0, -4, 0],
+                            filter: [
+                              'drop-shadow(0 0 0 rgba(59,130,246,0))',
+                              'drop-shadow(0 0 20px rgba(59,130,246,0.55))',
+                              'drop-shadow(0 0 0 rgba(59,130,246,0))'
+                            ]
+                          }}
+                          exit={{ opacity: 0, scale: 0.72, y: -8 }}
+                          transition={{ duration: 1, ease: "easeInOut" }}
+                          className="relative flex items-center justify-center w-20 h-20"
+                        >
+                          <span className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-300/20 via-white/45 to-indigo-300/20 blur-2xl" />
+                          {React.createElement(activeIconTheme.Icon, {
+                            size: 52,
+                            strokeWidth: 2.3,
+                            className: activeIconTheme.tone
+                          })}
+                        </motion.div>
+                      </AnimatePresence>
+                    </div>
+                    <motion.p
+                      className="text-sm sm:text-base font-display font-black tracking-tight mb-2"
+                      animate={{ opacity: [0.4, 1, 0.4], letterSpacing: ['0.22em', '0.27em', '0.22em'] }}
+                      transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
+                    >
+                      <span className="text-red-600 drop-shadow-sm">RRGI</span>{' '}
+                      <span className="text-slate-800 drop-shadow-sm">INNOVATHON</span>
+                    </motion.p>
+                    <AnimatePresence mode="wait">
+                      <motion.p
+                        key={messageIndex}
+                        initial={{ opacity: 0, y: 8 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -8 }}
+                        transition={{ duration: 0.25 }}
+                        className="text-lg sm:text-2xl font-display font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-slate-700 via-blue-700 to-indigo-700"
+                      >
+                        {problemLoadingMessages[messageIndex]}
+                      </motion.p>
+                    </AnimatePresence>
+
+                    <div className="mx-auto mt-4 h-1.5 w-52 sm:w-64 rounded-full bg-slate-200/60 overflow-hidden shadow-inner">
+                      <motion.div
+                        className="h-full rounded-full bg-gradient-to-r from-slate-900 via-slate-800 to-black shadow-lg"
+                        animate={{ width: `${loadingProgress}%` }}
+                        transition={{ duration: 0.22, ease: [0.22, 1, 0.36, 1] }}
+                      />
+                    </div>
+                    <p className="mt-1 text-[10px] uppercase tracking-[0.24em] text-slate-900 font-bold">{loadingProgress}% synced</p>
+
+                    <div className="mt-4 flex items-center justify-center">
+                      <AnimatePresence mode="wait">
+                        <motion.div
+                          key={`tag-${activeStageIndex}`}
+                          initial={{ opacity: 0, y: 8, scale: 0.96 }}
+                          animate={{
+                            opacity: [1, 0.35, 1],
+                            y: [0, -3, 0],
+                            scale: [1, 1.04, 1]
+                          }}
+                          exit={{ opacity: 0, y: -8, scale: 0.95 }}
+                          transition={{ duration: 0.9, ease: "easeInOut" }}
+                          className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-slate-200 bg-white/90 text-xs sm:text-sm font-semibold shadow-sm"
+                        >
+                          {React.createElement(activeTag.Icon, { size: 14, className: activeIconTheme.tone })}
+                          <span className={activeIconTheme.tone}>{activeTag.label}</span>
+                        </motion.div>
+                      </AnimatePresence>
+                    </div>
+                  </div>
+                )}
+
+                {phase === 'countdown' && (
+                  <motion.div
+                    key={countdown}
+                    initial={{ scale: 0.75, opacity: 0 }}
+                    animate={{ scale: 1, opacity: 1 }}
+                    exit={{ scale: 1.2, opacity: 0 }}
+                    className="text-center"
+                  >
+                    <p className="text-xs uppercase tracking-[0.25em] text-slate-400 font-bold mb-4">Launching In</p>
+                    <div className="relative w-32 h-32 sm:w-40 sm:h-40 mx-auto flex items-center justify-center">
+                      <p className="text-7xl sm:text-8xl font-black tracking-tighter text-transparent bg-clip-text bg-gradient-to-br from-slate-900 to-slate-600 drop-shadow-xl" style={{ fontFamily: "'Syne', sans-serif" }}>{countdown}</p>
+                    </div>
+                  </motion.div>
+                )}
+
+                {phase === 'qr' && (
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.9, y: 10 }}
+                    animate={{ opacity: 1, scale: 1, y: 0 }}
+                    transition={{ duration: 0.35 }}
+                    className="text-center relative"
+                  >
+                    <div className="absolute top-1/2 left-1/2 flex items-center justify-center -translate-x-1/2 -translate-y-1/2 z-0 pointer-events-none">
+                      {/* Engaging Ultra-Smooth Burst */}
+                      {[...Array(80)].map((_, i) => {
+                        const isDot = i % 3 === 0;
+                        const angle = (i * 4.5) + (Math.random() * 20 - 10);
+                        const distance = isDot ? 200 + Math.random() * 300 : 250 + Math.random() * 400;
+                        const colors = ['bg-rose-500', 'bg-blue-500', 'bg-emerald-500', 'bg-amber-400', 'bg-violet-500', 'bg-pink-500', 'bg-cyan-400'];
+                        const color = colors[i % colors.length];
+                        const delay = Math.random() * 0.3;
+                        const duration = isDot ? 2.5 + Math.random() * 1.5 : 2.0 + Math.random() * 1.5;
+                        
+                        return (
+                          <motion.div
+                            key={`burst-container-${i}`}
+                            className="absolute flex items-center justify-center"
+                            style={{ rotate: angle }}
+                          >
+                            <motion.div
+                              className={`rounded-full drop-shadow-md ${color}`}
+                              style={{ 
+                                width: isDot ? `${8 + Math.random() * 6}px` : `${4 + Math.random() * 3}px`,
+                                height: isDot ? `${8 + Math.random() * 6}px` : `${40 + Math.random() * 60}px` 
+                              }}
+                              initial={{ opacity: 1, y: 0, scale: 0 }}
+                              animate={{
+                                opacity: isDot ? [0, 1, 0] : [1, 1, 0],
+                                y: [-distance * 0.1, -distance],
+                                scale: isDot ? [0, 1.5, 0] : [0.2, 1.8, 0]
+                              }}
+                              transition={{ 
+                                duration: duration, 
+                                ease: [0.25, 1, 0.35, 1],
+                                delay: delay
+                              }}
+                            />
+                          </motion.div>
+                        );
+                      })}
+                    </div>
+                    <div className="relative z-10 mx-auto mb-4 inline-flex items-center gap-2 px-3 py-1 rounded-full border border-slate-200 bg-white text-xs font-bold uppercase tracking-wider text-slate-500 shadow-sm">
+                      <QrCode size={14} /> Scan Now
+                    </div>
+                    <div className="relative z-10 w-44 h-44 sm:w-56 sm:h-56 mx-auto rounded-[1.5rem] border border-slate-200/80 bg-white p-3 shadow-[0_20px_50px_-12px_rgba(15,23,42,0.15)] ring-4 ring-white/60 overflow-hidden">
+                      <img
+                        src="/qr.png"
+                        alt="Problem statement QR code"
+                        className="w-full h-full rounded-xl object-cover"
+                      />
+                      <motion.span
+                        className="absolute inset-x-2 h-6 bg-gradient-to-b from-blue-300/30 via-white/55 to-transparent blur-sm"
+                        animate={{ y: ['-15%', '105%'] }}
+                        transition={{ duration: 2.1, repeat: Infinity, ease: "easeInOut" }}
+                      />
+                    </div>
+                    <p className="relative z-10 mt-4 text-sm text-slate-500 font-medium">Scan to access the problem statement IDs portal.</p>
+                  </motion.div>
+                )}
+              </div>
+              </div>
+            </div>
+          </div>
+        </RevealText>
+      </div>
+    </section>
+  );
+};
+
 const FaqSection = () => {
   const [openIdx, setOpenIdx] = useState(0);
 
@@ -2441,6 +3038,7 @@ function App() {
         <EventTimelineSection />
         <TeamSection />
         <StudentOrganizersSection />
+        <ProblemStatementSection />
 
         <FaqSection />
       </main>
