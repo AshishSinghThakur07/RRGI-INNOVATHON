@@ -9,6 +9,7 @@ import {
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
+import { Analytics } from '@vercel/analytics/react';
 gsap.registerPlugin(ScrollTrigger);
 
 // Custom Components
@@ -3044,6 +3045,7 @@ function App() {
       </main>
 
       <Footer />
+      <Analytics />
     </div>
   );
 }
