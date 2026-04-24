@@ -4,7 +4,7 @@ import Lenis from 'lenis';
 import {
   Users, Zap, Trophy, ChevronDown, ChevronUp, Rocket,
   MapPin, Calendar, Clock, ArrowRight, Instagram, Linkedin, Twitter, Globe, Info, Gift, Lightbulb, UserPlus, Fingerprint, Code, Smartphone,
-  Coffee, Utensils, Mic, Play, Pause, Award, PartyPopper, Sun, Moon, Sunrise, ChevronLeft, ChevronRight, Hammer, Presentation, MessageSquare, Star, Menu, X, QrCode
+  Coffee, Utensils, Mic, Play, Pause, Award, PartyPopper, Sun, Moon, Sunrise, ChevronLeft, ChevronRight, Hammer, Presentation, MessageSquare, Star, Menu, X, QrCode, Medal
 } from 'lucide-react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -93,7 +93,7 @@ const Navbar = () => {
             <div className="font-display font-black text-lg sm:text-2xl tracking-tighter leading-none flex items-center gap-1.5" style={{ letterSpacing: '-0.04em' }}>
               <span className="text-red-600 drop-shadow-sm">RRGI</span>
               <span className="text-slate-800 drop-shadow-sm">Innovathon</span>
-              
+
             </div>
           </div>
         </div>
@@ -112,12 +112,12 @@ const Navbar = () => {
           </button>
 
           <a href="https://forms.gle/aWXrC9w6FwURfLDJ9" target="_blank" rel="noopener noreferrer" className="skeu-btn-primary px-4 sm:px-6 py-2 rounded-full font-bold text-xs sm:text-sm flex items-center gap-1.5 sm:gap-2 w-full sm:w-auto justify-center">
-            Register <ArrowRight size={14} className="sm:w-4 sm:h-4" />
+            Registration Closed <ArrowRight size={14} className="sm:w-4 sm:h-4" />
           </a>
         </div>
       </div>
 
-      <div className={`md:hidden ${open ? 'block' : 'hidden'} px-4`}> 
+      <div className={`md:hidden ${open ? 'block' : 'hidden'} px-4`}>
         <div className="max-w-7xl mx-auto mt-2 bg-white/90 backdrop-blur-md rounded-xl shadow-lg p-4 border border-white/50">
           <div className="flex flex-col gap-3 text-center">
             <a href="#about" onClick={() => setOpen(false)} className="py-2 hover:text-blue-500">About</a>
@@ -291,20 +291,20 @@ const HeroSection = () => {
               <span className="text-black">Innova</span><span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-blue-400">thon</span>
             </h1>
             <RevealText delay={0.45}>
-            <div className="flex flex-wrap justify-center items-center gap-2 sm:gap-3 md:gap-4 mb-8 px-2">
-              <a href="#" className="flex items-center gap-2 bg-white/6 hover:bg-white/12 border border-white/10 text-sm text-slate-800 px-3 py-1.5 rounded-full shadow-sm transition-all duration-200 backdrop-blur-sm">
-                <img src="/ola.jpeg" alt="OLA" className="w-6 h-6 rounded-full object-contain" />
-                <span className="font-semibold text-xs">Powered by OLA Krutrim</span>
-              </a>
+              <div className="flex flex-wrap justify-center items-center gap-2 sm:gap-3 md:gap-4 mb-8 px-2">
+                <a href="#" className="flex items-center gap-2 bg-white/6 hover:bg-white/12 border border-white/10 text-sm text-slate-800 px-3 py-1.5 rounded-full shadow-sm transition-all duration-200 backdrop-blur-sm">
+                  <img src="/ola.jpeg" alt="OLA" className="w-6 h-6 rounded-full object-contain" />
+                  <span className="font-semibold text-xs">Powered by OLA Krutrim</span>
+                </a>
 
-              <a href="#" className="flex items-center gap-2 bg-white/6 hover:bg-white/12 border border-white/10 text-sm text-slate-800 px-3 py-1.5 rounded-full shadow-sm transition-all duration-200 backdrop-blur-sm">
-                <img src="/trainx.jpeg" alt="TrainX" className="w-6 h-6 rounded-full object-contain" />
-                <span className="font-semibold text-xs">Strategic Partner — TrainX</span>
-              </a>
+                <a href="#" className="flex items-center gap-2 bg-white/6 hover:bg-white/12 border border-white/10 text-sm text-slate-800 px-3 py-1.5 rounded-full shadow-sm transition-all duration-200 backdrop-blur-sm">
+                  <img src="/trainx.jpeg" alt="TrainX" className="w-6 h-6 rounded-full object-contain" />
+                  <span className="font-semibold text-xs">Strategic Partner — TrainX</span>
+                </a>
 
-             
-            </div>
-          </RevealText>
+
+              </div>
+            </RevealText>
             <div className="flex items-center justify-center mb-4 sm:mb-6 drop-shadow-sm overflow-hidden py-2 sm:py-4">
               <span className="text-3xl sm:text-4xl md:text-5xl lg:text-[4rem] font-black text-[#E88E73] transform scale-x-[1.5] sm:scale-x-[2] inline-block tracking-tight" style={{ fontFamily: "'Orbitron', sans-serif" }}>
                 2026
@@ -364,7 +364,7 @@ const HeroSection = () => {
           <RevealText delay={0.5}>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6 mt-4 px-6 sm:px-4 w-full max-w-md sm:max-w-none mx-auto">
               <a href="https://forms.gle/aWXrC9w6FwURfLDJ9" target="_blank" rel="noopener noreferrer" className="skeu-btn-primary px-6 sm:px-8 py-3 sm:py-4 rounded-full font-bold flex items-center gap-2 text-base sm:text-lg w-full sm:w-auto justify-center">
-                Register Now <ArrowRight size={18} />
+                Registration Closed <ArrowRight size={18} />
               </a>
               <a href="#about" className="skeu-btn-secondary px-6 sm:px-8 py-3 sm:py-4 rounded-full font-bold flex items-center gap-2 text-base sm:text-lg w-full sm:w-auto justify-center">
                 <Info size={18} /> Learn More
@@ -373,8 +373,8 @@ const HeroSection = () => {
           </RevealText>
 
           {/* Sponsors moved to hero */}
-          
-          
+
+
         </motion.div>
       </div>
     </section>
@@ -390,7 +390,7 @@ const StudentOrganizersSection = () => {
     { name: 'Divyanshu Sachan', role: 'Logistics Head', subtitle: 'B.Tech CSE, 3rd Year', img: '/sachan.jpeg', website: '#', linkedin: 'https://www.linkedin.com/in/divyanshu-sachan-a32a5132b', instagram: 'https://www.instagram.com/mr.khurana54' },
     { name: 'Aditya Maurya', role: 'Community Lead', subtitle: 'B.Tech CS AIML, 3rd Year', img: '/aditya.jpeg', website: '#', linkedin: 'https://www.linkedin.com/in/adiincode?utm_source=share_via&utm_content=profile&utm_medium=member_ios', instagram: 'https://www.instagram.com/0001_adi_?igsh=ODZkd2NvODZpY3hj&utm_source=qr' },
   ];
-   
+
 
   // Hacklance / Student leadership team
   const hacklanceTeam = [
@@ -404,15 +404,15 @@ const StudentOrganizersSection = () => {
     { role: 'Core Member', name: 'Amartya Kushwaha', website: '#', linkedin: 'https://www.linkedin.com/in/amartya-kushwaha-70204832b?utm_source=share_via&utm_content=profile&utm_medium=member_android', instagram: '#', img: 'amartya.jpeg' },
     { role: 'Core Member', name: 'Ayushman Paswan', website: '#', linkedin: 'https://tinywebs.site/IQPyiK', instagram: '#', img: 'ayushman.jpeg' },
     { role: 'Core Member', name: 'Nilesh Rajbhar', website: '#', linkedin: 'https://www.linkedin.com/in/nilesh-rajbhar-483371274/', instagram: '#', img: 'nilesh.jpeg' },
-    
 
-    
-    
+
+
+
   ];
 
   const coordinators = [
-    { name: 'Mr. Anurag Pandey', role: '', subtitle: 'EVENT COORDINATOR ,GIT RRGI INNOVATHON', img: '/hodtnp.jpeg', linkedin: '#' },
-     { name: 'Mr. Sujeet Singh', role: '', subtitle: 'EVENT COORDINATOR , RRGI INNOVATHON', img: '/sujeet.jpeg', linkedin: '#' },
+    { name: 'Mr. Anurag Pandey', role: '', subtitle: 'EVENT COORDINATOR , RRGI INNOVATHON', img: '/hodtnp.jpeg', linkedin: '#' },
+    { name: 'Mr. Sujeet Singh', role: '', subtitle: 'EVENT COORDINATOR , RRGI INNOVATHON', img: '/sujeet.jpeg', linkedin: '#' },
     { name: 'Mr. Harendra  Prajapati', role: '', subtitle: 'Faculty Advisor,Hacklance, RRIMT', img: '/harendra.jpeg', linkedin: '#' },
   ];
 
@@ -468,7 +468,7 @@ const StudentOrganizersSection = () => {
   const noPhotoMembers = mergedTeam.filter(m => !m.img || m.img.trim() === '');
 
   // Prefer ordering so Soumya and Abhay appear adjacent to Ashish on medium+ screens
-  const priorityNames = ['Ekansh Saxena', 'Ashish Singh', 'Aditya Maurya', 'Soumya Singh','Divyanshu Sachan' ];
+  const priorityNames = ['Ekansh Saxena', 'Ashish Singh', 'Aditya Maurya', 'Soumya Singh', 'Divyanshu Sachan'];
   const orderedPhotoMembers = [
     ...priorityNames.map(n => photoMembers.find(m => m.name === n)).filter(Boolean),
     ...photoMembers.filter(m => !priorityNames.includes(m.name))
@@ -518,7 +518,7 @@ const StudentOrganizersSection = () => {
   };
 
   return (
-    <section className="py-12 sm:py-16 relative" id="students">
+    <section className="py-12 sm:py-16 relative overflow-hidden" id="students">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 space-y-14">
 
         {/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -644,8 +644,8 @@ const StudentOrganizersSection = () => {
                         className={`group rounded-xl p-4 ${layoutClass} gap-4 shadow-sm ${tc.outerBorder} bg-gradient-to-br ${tc.gradient}`}
                         style={{ minHeight: 110 }}
                       >
-                        <div className={`w-16 h-16 md:w-20 md:h-20 rounded-lg overflow-hidden flex items-center justify-center ${tc.avatar} flex-shrink-0`}> 
-                          {org.img ? <img src={org.img} alt={org.name} className="w-full h-full object-cover" /> : <span className="text-lg font-black text-gray-400">{(org.name||'').split(' ').map(n=>n[0]).slice(0,2).join('')}</span>}
+                        <div className={`w-16 h-16 md:w-20 md:h-20 rounded-lg overflow-hidden flex items-center justify-center ${tc.avatar} flex-shrink-0`}>
+                          {org.img ? <img src={org.img} alt={org.name} className="w-full h-full object-cover" /> : <span className="text-lg font-black text-gray-400">{(org.name || '').split(' ').map(n => n[0]).slice(0, 2).join('')}</span>}
                         </div>
 
                         <div className="flex-1 min-w-0">
@@ -678,7 +678,7 @@ const StudentOrganizersSection = () => {
                       className="flex items-center gap-2 px-4 py-2.5 rounded-full bg-white border border-gray-200 text-slate-900 font-semibold shadow-md hover:shadow-lg transition-all duration-200"
                     >
                       <span className="text-sm">
-                        {showAllMobile ? 'Show less' : `Show ${Math.max(0, organizers.slice(0,6).length - 2)} more`}
+                        {showAllMobile ? 'Show less' : `Show ${Math.max(0, organizers.slice(0, 6).length - 2)} more`}
                       </span>
                       <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${showAllMobile ? 'rotate-180' : ''}`} />
                     </button>
@@ -710,8 +710,8 @@ const StudentOrganizersSection = () => {
                         const hc = rowColors[i % rowColors.length];
                         return (
                           <div key={`${m.name}-${i}`} className={`snap-start w-full rounded-xl p-4 flex items-center gap-4 h-24 shadow-sm ${hc.outerBorder} bg-gradient-to-br ${hc.gradient}`}>
-                            <div className={`w-16 h-16 rounded-lg overflow-hidden flex items-center justify-center ${hc.avatar} flex-shrink-0`}> 
-                              {m.img ? <img src={m.img} alt={m.name} className="w-full h-full object-cover" /> : <span className="text-lg font-black text-gray-400">{(m.name||'').split(' ').map(n=>n[0]).slice(0,2).join('')}</span>}
+                            <div className={`w-16 h-16 rounded-lg overflow-hidden flex items-center justify-center ${hc.avatar} flex-shrink-0`}>
+                              {m.img ? <img src={m.img} alt={m.name} className="w-full h-full object-cover" /> : <span className="text-lg font-black text-gray-400">{(m.name || '').split(' ').map(n => n[0]).slice(0, 2).join('')}</span>}
                             </div>
 
                             <div className="flex-1 min-w-0">
@@ -805,7 +805,7 @@ const AboutSection = () => {
   ];
 
   return (
-    <section className="py-16 sm:py-24 relative" id="about">
+    <section className="py-16 sm:py-24 relative overflow-hidden" id="about">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="text-center mb-16 relative">
           <RevealText>
@@ -817,8 +817,8 @@ const AboutSection = () => {
             </div>
             <h2 className="text-3xl sm:text-4xl md:text-6xl font-black mb-4 sm:mb-6 tracking-tight text-slate-800">About <span className="text-blue-600">RRGI Innovathon</span></h2>
             <div className="flex items-center justify-center gap-3 mt-3 flex-wrap">
-              
-              
+
+
             </div>
           </RevealText>
           <RevealText delay={0.1}>
@@ -835,7 +835,7 @@ const AboutSection = () => {
             </p>
           </RevealText>
 
-   
+
 
         </div>
 
@@ -1324,7 +1324,7 @@ const PrizeSection = () => {
   ];
 
   return (
-    <section className="py-16 sm:py-24 relative" id="prizes">
+    <section className="py-16 sm:py-24 relative overflow-hidden" id="prizes">
       <FloatingShape color="bg-pastelYellow" size="w-64 h-64" top="20%" right="10%" duration={18} />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
@@ -1591,17 +1591,17 @@ const ConstellationCanvas = ({ colors = ['#60a5fa', '#a78bfa', '#f472b6', '#34d3
   }, []);
 
   return (
-    <motion.canvas 
-      ref={canvasRef} 
+    <motion.canvas
+      ref={canvasRef}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 2.5, ease: "easeOut" }}
-      className="absolute inset-0 w-full h-full z-0 pointer-events-none mix-blend-multiply" 
-      style={{ 
+      className="absolute inset-0 w-full h-full z-0 pointer-events-none mix-blend-multiply"
+      style={{
         filter: 'contrast(1.1) saturate(1.2)',
         WebkitMaskImage: 'radial-gradient(ellipse at center, black 15%, transparent 80%)',
         maskImage: 'radial-gradient(ellipse at center, black 15%, transparent 80%)'
-      }} 
+      }}
     />
   );
 };
@@ -1717,7 +1717,7 @@ const ProblemStatementSection = () => {
       {/* Background floaters for the section */}
       <FloatingShape color="bg-pastelBlue" size="w-[400px] h-[400px]" top="-5%" right="-5%" duration={25} blur="blur-3xl" />
       <FloatingShape color="bg-pastelPink" size="w-96 h-96" top="50%" left="-10%" duration={20} delay={2} blur="blur-3xl" />
-      
+
       <div className="max-w-4xl mx-auto px-4 sm:px-6 relative z-10">
         <RevealText>
           <div className="bg-white/40 backdrop-blur-2xl relative overflow-hidden rounded-[2rem] border border-white/60 p-6 sm:p-10 shadow-lg">
@@ -1725,7 +1725,7 @@ const ProblemStatementSection = () => {
             <div className="absolute top-0 left-0 w-full h-2.5 bg-gradient-to-r from-blue-500 to-blue-300 opacity-90 z-20"></div>
             {/* Subtle top right dot */}
             <div className="absolute top-5 right-5 w-2.5 h-2.5 rounded-full bg-gradient-to-r from-blue-500 to-blue-300 z-20"></div>
-            
+
             {/* Floaters strictly inside the block */}
             <FloatingShape color="bg-pastelPink" size="w-64 h-64" top="-20%" right="-10%" duration={15} blur="blur-2xl" />
             <FloatingShape color="bg-pastelBlue" size="w-80 h-80" top="50%" left="-20%" duration={18} delay={1} blur="blur-2xl" />
@@ -1741,16 +1741,14 @@ const ProblemStatementSection = () => {
 
               <button
                 onClick={() => setIsOn((prev) => !prev)}
-                className={`relative w-20 h-11 rounded-full transition-all duration-500 border ${
-                  isOn ? 'bg-slate-900 border-slate-900 shadow-[0_8px_26px_rgba(15,23,42,0.35)]' : 'bg-white border-slate-200'
-                }`}
+                className={`relative w-20 h-11 rounded-full transition-all duration-500 border ${isOn ? 'bg-slate-900 border-slate-900 shadow-[0_8px_26px_rgba(15,23,42,0.35)]' : 'bg-white border-slate-200'
+                  }`}
                 aria-label="Toggle problem statement reveal"
                 aria-pressed={isOn}
               >
                 <span
-                  className={`absolute top-1.5 left-1.5 h-8 w-8 rounded-full transition-all duration-500 flex items-center justify-center ${
-                    isOn ? 'translate-x-9 bg-emerald-400' : 'translate-x-0 bg-slate-200'
-                  }`}
+                  className={`absolute top-1.5 left-1.5 h-8 w-8 rounded-full transition-all duration-500 flex items-center justify-center ${isOn ? 'translate-x-9 bg-emerald-400' : 'translate-x-0 bg-slate-200'
+                    }`}
                 >
                   {isOn ? <Play size={14} className="text-slate-900 ml-0.5" /> : <Pause size={14} className="text-slate-500" />}
                 </span>
@@ -1759,298 +1757,298 @@ const ProblemStatementSection = () => {
             {/* Sleek Gradient Border Wrapper */}
             <div className="relative mx-auto w-full p-[3px] rounded-[2.5rem] bg-gradient-to-br from-blue-400 via-purple-400 to-emerald-400 shadow-[0_30px_60px_-15px_rgba(15,23,42,0.25)] ring-1 ring-slate-900/5 transition-all duration-700">
               <div className="relative min-h-[480px] rounded-[2.35rem] bg-white/60 backdrop-blur-3xl overflow-hidden shadow-[inset_0_0_100px_rgba(255,255,255,0.8)] border border-white/50">
-              {/* Ethereal animated glowing orbs in the background */}
-              <motion.div 
-                className="absolute -top-32 -right-32 w-[30rem] h-[30rem] bg-blue-100/10 rounded-full blur-[80px] pointer-events-none"
-                animate={{ scale: [1, 1.1, 1], opacity: [0.15, 0.3, 0.15] }}
-                transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
-              />
-              <motion.div 
-                className="absolute -bottom-32 -left-32 w-[30rem] h-[30rem] bg-violet-200/10 rounded-full blur-[80px] pointer-events-none"
-                animate={{ scale: [1.1, 1, 1.1], opacity: [0.15, 0.3, 0.15] }}
-                transition={{ duration: 9, repeat: Infinity, ease: "easeInOut" }}
-              />
-              
-              {/* Animated Panning Grid Pattern (More Visible) */}
-              <motion.div 
-                className="absolute inset-0 z-0 opacity-70 mix-blend-multiply pointer-events-none" 
-                style={{ 
-                  backgroundImage: 'linear-gradient(to right, rgba(59, 130, 246, 0.6) 1px, transparent 1px), linear-gradient(to bottom, rgba(59, 130, 246, 0.6) 1px, transparent 1px)',
-                  backgroundSize: '40px 40px',
-                  WebkitMaskImage: 'radial-gradient(ellipse at center, black 15%, transparent 85%)', 
-                  maskImage: 'radial-gradient(ellipse at center, black 15%, transparent 85%)' 
-                }}
-                animate={{ backgroundPosition: ['0px 0px', '40px 40px'] }}
-                transition={{ duration: 4, repeat: Infinity, ease: 'linear' }}
-              />
+                {/* Ethereal animated glowing orbs in the background */}
+                <motion.div
+                  className="absolute -top-32 -right-32 w-[30rem] h-[30rem] bg-blue-100/10 rounded-full blur-[80px] pointer-events-none"
+                  animate={{ scale: [1, 1.1, 1], opacity: [0.15, 0.3, 0.15] }}
+                  transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
+                />
+                <motion.div
+                  className="absolute -bottom-32 -left-32 w-[30rem] h-[30rem] bg-violet-200/10 rounded-full blur-[80px] pointer-events-none"
+                  animate={{ scale: [1.1, 1, 1.1], opacity: [0.15, 0.3, 0.15] }}
+                  transition={{ duration: 9, repeat: Infinity, ease: "easeInOut" }}
+                />
 
-              {/* Constellation Network isolated gently to the vertical borders */}
-              <div 
-                className="absolute inset-0 z-0 pointer-events-none"
-                style={{
-                  WebkitMaskImage: 'linear-gradient(to right, black 0%, transparent 15%, transparent 85%, black 100%)',
-                  maskImage: 'linear-gradient(to right, black 0%, transparent 15%, transparent 85%, black 100%)'
-                }}
-              >
-                <ConstellationCanvas colors={['#60a5fa', '#a855f7', '#ec4899', '#38bdf8', '#c084fc']} />
-              </div>
-              {phase !== 'idle' && (
-                <div className="absolute inset-0 z-[1] pointer-events-none">
-                  {[...Array(8)].map((_, idx) => (
-                    <motion.span
-                      key={`spark-${idx}`}
-                      className="absolute w-1.5 h-1.5 rounded-full bg-white/70"
-                      style={{ left: `${12 + idx * 11}%`, top: `${20 + (idx % 3) * 22}%` }}
-                      animate={{ y: [0, -14, 0], opacity: [0.15, 0.85, 0.15], scale: [0.7, 1.15, 0.7] }}
-                      transition={{ duration: 2.8 + idx * 0.2, repeat: Infinity, ease: "easeInOut", delay: idx * 0.12 }}
-                    />
-                  ))}
+                {/* Animated Panning Grid Pattern (More Visible) */}
+                <motion.div
+                  className="absolute inset-0 z-0 opacity-70 mix-blend-multiply pointer-events-none"
+                  style={{
+                    backgroundImage: 'linear-gradient(to right, rgba(59, 130, 246, 0.6) 1px, transparent 1px), linear-gradient(to bottom, rgba(59, 130, 246, 0.6) 1px, transparent 1px)',
+                    backgroundSize: '40px 40px',
+                    WebkitMaskImage: 'radial-gradient(ellipse at center, black 15%, transparent 85%)',
+                    maskImage: 'radial-gradient(ellipse at center, black 15%, transparent 85%)'
+                  }}
+                  animate={{ backgroundPosition: ['0px 0px', '40px 40px'] }}
+                  transition={{ duration: 4, repeat: Infinity, ease: 'linear' }}
+                />
+
+                {/* Constellation Network isolated gently to the vertical borders */}
+                <div
+                  className="absolute inset-0 z-0 pointer-events-none"
+                  style={{
+                    WebkitMaskImage: 'linear-gradient(to right, black 0%, transparent 15%, transparent 85%, black 100%)',
+                    maskImage: 'linear-gradient(to right, black 0%, transparent 15%, transparent 85%, black 100%)'
+                  }}
+                >
+                  <ConstellationCanvas colors={['#60a5fa', '#a855f7', '#ec4899', '#38bdf8', '#c084fc']} />
                 </div>
-              )}
-
-              {/* Premium Mac-Style Glass Window Header */}
-              <div className="absolute top-0 left-0 right-0 h-12 bg-white/75 backdrop-blur-xl border-b border-white z-30 flex items-center px-4 sm:px-6 shadow-[0_4px_20px_rgba(15,23,42,0.03)]">
-                <div className="flex gap-2">
-                  <div className="w-3 h-3 sm:w-3.5 sm:h-3.5 rounded-full bg-[#ff5f56] border border-[#e0443e] shadow-inner" />
-                  <div className="w-3 h-3 sm:w-3.5 sm:h-3.5 rounded-full bg-[#ffbd2e] border border-[#dea123] shadow-inner" />
-                  <div className="w-3 h-3 sm:w-3.5 sm:h-3.5 rounded-full bg-[#27c93f] border border-[#1aab29] shadow-inner" />
-                </div>
-                <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
-                  <span className="text-[10px] sm:text-[11px] uppercase tracking-[0.3em] font-black text-slate-500">RRGI INNOVATHON</span>
-                  <span className="text-[7px] sm:text-[8px] font-bold tracking-widest text-slate-400">READY TO INNOVATE</span>
-                </div>
-              </div>
-
-              <motion.div
-                className="absolute inset-y-0 left-0 w-1/2 z-20"
-                animate={{
-                  x: curtainState === 'closed' ? '0%' : curtainState === 'opening' ? '-72%' : '-108%',
-                  skewY: curtainState === 'open' ? [-2.8, -1.6, -2.2, -2] : 0
-                }}
-                transition={
-                  curtainState === 'open'
-                    ? {
-                        x: { type: 'spring', stiffness: 82, damping: 12, mass: 0.9 },
-                        skewY: { duration: 1.1, ease: [0.22, 1, 0.36, 1] }
-                      }
-                    : { duration: curtainState === 'opening' ? 1.5 : 0.8, ease: [0.22, 1, 0.36, 1] }
-                }
-              >
-                <div className="h-full w-full bg-gradient-to-r from-slate-950 via-slate-900 to-slate-800 shadow-[inset_-16px_0_22px_rgba(255,255,255,0.08),inset_-30px_0_30px_rgba(15,23,42,0.6)]" />
-                <div className="absolute inset-y-0 right-6 w-[2px] bg-white/10" />
-                <div className="absolute inset-y-0 right-0 w-8 bg-gradient-to-r from-transparent to-black/35" />
-              </motion.div>
-
-              <motion.div
-                className="absolute inset-y-0 right-0 w-1/2 z-20"
-                animate={{
-                  x: curtainState === 'closed' ? '0%' : curtainState === 'opening' ? '72%' : '108%',
-                  skewY: curtainState === 'open' ? [2.8, 1.6, 2.2, 2] : 0
-                }}
-                transition={
-                  curtainState === 'open'
-                    ? {
-                        x: { type: 'spring', stiffness: 82, damping: 12, mass: 0.9 },
-                        skewY: { duration: 1.1, ease: [0.22, 1, 0.36, 1] }
-                      }
-                    : { duration: curtainState === 'opening' ? 1.5 : 0.8, ease: [0.22, 1, 0.36, 1] }
-                }
-              >
-                <div className="h-full w-full bg-gradient-to-l from-slate-950 via-slate-900 to-slate-800 shadow-[inset_16px_0_22px_rgba(255,255,255,0.08),inset_30px_0_30px_rgba(15,23,42,0.6)]" />
-                <div className="absolute inset-y-0 left-6 w-[2px] bg-white/10" />
-                <div className="absolute inset-y-0 left-0 w-8 bg-gradient-to-l from-transparent to-black/35" />
-              </motion.div>
-
-              <motion.div
-                className="absolute inset-y-0 left-1/2 w-px bg-white/40 z-20"
-                animate={{ opacity: curtainState === 'closed' ? 0.7 : curtainState === 'opening' ? 0.25 : 0 }}
-                transition={{ duration: 0.6 }}
-              />
-
-              <motion.div
-                className="absolute inset-0 z-10 pointer-events-none flex items-center justify-center"
-                animate={
-                  curtainState === 'open'
-                    ? { opacity: [0, 0.28, 0], scale: [0.86, 1.05, 1.18] }
-                    : { opacity: 0, scale: 0.86 }
-                }
-                transition={{ duration: 0.95, ease: [0.22, 1, 0.36, 1] }}
-              >
-                <div className="w-44 h-44 sm:w-64 sm:h-64 rounded-full bg-gradient-to-r from-blue-300/25 via-white/35 to-indigo-300/25 blur-2xl" />
-              </motion.div>
-
-              {/* Adjusted padding top to clear the new glass header */}
-              <div className="absolute inset-0 flex items-center justify-center p-5 sm:p-8 pt-16 sm:pt-20">
-                {(phase === 'idle' || phase === 'curtain') && (
-                  <div className="text-center">
-                    <p className="text-xs uppercase tracking-[0.3em] text-slate-400 font-bold mb-3">Ready</p>
-                    <h2 className="text-2xl sm:text-4xl text-slate-800 font-display font-black tracking-tight drop-shadow-sm" style={{ fontFamily: "'Syne', sans-serif" }}>INNOVATHON</h2>
-                    <h2><span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">ORGANIZED BY RRGI</span></h2>
-                  </div>
-                )}
-
-                {phase === 'loading' && (
-                  <div className="text-center w-full">
-                    <div className="mx-auto mb-5 flex items-center justify-center w-20 h-20 relative">
-                      <AnimatePresence mode="wait">
-                        <motion.div
-                          key={`hero-icon-${activeStageIndex}`}
-                          initial={{ opacity: 0, scale: 0.78, y: 10 }}
-                          animate={{
-                            opacity: [1, 0.8, 1],
-                            scale: [1, 1.14, 1],
-                            y: [0, -4, 0],
-                            filter: [
-                              'drop-shadow(0 0 0 rgba(59,130,246,0))',
-                              'drop-shadow(0 0 20px rgba(59,130,246,0.55))',
-                              'drop-shadow(0 0 0 rgba(59,130,246,0))'
-                            ]
-                          }}
-                          exit={{ opacity: 0, scale: 0.72, y: -8 }}
-                          transition={{ duration: 1, ease: "easeInOut" }}
-                          className="relative flex items-center justify-center w-20 h-20"
-                        >
-                          <span className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-300/20 via-white/45 to-indigo-300/20 blur-2xl" />
-                          {React.createElement(activeIconTheme.Icon, {
-                            size: 52,
-                            strokeWidth: 2.3,
-                            className: activeIconTheme.tone
-                          })}
-                        </motion.div>
-                      </AnimatePresence>
-                    </div>
-                    <motion.p
-                      className="text-sm sm:text-base font-display font-black tracking-tight mb-2"
-                      animate={{ opacity: [0.4, 1, 0.4], letterSpacing: ['0.22em', '0.27em', '0.22em'] }}
-                      transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
-                    >
-                      <span className="text-red-600 drop-shadow-sm">RRGI</span>{' '}
-                      <span className="text-slate-800 drop-shadow-sm">INNOVATHON</span>
-                    </motion.p>
-                    <AnimatePresence mode="wait">
-                      <motion.p
-                        key={messageIndex}
-                        initial={{ opacity: 0, y: 8 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -8 }}
-                        transition={{ duration: 0.25 }}
-                        className="text-lg sm:text-2xl font-display font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-slate-700 via-blue-700 to-indigo-700"
-                      >
-                        {problemLoadingMessages[messageIndex]}
-                      </motion.p>
-                    </AnimatePresence>
-
-                    <div className="mx-auto mt-4 h-1.5 w-52 sm:w-64 rounded-full bg-slate-200/60 overflow-hidden shadow-inner">
-                      <motion.div
-                        className="h-full rounded-full bg-gradient-to-r from-slate-900 via-slate-800 to-black shadow-lg"
-                        animate={{ width: `${loadingProgress}%` }}
-                        transition={{ duration: 0.22, ease: [0.22, 1, 0.36, 1] }}
-                      />
-                    </div>
-                    <p className="mt-1 text-[10px] uppercase tracking-[0.24em] text-slate-900 font-bold">{loadingProgress}% synced</p>
-
-                    <div className="mt-4 flex items-center justify-center">
-                      <AnimatePresence mode="wait">
-                        <motion.div
-                          key={`tag-${activeStageIndex}`}
-                          initial={{ opacity: 0, y: 8, scale: 0.96 }}
-                          animate={{
-                            opacity: [1, 0.35, 1],
-                            y: [0, -3, 0],
-                            scale: [1, 1.04, 1]
-                          }}
-                          exit={{ opacity: 0, y: -8, scale: 0.95 }}
-                          transition={{ duration: 0.9, ease: "easeInOut" }}
-                          className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-slate-200 bg-white/90 text-xs sm:text-sm font-semibold shadow-sm"
-                        >
-                          {React.createElement(activeTag.Icon, { size: 14, className: activeIconTheme.tone })}
-                          <span className={activeIconTheme.tone}>{activeTag.label}</span>
-                        </motion.div>
-                      </AnimatePresence>
-                    </div>
-                  </div>
-                )}
-
-                {phase === 'countdown' && (
-                  <motion.div
-                    key={countdown}
-                    initial={{ scale: 0.75, opacity: 0 }}
-                    animate={{ scale: 1, opacity: 1 }}
-                    exit={{ scale: 1.2, opacity: 0 }}
-                    className="text-center"
-                  >
-                    <p className="text-xs uppercase tracking-[0.25em] text-slate-400 font-bold mb-4">Launching In</p>
-                    <div className="relative w-32 h-32 sm:w-40 sm:h-40 mx-auto flex items-center justify-center">
-                      <p className="text-7xl sm:text-8xl font-black tracking-tighter text-transparent bg-clip-text bg-gradient-to-br from-slate-900 to-slate-600 drop-shadow-xl" style={{ fontFamily: "'Syne', sans-serif" }}>{countdown}</p>
-                    </div>
-                  </motion.div>
-                )}
-
-                {phase === 'qr' && (
-                  <motion.div
-                    initial={{ opacity: 0, scale: 0.9, y: 10 }}
-                    animate={{ opacity: 1, scale: 1, y: 0 }}
-                    transition={{ duration: 0.35 }}
-                    className="text-center relative"
-                  >
-                    <div className="absolute top-1/2 left-1/2 flex items-center justify-center -translate-x-1/2 -translate-y-1/2 z-0 pointer-events-none">
-                      {/* Engaging Ultra-Smooth Burst */}
-                      {[...Array(80)].map((_, i) => {
-                        const isDot = i % 3 === 0;
-                        const angle = (i * 4.5) + (Math.random() * 20 - 10);
-                        const distance = isDot ? 200 + Math.random() * 300 : 250 + Math.random() * 400;
-                        const colors = ['bg-rose-500', 'bg-blue-500', 'bg-emerald-500', 'bg-amber-400', 'bg-violet-500', 'bg-pink-500', 'bg-cyan-400'];
-                        const color = colors[i % colors.length];
-                        const delay = Math.random() * 0.3;
-                        const duration = isDot ? 2.5 + Math.random() * 1.5 : 2.0 + Math.random() * 1.5;
-                        
-                        return (
-                          <motion.div
-                            key={`burst-container-${i}`}
-                            className="absolute flex items-center justify-center"
-                            style={{ rotate: angle }}
-                          >
-                            <motion.div
-                              className={`rounded-full drop-shadow-md ${color}`}
-                              style={{ 
-                                width: isDot ? `${8 + Math.random() * 6}px` : `${4 + Math.random() * 3}px`,
-                                height: isDot ? `${8 + Math.random() * 6}px` : `${40 + Math.random() * 60}px` 
-                              }}
-                              initial={{ opacity: 1, y: 0, scale: 0 }}
-                              animate={{
-                                opacity: isDot ? [0, 1, 0] : [1, 1, 0],
-                                y: [-distance * 0.1, -distance],
-                                scale: isDot ? [0, 1.5, 0] : [0.2, 1.8, 0]
-                              }}
-                              transition={{ 
-                                duration: duration, 
-                                ease: [0.25, 1, 0.35, 1],
-                                delay: delay
-                              }}
-                            />
-                          </motion.div>
-                        );
-                      })}
-                    </div>
-                    <div className="relative z-10 mx-auto mb-4 inline-flex items-center gap-2 px-3 py-1 rounded-full border border-slate-200 bg-white text-xs font-bold uppercase tracking-wider text-slate-500 shadow-sm">
-                      <QrCode size={14} /> Scan Now
-                    </div>
-                    <div className="relative z-10 w-44 h-44 sm:w-56 sm:h-56 mx-auto rounded-[1.5rem] border border-slate-200/80 bg-white p-3 shadow-[0_20px_50px_-12px_rgba(15,23,42,0.15)] ring-4 ring-white/60 overflow-hidden">
-                      <img
-                        src="/qr.png"
-                        alt="Problem statement QR code"
-                        className="w-full h-full rounded-xl object-cover"
-                      />
+                {phase !== 'idle' && (
+                  <div className="absolute inset-0 z-[1] pointer-events-none">
+                    {[...Array(8)].map((_, idx) => (
                       <motion.span
-                        className="absolute inset-x-2 h-6 bg-gradient-to-b from-blue-300/30 via-white/55 to-transparent blur-sm"
-                        animate={{ y: ['-15%', '105%'] }}
-                        transition={{ duration: 2.1, repeat: Infinity, ease: "easeInOut" }}
+                        key={`spark-${idx}`}
+                        className="absolute w-1.5 h-1.5 rounded-full bg-white/70"
+                        style={{ left: `${12 + idx * 11}%`, top: `${20 + (idx % 3) * 22}%` }}
+                        animate={{ y: [0, -14, 0], opacity: [0.15, 0.85, 0.15], scale: [0.7, 1.15, 0.7] }}
+                        transition={{ duration: 2.8 + idx * 0.2, repeat: Infinity, ease: "easeInOut", delay: idx * 0.12 }}
                       />
-                    </div>
-                    <p className="relative z-10 mt-4 text-sm text-slate-500 font-medium">Scan to access the problem statement IDs portal.</p>
-                  </motion.div>
+                    ))}
+                  </div>
                 )}
-              </div>
+
+                {/* Premium Mac-Style Glass Window Header */}
+                <div className="absolute top-0 left-0 right-0 h-12 bg-white/75 backdrop-blur-xl border-b border-white z-30 flex items-center px-4 sm:px-6 shadow-[0_4px_20px_rgba(15,23,42,0.03)]">
+                  <div className="flex gap-2">
+                    <div className="w-3 h-3 sm:w-3.5 sm:h-3.5 rounded-full bg-[#ff5f56] border border-[#e0443e] shadow-inner" />
+                    <div className="w-3 h-3 sm:w-3.5 sm:h-3.5 rounded-full bg-[#ffbd2e] border border-[#dea123] shadow-inner" />
+                    <div className="w-3 h-3 sm:w-3.5 sm:h-3.5 rounded-full bg-[#27c93f] border border-[#1aab29] shadow-inner" />
+                  </div>
+                  <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
+                    <span className="text-[10px] sm:text-[11px] uppercase tracking-[0.3em] font-black text-slate-500">RRGI INNOVATHON</span>
+                    <span className="text-[7px] sm:text-[8px] font-bold tracking-widest text-slate-400">READY TO INNOVATE</span>
+                  </div>
+                </div>
+
+                <motion.div
+                  className="absolute inset-y-0 left-0 w-1/2 z-20"
+                  animate={{
+                    x: curtainState === 'closed' ? '0%' : curtainState === 'opening' ? '-72%' : '-108%',
+                    skewY: curtainState === 'open' ? [-2.8, -1.6, -2.2, -2] : 0
+                  }}
+                  transition={
+                    curtainState === 'open'
+                      ? {
+                        x: { type: 'spring', stiffness: 82, damping: 12, mass: 0.9 },
+                        skewY: { duration: 1.1, ease: [0.22, 1, 0.36, 1] }
+                      }
+                      : { duration: curtainState === 'opening' ? 1.5 : 0.8, ease: [0.22, 1, 0.36, 1] }
+                  }
+                >
+                  <div className="h-full w-full bg-gradient-to-r from-slate-950 via-slate-900 to-slate-800 shadow-[inset_-16px_0_22px_rgba(255,255,255,0.08),inset_-30px_0_30px_rgba(15,23,42,0.6)]" />
+                  <div className="absolute inset-y-0 right-6 w-[2px] bg-white/10" />
+                  <div className="absolute inset-y-0 right-0 w-8 bg-gradient-to-r from-transparent to-black/35" />
+                </motion.div>
+
+                <motion.div
+                  className="absolute inset-y-0 right-0 w-1/2 z-20"
+                  animate={{
+                    x: curtainState === 'closed' ? '0%' : curtainState === 'opening' ? '72%' : '108%',
+                    skewY: curtainState === 'open' ? [2.8, 1.6, 2.2, 2] : 0
+                  }}
+                  transition={
+                    curtainState === 'open'
+                      ? {
+                        x: { type: 'spring', stiffness: 82, damping: 12, mass: 0.9 },
+                        skewY: { duration: 1.1, ease: [0.22, 1, 0.36, 1] }
+                      }
+                      : { duration: curtainState === 'opening' ? 1.5 : 0.8, ease: [0.22, 1, 0.36, 1] }
+                  }
+                >
+                  <div className="h-full w-full bg-gradient-to-l from-slate-950 via-slate-900 to-slate-800 shadow-[inset_16px_0_22px_rgba(255,255,255,0.08),inset_30px_0_30px_rgba(15,23,42,0.6)]" />
+                  <div className="absolute inset-y-0 left-6 w-[2px] bg-white/10" />
+                  <div className="absolute inset-y-0 left-0 w-8 bg-gradient-to-l from-transparent to-black/35" />
+                </motion.div>
+
+                <motion.div
+                  className="absolute inset-y-0 left-1/2 w-px bg-white/40 z-20"
+                  animate={{ opacity: curtainState === 'closed' ? 0.7 : curtainState === 'opening' ? 0.25 : 0 }}
+                  transition={{ duration: 0.6 }}
+                />
+
+                <motion.div
+                  className="absolute inset-0 z-10 pointer-events-none flex items-center justify-center"
+                  animate={
+                    curtainState === 'open'
+                      ? { opacity: [0, 0.28, 0], scale: [0.86, 1.05, 1.18] }
+                      : { opacity: 0, scale: 0.86 }
+                  }
+                  transition={{ duration: 0.95, ease: [0.22, 1, 0.36, 1] }}
+                >
+                  <div className="w-44 h-44 sm:w-64 sm:h-64 rounded-full bg-gradient-to-r from-blue-300/25 via-white/35 to-indigo-300/25 blur-2xl" />
+                </motion.div>
+
+                {/* Adjusted padding top to clear the new glass header */}
+                <div className="absolute inset-0 flex items-center justify-center p-5 sm:p-8 pt-16 sm:pt-20">
+                  {(phase === 'idle' || phase === 'curtain') && (
+                    <div className="text-center">
+                      <p className="text-xs uppercase tracking-[0.3em] text-slate-400 font-bold mb-3">Ready</p>
+                      <h2 className="text-2xl sm:text-4xl text-slate-800 font-display font-black tracking-tight drop-shadow-sm" style={{ fontFamily: "'Syne', sans-serif" }}>INNOVATHON</h2>
+                      <h2><span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">ORGANIZED BY RRGI</span></h2>
+                    </div>
+                  )}
+
+                  {phase === 'loading' && (
+                    <div className="text-center w-full">
+                      <div className="mx-auto mb-5 flex items-center justify-center w-20 h-20 relative">
+                        <AnimatePresence mode="wait">
+                          <motion.div
+                            key={`hero-icon-${activeStageIndex}`}
+                            initial={{ opacity: 0, scale: 0.78, y: 10 }}
+                            animate={{
+                              opacity: [1, 0.8, 1],
+                              scale: [1, 1.14, 1],
+                              y: [0, -4, 0],
+                              filter: [
+                                'drop-shadow(0 0 0 rgba(59,130,246,0))',
+                                'drop-shadow(0 0 20px rgba(59,130,246,0.55))',
+                                'drop-shadow(0 0 0 rgba(59,130,246,0))'
+                              ]
+                            }}
+                            exit={{ opacity: 0, scale: 0.72, y: -8 }}
+                            transition={{ duration: 1, ease: "easeInOut" }}
+                            className="relative flex items-center justify-center w-20 h-20"
+                          >
+                            <span className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-300/20 via-white/45 to-indigo-300/20 blur-2xl" />
+                            {React.createElement(activeIconTheme.Icon, {
+                              size: 52,
+                              strokeWidth: 2.3,
+                              className: activeIconTheme.tone
+                            })}
+                          </motion.div>
+                        </AnimatePresence>
+                      </div>
+                      <motion.p
+                        className="text-sm sm:text-base font-display font-black tracking-tight mb-2"
+                        animate={{ opacity: [0.4, 1, 0.4], letterSpacing: ['0.22em', '0.27em', '0.22em'] }}
+                        transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
+                      >
+                        <span className="text-red-600 drop-shadow-sm">RRGI</span>{' '}
+                        <span className="text-slate-800 drop-shadow-sm">INNOVATHON</span>
+                      </motion.p>
+                      <AnimatePresence mode="wait">
+                        <motion.p
+                          key={messageIndex}
+                          initial={{ opacity: 0, y: 8 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          exit={{ opacity: 0, y: -8 }}
+                          transition={{ duration: 0.25 }}
+                          className="text-lg sm:text-2xl font-display font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-slate-700 via-blue-700 to-indigo-700"
+                        >
+                          {problemLoadingMessages[messageIndex]}
+                        </motion.p>
+                      </AnimatePresence>
+
+                      <div className="mx-auto mt-4 h-1.5 w-52 sm:w-64 rounded-full bg-slate-200/60 overflow-hidden shadow-inner">
+                        <motion.div
+                          className="h-full rounded-full bg-gradient-to-r from-slate-900 via-slate-800 to-black shadow-lg"
+                          animate={{ width: `${loadingProgress}%` }}
+                          transition={{ duration: 0.22, ease: [0.22, 1, 0.36, 1] }}
+                        />
+                      </div>
+                      <p className="mt-1 text-[10px] uppercase tracking-[0.24em] text-slate-900 font-bold">{loadingProgress}% synced</p>
+
+                      <div className="mt-4 flex items-center justify-center">
+                        <AnimatePresence mode="wait">
+                          <motion.div
+                            key={`tag-${activeStageIndex}`}
+                            initial={{ opacity: 0, y: 8, scale: 0.96 }}
+                            animate={{
+                              opacity: [1, 0.35, 1],
+                              y: [0, -3, 0],
+                              scale: [1, 1.04, 1]
+                            }}
+                            exit={{ opacity: 0, y: -8, scale: 0.95 }}
+                            transition={{ duration: 0.9, ease: "easeInOut" }}
+                            className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-slate-200 bg-white/90 text-xs sm:text-sm font-semibold shadow-sm"
+                          >
+                            {React.createElement(activeTag.Icon, { size: 14, className: activeIconTheme.tone })}
+                            <span className={activeIconTheme.tone}>{activeTag.label}</span>
+                          </motion.div>
+                        </AnimatePresence>
+                      </div>
+                    </div>
+                  )}
+
+                  {phase === 'countdown' && (
+                    <motion.div
+                      key={countdown}
+                      initial={{ scale: 0.75, opacity: 0 }}
+                      animate={{ scale: 1, opacity: 1 }}
+                      exit={{ scale: 1.2, opacity: 0 }}
+                      className="text-center"
+                    >
+                      <p className="text-xs uppercase tracking-[0.25em] text-slate-400 font-bold mb-4">Launching In</p>
+                      <div className="relative w-32 h-32 sm:w-40 sm:h-40 mx-auto flex items-center justify-center">
+                        <p className="text-7xl sm:text-8xl font-black tracking-tighter text-transparent bg-clip-text bg-gradient-to-br from-slate-900 to-slate-600 drop-shadow-xl" style={{ fontFamily: "'Syne', sans-serif" }}>{countdown}</p>
+                      </div>
+                    </motion.div>
+                  )}
+
+                  {phase === 'qr' && (
+                    <motion.div
+                      initial={{ opacity: 0, scale: 0.9, y: 10 }}
+                      animate={{ opacity: 1, scale: 1, y: 0 }}
+                      transition={{ duration: 0.35 }}
+                      className="text-center relative"
+                    >
+                      <div className="absolute top-1/2 left-1/2 flex items-center justify-center -translate-x-1/2 -translate-y-1/2 z-0 pointer-events-none">
+                        {/* Engaging Ultra-Smooth Burst */}
+                        {[...Array(80)].map((_, i) => {
+                          const isDot = i % 3 === 0;
+                          const angle = (i * 4.5) + (Math.random() * 20 - 10);
+                          const distance = isDot ? 200 + Math.random() * 300 : 250 + Math.random() * 400;
+                          const colors = ['bg-rose-500', 'bg-blue-500', 'bg-emerald-500', 'bg-amber-400', 'bg-violet-500', 'bg-pink-500', 'bg-cyan-400'];
+                          const color = colors[i % colors.length];
+                          const delay = Math.random() * 0.3;
+                          const duration = isDot ? 2.5 + Math.random() * 1.5 : 2.0 + Math.random() * 1.5;
+
+                          return (
+                            <motion.div
+                              key={`burst-container-${i}`}
+                              className="absolute flex items-center justify-center"
+                              style={{ rotate: angle }}
+                            >
+                              <motion.div
+                                className={`rounded-full drop-shadow-md ${color}`}
+                                style={{
+                                  width: isDot ? `${8 + Math.random() * 6}px` : `${4 + Math.random() * 3}px`,
+                                  height: isDot ? `${8 + Math.random() * 6}px` : `${40 + Math.random() * 60}px`
+                                }}
+                                initial={{ opacity: 1, y: 0, scale: 0 }}
+                                animate={{
+                                  opacity: isDot ? [0, 1, 0] : [1, 1, 0],
+                                  y: [-distance * 0.1, -distance],
+                                  scale: isDot ? [0, 1.5, 0] : [0.2, 1.8, 0]
+                                }}
+                                transition={{
+                                  duration: duration,
+                                  ease: [0.25, 1, 0.35, 1],
+                                  delay: delay
+                                }}
+                              />
+                            </motion.div>
+                          );
+                        })}
+                      </div>
+                      <div className="relative z-10 mx-auto mb-4 inline-flex items-center gap-2 px-3 py-1 rounded-full border border-slate-200 bg-white text-xs font-bold uppercase tracking-wider text-slate-500 shadow-sm">
+                        <QrCode size={14} /> Scan Now
+                      </div>
+                      <div className="relative z-10 w-44 h-44 sm:w-56 sm:h-56 mx-auto rounded-[1.5rem] border border-slate-200/80 bg-white p-3 shadow-[0_20px_50px_-12px_rgba(15,23,42,0.15)] ring-4 ring-white/60 overflow-hidden">
+                        <img
+                          src="/qr.png"
+                          alt="Problem statement QR code"
+                          className="w-full h-full rounded-xl object-cover"
+                        />
+                        <motion.span
+                          className="absolute inset-x-2 h-6 bg-gradient-to-b from-blue-300/30 via-white/55 to-transparent blur-sm"
+                          animate={{ y: ['-15%', '105%'] }}
+                          transition={{ duration: 2.1, repeat: Infinity, ease: "easeInOut" }}
+                        />
+                      </div>
+                      <p className="relative z-10 mt-4 text-sm text-slate-500 font-medium">Scan to access the problem statement IDs portal.</p>
+                    </motion.div>
+                  )}
+                </div>
               </div>
             </div>
           </div>
@@ -2072,7 +2070,7 @@ const FaqSection = () => {
   ];
 
   return (
-    <section className="py-16 sm:py-24 relative" id="faq">
+    <section className="py-16 sm:py-24 relative overflow-hidden" id="faq">
       <div className="max-w-3xl mx-auto px-4 sm:px-6">
         <div className="text-center mb-16">
           <RevealText>
@@ -2167,7 +2165,7 @@ const TeamSection = () => {
         <div className={`absolute top-8 right-8 w-3 h-3 rounded-full ${member.dot} opacity-20`}></div>
 
         {/* Avatar Area - show image if available */}
-          <div className="relative mb-6">
+        <div className="relative mb-6">
           <div className={`w-28 h-28 sm:w-32 sm:h-32 rounded-3xl flex items-center justify-center bg-gray-50 border-2 border-solid border-gray-200 group-hover:${member.color} transition-all duration-500 overflow-hidden`}>
             <div className="w-full h-full rounded-2xl flex items-center justify-center bg-white shadow-inner overflow-hidden">
               {member.img ? (
@@ -2353,7 +2351,6 @@ const EventTimelineSection = () => {
     'Preparation': { cardBg: 'bg-sky-50/80', border: 'border-sky-300', text: 'text-sky-600', dot: 'bg-sky-500', line: 'bg-sky-300', badge: 'bg-sky-100 text-sky-700', iconBg: 'bg-sky-100', navBorder: 'border-sky-300', navText: 'text-sky-600', navHover: 'hover:bg-sky-50' },
     'Judging': { cardBg: 'bg-orange-50/80', border: 'border-orange-300', text: 'text-orange-600', dot: 'bg-orange-500', line: 'bg-orange-300', badge: 'bg-orange-100 text-orange-700', iconBg: 'bg-orange-100', navBorder: 'border-orange-300', navText: 'text-orange-600', navHover: 'hover:bg-orange-50' },
     'Wrap-up': { cardBg: 'bg-emerald-50/80', border: 'border-emerald-300', text: 'text-emerald-600', dot: 'bg-emerald-500', line: 'bg-emerald-300', badge: 'bg-emerald-100 text-emerald-700', iconBg: 'bg-emerald-100', navBorder: 'border-emerald-300', navText: 'text-emerald-600', navHover: 'hover:bg-emerald-50' },
-    'Ceremony': { cardBg: 'bg-indigo-50/80', border: 'border-indigo-300', text: 'text-indigo-600', dot: 'bg-indigo-500', line: 'bg-indigo-300', badge: 'bg-indigo-100 text-indigo-700', iconBg: 'bg-indigo-100', navBorder: 'border-indigo-300', navText: 'text-indigo-600', navHover: 'hover:bg-indigo-50' },
   };
 
   const currentDay = days[activeDay];
@@ -2380,7 +2377,7 @@ const EventTimelineSection = () => {
 
         {/* Day Switcher Tabs */}
         <RevealText>
-          <div className="flex items-center justify-center gap-2 sm:gap-3 md:gap-4 mb-10 sm:mb-14">
+          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 md:gap-4 mb-10 sm:mb-14">
             {days.map((day, idx) => {
               const dColors = colorMap[day.color];
               const isActive = activeDay === idx;
@@ -2615,7 +2612,7 @@ const Footer = () => {
               <li><a href="#" className="hover:text-blue-500">Home</a></li>
               <li><a href="#about" className="hover:text-blue-500">About</a></li>
               <li><a href="#themes" className="hover:text-blue-500">Themes</a></li>
-              <li><a href="https://forms.gle/aWXrC9w6FwURfLDJ9" target="_blank" rel="noopener noreferrer" className="hover:text-blue-500">Register</a></li>
+              <li><a href="https://forms.gle/aWXrC9w6FwURfLDJ9" target="_blank" rel="noopener noreferrer" className="hover:text-blue-500">Registration Closed</a></li>
               <li><a href="#prizes" className="hover:text-blue-500">Prizes</a></li>
               <li><a href="#faq" className="hover:text-blue-500">FAQs</a></li>
             </ul>
@@ -2995,6 +2992,311 @@ const useVanillaAnimations = () => {
   }, []);
 };
 
+const AchievementsAwardsSection = () => {
+  const achievements = [
+    {
+      position: 'Champions',
+      team: 'ZERO TRACE',
+      project: 'Smart Energy Grid',
+      college: 'Feroze Gandhi Institute of Engg. & Tech., Raebareli',
+      members: ['Nilesh K. Mishra', 'Mohd. Hamza', 'Shambhavi Sharma', 'Shashi Tiwari'],
+      img: '/team1.jpeg',
+      gradient: 'from-yellow-400 to-amber-600',
+      shadow: 'shadow-yellow-500/30',
+      fill: 'bg-gradient-to-br from-yellow-50/80 to-white border-yellow-200/50',
+      icon: Trophy
+    },
+    {
+      position: 'Runner-Up',
+      team: 'CODE CRACKERS',
+      project: 'Fair Mandi Price System',
+      college: 'City Monstessari School',
+      members: ['Ansh Yadav', 'Vivek Rai'],
+      img: '/team2.jpeg',
+      gradient: 'from-gray-300 to-gray-500',
+      shadow: 'shadow-gray-500/30',
+      fill: 'bg-gradient-to-br from-gray-50/80 to-white border-gray-200/50',
+      icon: Medal
+    },
+    {
+      position: '2nd Runner-Up',
+      team: 'CodeRedX',
+      project: 'Civic Seva',
+      college: 'R.R. Institute of Modern Technology, Lucknow',
+      members: ['Shivam K. Mishra', 'Mohd. Moshiq', 'Vaishnavi Gupta', 'Mayank Gupta'],
+      img: '/team3.jpeg',
+      gradient: 'from-orange-400 to-red-500',
+      shadow: 'shadow-orange-500/30',
+      fill: 'bg-gradient-to-br from-orange-50/80 to-white border-orange-200/50',
+      icon: Award
+    }
+  ];
+
+  return (
+    <section className="py-20 relative overflow-hidden bg-gradient-to-b from-white/10 to-transparent" id="achievements">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+        <RevealText>
+          <div className="text-center mb-16">
+            <span className="inline-block py-1 px-5 rounded-full bg-yellow-100 border border-yellow-200 text-yellow-700 text-xs font-extrabold tracking-widest uppercase mb-4 shadow-sm">
+              Hall of Fame
+            </span>
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-black mb-6 text-slate-800 drop-shadow-sm font-display tracking-tight">
+              Achievements <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-amber-600">& Awards</span>
+            </h2>
+            <p className="text-gray-500 max-w-2xl mx-auto text-lg leading-relaxed">
+              Celebrating the brilliant minds who pushed the boundaries of innovation and creativity.
+            </p>
+          </div>
+        </RevealText>
+
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 sm:gap-12 mt-12">
+          {achievements.map((item, idx) => (
+            <motion.div
+              key={idx}
+              initial={{ opacity: 0, scale: 0.4, y: 100, rotate: idx % 2 === 0 ? -4 : 4 }}
+              whileInView={{ opacity: 1, scale: 1, y: 0, rotate: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{
+                type: 'spring',
+                stiffness: 220,
+                damping: 14,
+                delay: idx * 0.15
+              }}
+              whileHover={{ y: -10, scale: 1.02, transition: { type: 'spring', stiffness: 300 } }}
+              className={`relative rounded-3xl p-6 shadow-xl border ${item.fill} ${item.shadow} group overflow-hidden flex flex-col h-full`}
+            >
+              <div className={`absolute top-0 left-0 w-full h-1 bg-gradient-to-r ${item.gradient}`} />
+              <div className="flex justify-between items-start mb-6">
+                <div>
+                  <h3 className={`text-sm font-black uppercase tracking-widest bg-clip-text text-transparent bg-gradient-to-r ${item.gradient} mb-2`}>
+                    {item.position}
+                  </h3>
+                  <h4 className="text-2xl font-bold text-slate-900 leading-tight">
+                    Team {item.team}
+                  </h4>
+                </div>
+                <div className={`w-12 h-12 rounded-full flex items-center justify-center bg-gradient-to-br ${item.gradient} text-white shadow-lg`}>
+                  <item.icon size={20} />
+                </div>
+              </div>
+
+              <div className="w-full h-40 rounded-xl overflow-hidden mb-4 relative bg-slate-100 border border-gray-100">
+                {/* Photo Placeholder */}
+                <div className="absolute inset-0 flex items-center justify-center text-gray-300">
+                  <svg className="w-16 h-16 text-gray-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M23 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" /></svg>
+                </div>
+                <img src={item.img} alt={item.team} className="w-full h-full object-cover relative z-10 opacity-0 transition-opacity duration-300" onLoad={(e) => e.target.style.opacity = 1} onError={(e) => e.target.style.display = 'none'} />
+              </div>
+
+              <div className="space-y-3 flex-grow">
+                <div className="flex items-center gap-2">
+                  <span className="text-xs text-gray-400 uppercase font-bold tracking-wider">Project:</span>
+                  <span className="font-semibold text-slate-700 text-sm">{item.project}</span>
+                </div>
+                <div className="flex items-start gap-2">
+                  <span className="text-xs text-gray-400 uppercase font-bold tracking-wider mt-0.5">College:</span>
+                  <span className="font-medium text-slate-600 text-sm">{item.college}</span>
+                </div>
+                <div className="flex items-start gap-2">
+                  <span className="text-xs text-gray-400 uppercase font-bold tracking-wider mt-0.5">Members:</span>
+                  <span className="font-medium text-slate-600 text-sm leading-snug">{item.members.join(', ')}</span>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+// Lightweight Auto-Slider for Gallery Feature
+const AutoSlider = ({ images, interval = 3500 }) => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % images.length);
+    }, interval);
+    return () => clearInterval(timer);
+  }, [images, interval]);
+
+  return (
+    <div className="absolute inset-0 w-full h-full overflow-hidden">
+      <AnimatePresence mode="popLayout" initial={false}>
+        <motion.img
+          key={currentIndex}
+          src={images[currentIndex]}
+          alt="Gallery Slide"
+          initial={{ opacity: 0, scale: 1.05 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 1.2, ease: "easeInOut" }}
+          className="absolute inset-0 w-full h-full object-cover"
+          onError={(e) => { e.target.style.display = 'none'; e.target.parentNode.style.backgroundColor = '#e2e8f0'; }}
+        />
+      </AnimatePresence>
+    </div>
+  );
+};
+
+const EventGallerySection = () => {
+  const [showGallery, setShowGallery] = useState(false);
+
+  const initialImages = [
+    {
+      isVideo: true,
+      src: '/RRGI.mp4',
+      tag: 'Main Event Overview',
+      colSpan: 'col-span-12 md:col-span-6',
+      rowSpan: 'row-span-2'
+    },
+    { src: '/day01.jpeg', tag: 'Inception of Innovathon', colSpan: 'col-span-6 md:col-span-3', rowSpan: 'row-span-1' },
+    { src: '/gallery6.jpeg', tag: 'Esteemed Leadership', colSpan: 'col-span-6 md:col-span-3', rowSpan: 'row-span-1' },
+    { src: '/gallery5.jpeg', tag: 'Assessment Panel', colSpan: 'col-span-6 md:col-span-3', rowSpan: 'row-span-1' },
+    { src: '/gallery3.jpeg', tag: 'Core Organizing Crew', colSpan: 'col-span-6 md:col-span-3', rowSpan: 'row-span-1' },
+
+  ];
+
+  const extendedImages = [
+    { src: '/gallery8.jpeg', tag: 'Finale Frame' },
+    { src: '/gallery10.jpeg', tag: 'Igniting the Innovathon' },
+    { src: '/gallery14.jpeg', tag: 'Onboading Zone' },
+    { src: '/gallery11.jpeg', tag: 'Insights from Industry' },
+    { src: '/gallery12.jpeg', tag: 'Team Hacklance' },
+    { src: '/gallery15.jpeg', tag: 'Closing Ceremony' },
+    { src: '/gallery9.jpeg', tag: 'Frame of Enthusiasm' },
+    { src: '/gallery4.jpeg', tag: 'Ocean of Oppotunites' },
+    { src: '/gallery16.jpeg', tag: 'Glimpse of Glory' },
+
+  ];
+
+  return (
+    <section className="py-20 relative overflow-hidden" id="gallery">
+      {/* Grid Pattern Background */}
+      <div className="absolute inset-0 pointer-events-none bg-gradient-to-br from-[#FAFCFF] via-[#F3F8FF] to-[#E5F0FF]">
+        <div className="absolute inset-0 bg-grid-pattern opacity-40 mix-blend-multiply"></div>
+      </div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+        <RevealText>
+          <div className="text-center mb-16">
+            <span className="inline-block py-1 px-5 rounded-full bg-blue-100 border border-blue-200 text-blue-700 text-xs font-extrabold tracking-widest uppercase mb-4 shadow-sm">
+              Memories
+            </span>
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-black mb-6 text-slate-800 drop-shadow-sm font-display tracking-tight">
+              Event <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-indigo-600">Gallery</span>
+            </h2>
+            <p className="text-gray-500 max-w-2xl mx-auto text-lg leading-relaxed">
+              Relive the moments. A visual journey through our incredible event.
+            </p>
+          </div>
+        </RevealText>
+
+        <motion.div layout className="grid grid-cols-12 gap-4 mb-10 auto-rows-[200px]">
+          {initialImages.map((img, idx) => (
+            <RevealText key={idx} delay={idx * 0.15} className={`${img.colSpan} ${img.rowSpan} h-full`}>
+              <motion.div
+                layout
+                whileHover={{ scale: 1.02 }}
+                transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+                className="w-full h-full rounded-2xl overflow-hidden relative group shadow-md bg-slate-100"
+              >
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-60 z-20 pointer-events-none" />
+                {img.tag && (
+                  <div className="absolute bottom-3 left-3 z-30 pointer-events-none">
+                    <span className="bg-black/40 backdrop-blur-[2px] px-2 py-1 rounded text-[10px] uppercase tracking-wider font-semibold text-white/90 shadow-sm border border-white/10">
+                      {img.tag}
+                    </span>
+                  </div>
+                )}
+                {/* Fallback pattern inside */}
+                <div className="absolute inset-0 flex items-center justify-center -z-10 text-gray-300">
+                  <svg className="w-12 h-12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2" /><circle cx="8.5" cy="8.5" r="1.5" /><polyline points="21 15 16 10 5 21" /></svg>
+                </div>
+
+                {img.isVideo ? (
+                  <video
+                    src={img.src}
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                ) : img.isSlider ? (
+                  <AutoSlider images={img.slideImages} />
+                ) : (
+                  <motion.img
+                    src={img.src}
+                    alt={img.tag}
+                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    onError={(e) => { e.target.style.display = 'none'; e.target.parentNode.style.backgroundColor = '#e2e8f0'; }}
+                  />
+                )}
+              </motion.div>
+            </RevealText>
+          ))}
+        </motion.div>
+
+        <AnimatePresence>
+          {showGallery && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+              className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mb-10 overflow-hidden"
+            >
+              {extendedImages.map((img, idx) => (
+                <motion.div
+                  key={idx}
+                  layout
+                  initial={{ opacity: 0, y: 30, scale: 0.95 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  transition={{
+                    duration: 0.6,
+                    delay: idx * 0.08,
+                    type: "spring",
+                    stiffness: 250,
+                    damping: 20
+                  }}
+                  whileHover={{ scale: 1.03 }}
+                  className="w-full h-64 rounded-2xl overflow-hidden relative group shadow-sm bg-slate-100"
+                >
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-60 z-20 pointer-events-none" />
+                  {img.tag && (
+                    <div className="absolute bottom-3 left-3 z-30 flex gap-2 pointer-events-none">
+                      <span className="bg-black/40 backdrop-blur-[2px] px-2 py-1 rounded text-[10px] uppercase tracking-wider font-semibold text-white/90 shadow-sm border border-white/10">
+                        {img.tag}
+                      </span>
+                    </div>
+                  )}
+                  <div className="absolute inset-0 flex items-center justify-center -z-10 text-gray-300">
+                    <svg className="w-12 h-12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2" /><circle cx="8.5" cy="8.5" r="1.5" /><polyline points="21 15 16 10 5 21" /></svg>
+                  </div>
+                  <img src={img.src} alt={img.tag} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" onError={(e) => { e.target.style.display = 'none'; e.target.parentNode.style.backgroundColor = '#e2e8f0'; }} />
+                </motion.div>
+              ))}
+            </motion.div>
+          )}
+        </AnimatePresence>
+
+        <div className="flex justify-center mt-8">
+          <button
+            onClick={() => setShowGallery(!showGallery)}
+            className="group relative px-8 py-4 rounded-full bg-slate-900 text-white font-bold tracking-wide shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden"
+          >
+            <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-indigo-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <span className="relative z-10 flex items-center gap-2">
+              {showGallery ? 'Show Less' : 'Explore Gallery'} {showGallery ? <ChevronDown size={18} className="rotate-180" /> : <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />}
+            </span>
+          </button>
+        </div>
+      </div>
+    </section>
+  );
+};
+
 function App() {
   useVanillaAnimations();
 
@@ -3034,6 +3336,8 @@ function App() {
         <AboutSection />
         <FeaturesSection />
         <PrizeSection />
+        <AchievementsAwardsSection />
+        <EventGallerySection />
         <ThemesSection />
         <EventTimelineSection />
         <TeamSection />
