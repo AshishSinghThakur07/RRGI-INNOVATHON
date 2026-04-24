@@ -111,7 +111,7 @@ const Navbar = () => {
             {open ? <X size={18} /> : <Menu size={18} />}
           </button>
 
-          <a href="https://forms.gle/aWXrC9w6FwURfLDJ9" target="_blank" rel="noopener noreferrer" className="skeu-btn-primary px-4 sm:px-6 py-2 rounded-full font-bold text-xs sm:text-sm flex items-center gap-1.5 sm:gap-2 w-full sm:w-auto justify-center">
+          <a href="https://forms.gle/aWXrC9w6FwURfLDJ9" target="_blank" rel="noopener noreferrer" className="skeu-btn-primary hidden sm:flex px-4 sm:px-6 py-2 rounded-full font-bold text-xs sm:text-sm items-center gap-1.5 sm:gap-2 w-full sm:w-auto justify-center">
             Registration Closed <ArrowRight size={14} className="sm:w-4 sm:h-4" />
           </a>
         </div>
@@ -125,6 +125,11 @@ const Navbar = () => {
             <a href="#prizes" onClick={() => setOpen(false)} className="py-2 hover:text-blue-500">Prizes</a>
             <a href="#themes" onClick={() => setOpen(false)} className="py-2 hover:text-blue-500">Themes</a>
             <a href="#faq" onClick={() => setOpen(false)} className="py-2 hover:text-blue-500">FAQs</a>
+            <div className="mt-2 pt-3 border-t border-gray-200">
+              <a href="https://forms.gle/aWXrC9w6FwURfLDJ9" target="_blank" rel="noopener noreferrer" className="skeu-btn-primary px-4 py-2.5 rounded-full font-bold text-sm flex items-center justify-center gap-2 w-full">
+                Registration Closed <ArrowRight size={14} />
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -348,7 +353,7 @@ const HeroSection = () => {
             </motion.a>
           </RevealText>
 
-          <RevealText delay={0.4}>
+          {/* <RevealText delay={0.4}>
             <p className="text-[10px] sm:text-xs font-bold tracking-widest text-gray-400 mb-4 sm:mb-6 uppercase text-center">Hackathon Starts In</p>
             <div className="flex justify-center items-center gap-2 sm:gap-3 md:gap-6 mb-6 relative z-30 w-full max-w-lg mx-auto">
               <TimerCard delayIndex={0} label="Days" value={timeLeft.days} gradient="from-blue-400 via-cyan-300 to-indigo-500" textHoverColor="text-blue-500" />
@@ -359,7 +364,7 @@ const HeroSection = () => {
               <div className="text-lg sm:text-2xl md:text-4xl font-bold text-gray-600 mb-8">:</div>
               <TimerCard delayIndex={3} label="Seconds" value={timeLeft.seconds} gradient="from-pink-400 via-fuchsia-300 to-purple-500" textHoverColor="text-pink-500" />
             </div>
-          </RevealText>
+          </RevealText> */}
 
           <RevealText delay={0.5}>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6 mt-4 px-6 sm:px-4 w-full max-w-md sm:max-w-none mx-auto">
@@ -3151,10 +3156,10 @@ const EventGallerySection = () => {
       colSpan: 'col-span-12 md:col-span-6',
       rowSpan: 'row-span-2'
     },
-    { src: '/day01.jpeg', tag: 'Inception of Innovathon', colSpan: 'col-span-6 md:col-span-3', rowSpan: 'row-span-1' },
-    { src: '/gallery6.jpeg', tag: 'Esteemed Leadership', colSpan: 'col-span-6 md:col-span-3', rowSpan: 'row-span-1' },
-    { src: '/gallery5.jpeg', tag: 'Assessment Panel', colSpan: 'col-span-6 md:col-span-3', rowSpan: 'row-span-1' },
-    { src: '/gallery3.jpeg', tag: 'Core Organizing Crew', colSpan: 'col-span-6 md:col-span-3', rowSpan: 'row-span-1' },
+    { src: '/day01.jpeg', tag: 'Inception of Innovathon', colSpan: 'col-span-12 md:col-span-3', rowSpan: 'row-span-1' },
+    { src: '/gallery6.jpeg', tag: 'Esteemed Leadership', colSpan: 'col-span-12 md:col-span-3', rowSpan: 'row-span-1' },
+    { src: '/gallery5.jpeg', tag: 'Assessment Panel', colSpan: 'col-span-12 md:col-span-3', rowSpan: 'row-span-1' },
+    { src: '/gallery3.jpeg', tag: 'Core Organizing Crew', colSpan: 'col-span-12 md:col-span-3', rowSpan: 'row-span-1' },
 
   ];
 
@@ -3342,7 +3347,7 @@ function App() {
         <EventTimelineSection />
         <TeamSection />
         <StudentOrganizersSection />
-        <ProblemStatementSection />
+
 
         <FaqSection />
       </main>
